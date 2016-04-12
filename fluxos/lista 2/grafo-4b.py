@@ -32,7 +32,8 @@ def desenhaGrafo(G,pngfilename): # desenha o grafo e salva numa imagem png
     edge_labels=dict([((u,v,),d['weight']) # gera os labels das arestas
                     for u,v,d in G.edges(data=True)])
     colors = [G[u][v]['color'] for u,v in G.edges()]
-    pos = nx.graphviz_layout(G,prog='dot') # obtem a posicao dos nos (para desenhalo) # TODO: desativar isso?
+    pos = nx.graphviz_layout(G,prog='twopi') # obtem a posicao dos nos (para desenhalo) # TODO: desativar isso?
+    #  progs: dot,neato,twopi,circo,fdp,sfdp
     nx.draw_networkx_edges(G,pos, edge_color=colors) # desenha as arestas
     nx.draw_networkx_labels(G,pos) # desenha os labels das arestas
     nx.draw_networkx_edge_labels(G,pos,edge_labels=edge_labels) # desenha os labels dos nos
