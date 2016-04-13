@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 from networkx.drawing.nx_agraph import graphviz_layout
 
+
 def main():
     G = nx.DiGraph()  # G eh um grafo direcionado
     # gera o grafo apartir de suas arestas
@@ -18,15 +19,11 @@ def main():
         # print i[0], i[1]
         G[i[0]][i[1]]["color"] = "black"
     # G[1][2]["color"] = "red"
-    comprimento, caminho = nx.single_source_dijkstra(G, 1)
-    print caminho
-    for i in caminho:
-        print i, comprimento[i], caminho[i]
-        for j in range(1, len(caminho[i])):
-            #print caminho[i][j-1], caminho[i][j]
-            G[caminho[i][j-1]][caminho[i][j]]["color"] = "red"
-    desenhaGrafo(G, "grafo-1c.png")
-
+    maiorCaminho = nx.dag_longest_path(G)
+    print maiorCaminho
+    for i in range(1, len(maiorCaminho)):
+        G[maiorCaminho[i-1]][maiorCaminho[i]]["color"] = "red"
+    desenhaGrafo(G, "grafo-3.png")
 
 def desenhaGrafo(G,pngfilename): # desenha o grafo e salva numa imagem png
     edge_labels=dict([((u,v,),d['weight']) # gera os labels das arestas
