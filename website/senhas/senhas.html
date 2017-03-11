@@ -1,0 +1,745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<style>
+  body          { color:#00FF00;background-color:#000000;}
+  code          { color:#FFFFFF;background-color:#002b36;}
+  p             { font-family:monospace;}
+  a:link        { color:#FFFFFF;}
+  table,th,td   { border: 1px solid white; border-collapse: collapse}
+</style>
+<!--
+que bom te ver por aqui!!!
+voce tambem toma cuidado com o que roda no seu navegador o/
+
+ta tranquilo, ta favoravel: meu site é feito usando somente markdown + CSS:
+uso o pandoc pra renderizar o html (pq to mais acostumado com ele e latex :P )
+
+a minha inspiração foi o https://websitedocaralho.com.br/
+
+vida longa e prospera
+-->
+<h1 id="o-elo-mais-fraco-da-nossa-segurança-snh5s">O elo mais fraco da nossa segurança: S&amp;nh5s</h1>
+<p>Comecei a pesquisar e fazer a análise de senhas para um trabalho então resolvi escrever um texto sobre o assunto.</p>
+<h2 id="edits">Edits:</h2>
+<ul>
+<li>16fev2017: 1a. revisão: agradecimento especial a revisão do Rafael (São Carlos Area Linux User Group -- <a href="https://sancalug.org/doku.php">sancaLUG</a>) e a revisão do Zé e amigos da Unicamp.</li>
+<li>18fev2017: Publicação?</li>
+</ul>
+<h2 id="dedicatória">Dedicatória:</h2>
+<p>Não sou de fazer dedicatórias, mas como também não sou de escrever textos, esse texto é dedicado aos meus amigos que (coelhinhos voadores) sempre (coelhinhos voadores) me incentivaram em compartilhar essas paradas.</p>
+<h2 id="tldr-textão-nem-li">TL;DR (textão, nem li)</h2>
+<ul>
+<li>As senhas analisadas são bastante previsíveis (pois não temos uma boa intuição de aleatoriedade).</li>
+<li>Use senhas verdadeiramente aleatórias, usando por exemplo o método diceware.</li>
+<li>Não repita a mesma senha em dois lugares.</li>
+<li>Sua senha não pode conter datas, nomes ou qualquer coisa pessoal.</li>
+<li>Use um Password Manager.</li>
+<li>Habilite autenticação em duas etapas (2FA).
+<ul>
+<li>Sério!!! Passou a era da senha, não é ela sozinha que vai garantir sua segurança. Veja <a href="https://www.wired.com/2012/11/ff-mat-honan-password-hacker/">Kill the Password: A String of Characters Wont Protect You</a>.</li>
+</ul></li>
+<li>Troque suas senhas com frequência (tipo uma vez por ano).</li>
+<li>Assista <a href="http://www.imdb.com/title/tt4044364/">Citizenfour</a>.</li>
+<li><strong>QUEM TEM COOKIE, TEM MEDO!</strong></li>
+</ul>
+<h2 id="glossário">Glossário:</h2>
+<p>Vou usar esses termos durante o texto, então melhor já tirar isso da frente.</p>
+<h3 id="hash">hash:</h3>
+<p>Def: uma função de hash é uma função que recebe em sua entrada mensagens de qualquer tamanho e as “resume” numa saída de tamanho fixo (normalmente a saída é representada em hexadecimal).</p>
+<p>Boas funções de hash têm algumas propriedades, dentre elas vou destacar:</p>
+<ul>
+<li>Função de sentido único (dado um hash é custoso descobrir a mensagem que gera aquele hash).</li>
+<li>Resistência a colisões (encontrar outra mensagem que produz o mesmo hash).</li>
+<li>Efeito avalanche (duas mensagens bastante parecidas produzem hashes bem diferentes).</li>
+</ul>
+<p>Alguns exemplos de funções de hash: MD5, SHA1, SHA2, blake2. <br><br></p>
+<p>Exemplo:</p>
+<pre><code>md5(&#39;senha&#39;)  = e8d95a51f3af4a3b134bf6bb680a213a
+md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
+<p>Repare no efeito avalanche: as duas mensagens são muito parecidas, porém seus hashes são muito diferentes. <br><br></p>
+<p>(<strong>NUNCA</strong> use MD5 ou SHA1 ou somente o hash (sem salt) para armazenar senhas. Recomendo usar <a href="https://github.com/p-h-c/phc-winner-argon2">argon2</a> -- ganhadora da Password Hashing Competition)</p>
+<h3 id="distribuição-de-probabilidade">Distribuição de Probabilidade:</h3>
+<p>Def: Dado um espaço amostral de eventos (<em>S</em>), uma distribuição de probabilidade é uma função <em>P</em>, <em>P:S→[0,1]</em>, e a única restrição dessa função é que a soma de P aplicada em todos os eventos no espaço amostral vale 1 (caso discreto) e no caso continuo a integral sobre o domínio vale 1.</p>
+<h3 id="engenharia-social">Engenharia Social:</h3>
+<p>Def: Engenharia social é a manipulação psicológica de pessoas para que realizem ações ou revelem informações. <br><br></p>
+<p>Exemplo: Um dos hackers mais famosos do mundo é o Kevin Mitnick, que escreveu um livro chamado <em>A Arte de Enganar</em>. Ele sempre pregou que a estupidez humana é a maior falha de qualquer sistema. <br><br></p>
+<p>Certa vez, uma operadora de telefonia americana tinha uma promoção na qual, na compra um celular, você ganhava um segundo aparelho por 1 centavo. O Mitnick ligou para a loja da operadora perguntando se tinham um determinado modelo de aparelho, há quanto tempo o funcionário trabalhava lá etc… Então, ele ligou em outra loja da operadora se identificando como o funcionário e dizendo que um cliente chamado Kevin Mitnick havia comprado um aparelho, mas que como não tinham um celular naquela loja, o cliente iria buscar na outra unidade. Ele chegou lá e pegou o aparelho de graça. <br><br></p>
+<p>Repare que o Mitnick &quot;hackeou&quot; a operadora sem nem usar um computador, só persuadindo as pessoas.</p>
+<h2 id="motivação">Motivação:</h2>
+<p>No junho de 2016, houve um vazamento de senhas do LinkedIn. O <a href="https://blog.korelogic.com/blog/2016/05/19/linkedin_passwords_2016">grupo resposável pelo vazamento</a> obteve 61 milhões de hashes (SHA1) de senhas distintas e em apenas duas horas eles conseguiram quebrar 65% das senhas :O <br><br></p>
+<p>Um dos afetados foi o Mark Zukerberg (CEO do Facebook) que teve sua <a href="https://www.theregister.co.uk/2016/06/06/facebook_zuckerberg_social_media_accnt_pwnage/">senha vazada</a>. Sua senha era “dadada” e ele usava essa mesma senha no LinkedIn, Twitter e Pinterest.</p>
+<p>O que aprendemos com esse episódio? Precisamos falar sobre senhas!!! Nosso dia a dia está rodeado de senhas, porém nem sempre essas elas são seguras.</p>
+<p>Às vezes utilizamos a mesma senha em vários sites, ou temos aquela senha que um/a ex ainda tem.</p>
+<h2 id="análise-de-senhas">análise de senhas:</h2>
+<p>Para um trabalho, comecei a analisar um conjunto de dados com 10 milhões de senhas, em outros conjuntos de dados <a href="dictionnaryattack.png">muito bons</a>, porém acabei optando por <a href="https://xato.net/today-i-am-releasing-ten-million-passwords-b6278bbe7495#.6eti1aoge">esse</a> por causa do Departamento Vai Dar Merda. O responsável por esse conjunto de dados, Mark Burnett, colocou apenas senhas mais antigas (de 5 a 10 anos atrás) e tomou vários cuidados pra evitar que as pessoas se prejudiquem. <br><br></p>
+<p>Minha análise propõe estudar as seguintes características de interesse:</p>
+<ul>
+<li>As senhas mais comuns.</li>
+<li>Os tamanhos das senhas.</li>
+<li>Os grupos de caracteres (tipo: a senha tem apenas minúsculas e números).</li>
+<li>As “máscaras” das senhas.
+<ul>
+<li>(Estou chamando de máscara o “padrão” daquela senha, exemplo: a senha “abc123” tem a máscara “lllddd”, onde <em>l</em> representa as minúsculas, <em>d</em> os números, <em>u</em> as maiúsculas e <em>s</em> os caracteres especiais.)</li>
+</ul></li>
+</ul>
+<p><br><br> A análise das senhas foi feita conforme o esquema abaixo:</p>
+<pre><code>(conjunto de dados) → (tabela de frequências) → resultados da análise</code></pre>
+<p>O conjunto de dados é um arquivo de texto chamado : <code>10-million-combos.txt</code>.</p>
+<p>(PS: o arquivo está no “formato windows” (além do \n, tem um \r), porém preferi remover os \r, usando o <code>tr</code>.)</p>
+<p>A tabela de frequências (<code>tabFreq.txt</code>) foi obtida com o seguinte comando:</p>
+<pre><code>awk &#39;{print $2}&#39; 10-million-combos.txt  | sort | uniq -c | sort -nr &gt; tabFreq.txt</code></pre>
+<p>Esse <code>awk</code> vai imprimir somente a segunda coluna do arquivo (descartando os usernames), <code>sort</code> por sua vez coloca as senhas em ordem alfabética para que <code>uniq -c</code> conte as ocorrências das senhas e, por fim, <code>sort -nr</code> as ordena pelo número de ocorrências.</p>
+<h3 id="resultados">Resultados :</h3>
+<p>Vamos ao que interessa: são 5,1 milhões (5.189.333) de senhas únicas, que dão no total 9.997.922 senhas. Abaixo estão as 30 senhas mais frequentes, que juntas correspondem a 2,05% do total das senhas:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Senha</th>
+<th align="left">%freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">123456</td>
+<td align="left">0.56%</td>
+</tr>
+<tr class="even">
+<td align="left">password</td>
+<td align="left">0.20%</td>
+</tr>
+<tr class="odd">
+<td align="left">12345678</td>
+<td align="left">0.14%</td>
+</tr>
+<tr class="even">
+<td align="left">qwerty</td>
+<td align="left">0.13%</td>
+</tr>
+<tr class="odd">
+<td align="left">123456789</td>
+<td align="left">0.12%</td>
+</tr>
+<tr class="even">
+<td align="left">12345</td>
+<td align="left">0.11%</td>
+</tr>
+<tr class="odd">
+<td align="left">1234</td>
+<td align="left">0.06%</td>
+</tr>
+<tr class="even">
+<td align="left">111111</td>
+<td align="left">0.06%</td>
+</tr>
+<tr class="odd">
+<td align="left">1234567</td>
+<td align="left">0.05%</td>
+</tr>
+<tr class="even">
+<td align="left">dragon</td>
+<td align="left">0.04%</td>
+</tr>
+<tr class="odd">
+<td align="left">123123</td>
+<td align="left">0.04%</td>
+</tr>
+<tr class="even">
+<td align="left">baseball</td>
+<td align="left">0.04%</td>
+</tr>
+<tr class="odd">
+<td align="left">abc123</td>
+<td align="left">0.04%</td>
+</tr>
+<tr class="even">
+<td align="left">football</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="odd">
+<td align="left">monkey</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="even">
+<td align="left">letmein</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="odd">
+<td align="left">696969</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="even">
+<td align="left">shadow</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="odd">
+<td align="left">master</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="even">
+<td align="left">666666</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="odd">
+<td align="left">qwertyuiop</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="even">
+<td align="left">123321</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="odd">
+<td align="left">mustang</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="even">
+<td align="left">1234567890</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="odd">
+<td align="left">michael</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="even">
+<td align="left">654321</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="odd">
+<td align="left">pussy</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="even">
+<td align="left">superman</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="odd">
+<td align="left">1qaz2wsx</td>
+<td align="left">0.03%</td>
+</tr>
+<tr class="even">
+<td align="left">7777777</td>
+<td align="left">0.02%</td>
+</tr>
+</tbody>
+</table>
+<p>Abaixo os grupos:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Grupos</th>
+<th align="left">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">l</td>
+<td align="left">38.25%</td>
+</tr>
+<tr class="even">
+<td align="left">l+d</td>
+<td align="left">29.86%</td>
+</tr>
+<tr class="odd">
+<td align="left">d</td>
+<td align="left">20.36%</td>
+</tr>
+<tr class="even">
+<td align="left">u+l+d</td>
+<td align="left">5.71%</td>
+</tr>
+<tr class="odd">
+<td align="left">u+l</td>
+<td align="left">2.52%</td>
+</tr>
+<tr class="even">
+<td align="left">u+d</td>
+<td align="left">1.10%</td>
+</tr>
+<tr class="odd">
+<td align="left">u</td>
+<td align="left">1.09%</td>
+</tr>
+<tr class="even">
+<td align="left">l+s</td>
+<td align="left">0.40%</td>
+</tr>
+<tr class="odd">
+<td align="left">l+d+s</td>
+<td align="left">0.37%</td>
+</tr>
+<tr class="even">
+<td align="left">u+l+d+s</td>
+<td align="left">0.15%</td>
+</tr>
+<tr class="odd">
+<td align="left">d+s</td>
+<td align="left">0.08%</td>
+</tr>
+<tr class="even">
+<td align="left">u+l+s</td>
+<td align="left">0.07%</td>
+</tr>
+<tr class="odd">
+<td align="left">u+d+s</td>
+<td align="left">0.02%</td>
+</tr>
+<tr class="even">
+<td align="left">u+s</td>
+<td align="left">0.01%</td>
+</tr>
+<tr class="odd">
+<td align="left">s</td>
+<td align="left">0.01%</td>
+</tr>
+</tbody>
+</table>
+<p>Abaixo os 11 tamanhos mais frequentes:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">tam</th>
+<th align="left">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">8</td>
+<td align="left">29.81%</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">25.45%</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">16.63%</td>
+</tr>
+<tr class="even">
+<td align="left">9</td>
+<td align="left">6.81%</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">4.95%</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left">4.71%</td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">3.45%</td>
+</tr>
+<tr class="even">
+<td align="left">11</td>
+<td align="left">2.64%</td>
+</tr>
+<tr class="odd">
+<td align="left">12</td>
+<td align="left">1.91%</td>
+</tr>
+<tr class="even">
+<td align="left">13</td>
+<td align="left">1.36%</td>
+</tr>
+<tr class="odd">
+<td align="left">14</td>
+<td align="left">0.77%</td>
+</tr>
+</tbody>
+</table>
+<p>Abaixo as 20 máscaras mais frequentes, que correspondem a 65% do total:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">máscara</th>
+<th align="left">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">llllll</td>
+<td align="left">11.76%</td>
+</tr>
+<tr class="even">
+<td align="left">llllllll</td>
+<td align="left">8.98%</td>
+</tr>
+<tr class="odd">
+<td align="left">lllllll</td>
+<td align="left">7.50%</td>
+</tr>
+<tr class="even">
+<td align="left">dddddddd</td>
+<td align="left">7.40%</td>
+</tr>
+<tr class="odd">
+<td align="left">dddddd</td>
+<td align="left">7.03%</td>
+</tr>
+<tr class="even">
+<td align="left">lllll</td>
+<td align="left">3.15%</td>
+</tr>
+<tr class="odd">
+<td align="left">ddddddd</td>
+<td align="left">2.09%</td>
+</tr>
+<tr class="even">
+<td align="left">lllllldd</td>
+<td align="left">2.00%</td>
+</tr>
+<tr class="odd">
+<td align="left">lllllllll</td>
+<td align="left">1.97%</td>
+</tr>
+<tr class="even">
+<td align="left">llll</td>
+<td align="left">1.74%</td>
+</tr>
+<tr class="odd">
+<td align="left">dddd</td>
+<td align="left">1.42%</td>
+</tr>
+<tr class="even">
+<td align="left">llllllld</td>
+<td align="left">1.38%</td>
+</tr>
+<tr class="odd">
+<td align="left">llllld</td>
+<td align="left">1.25%</td>
+</tr>
+<tr class="even">
+<td align="left">llllllllll</td>
+<td align="left">1.21%</td>
+</tr>
+<tr class="odd">
+<td align="left">llllldd</td>
+<td align="left">1.19%</td>
+</tr>
+<tr class="even">
+<td align="left">lllldddd</td>
+<td align="left">1.10%</td>
+</tr>
+<tr class="odd">
+<td align="left">lllllld</td>
+<td align="left">1.07%</td>
+</tr>
+<tr class="even">
+<td align="left">lllldd</td>
+<td align="left">1.05%</td>
+</tr>
+<tr class="odd">
+<td align="left">lllllddd</td>
+<td align="left">0.94%</td>
+</tr>
+<tr class="even">
+<td align="left">ddddd</td>
+<td align="left">0.74%</td>
+</tr>
+</tbody>
+</table>
+<p>Logo mais veremos que as senhas geradas por essas máscaras não são muito boas (pouca entropia). Por exemplo: a máscara mais frequente llllll (11%), tem apenas 28 bits ou seja em menos de 1s todas as senhas geradas por essa máscaras são quebradas.</p>
+<h2 id="lei-de-zipf">Lei de Zipf:</h2>
+<p><strong>Aviso: a secção abaixo VAI EXPLODIR SUA MENTE !!! Caso sua mente não exploda: VOCÊ NÃO TEM EMOÇÃO (continue com cuidado).</strong><br><br></p>
+<p>A lei de Zipf foi nomeada em homenagem ao linguista americano George Kingsley Zipf, que a popularizou.</p>
+<p>A lei diz que se observamos o quão frequente uma palavra é em um livro (ou numa língua inteira), a <em>k</em>-sima palavra mais frequente vai aparecer proporcionalmente a <em>1/k</em>.</p>
+<p>Ou seja, a segunda palavra mais frequente vai ocorrer aproximadamente metade das vezes do que a primeira mais frequente; já a terceira palavra mais frequente, um terço da primeira mais frequente e assim por diante… <br><br></p>
+<p>Apesar do Zipf ter começado suas observações na língua inglesa, isso acontece em <a href="http://colala.bcs.rochester.edu/papers/piantadosi2014zipfs.pdf">todas as línguas</a>, inclusive em <a href="http://arxiv.org/pdf/0808.2904.pdf">línguas extintas</a> que ainda nem conseguimos traduzir. <br><br></p>
+<p>É surpreendente como coisa tão humana e criativa como a linguagem pode ser expressa de uma forma tão previsível. <br><br></p>
+<p>Na real, a lei de Zipf é o caso discreto da distribuição (continua) de Pareto, na qual densidade vale:</p>
+<p><img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=P%28x%29%20%3D%20%5Cfrac%7Bab%5Ea%7D%7Bx%5E%7Ba%2B1%7D%7D" alt="P(x) = \frac{ab^a}{x^{a+1}}" title="P(x) = \frac{ab^a}{x^{a+1}}" /></p>
+<p>onde o suporte é <em>x ≥ b</em> e <em>a &gt; 1</em>;</p>
+<p>Perceba que se aplicarmos log na distribuição teremos:</p>
+<p><img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=%5Clog%28P%28x%29%29%20%3D%20%5Clog%5Cleft%28%5Cfrac%7Bab%5Ea%7D%7Bx%5E%7Ba%2B1%7D%7D%5Cright%29%20%3D%20%5Clog%28a%29%20%2B%20a%5Clog%28b%29%20-%20%28a%2B1%29%5Clog%28x%29" alt="\log(P(x)) = \log\left(\frac{ab^a}{x^{a+1}}\right) = \log(a) + a\log(b) - (a+1)\log(x)" title="\log(P(x)) = \log\left(\frac{ab^a}{x^{a+1}}\right) = \log(a) + a\log(b) - (a+1)\log(x)" /></p>
+<p>ou seja, o gráfico log-log da distribuição de Pareto é uma reta decrescente. <br><br></p>
+<p>Dito isso, esse padrão não acontece apenas nas línguas, mas também descreve:</p>
+<ul>
+<li>População de cidades.</li>
+<li>O trafico de web-sites.</li>
+<li>A magnitude de terremotos.</li>
+<li>O número de citações em artigos acadêmicos.</li>
+<li>O diâmetro das crateras da lua.</li>
+<li>E <a href="http://arxiv.org/pdf/cond-mat/0412004.pdf">muito mais</a>.</li>
+</ul>
+<h3 id="o-princípio-de-pareto">O Princípio de Pareto:</h3>
+<p>Como tantos processos da vida real se comportam segundo a distribuição de Pareto, a partir da distribuição surge o Princípio de Pareto, que diz que via de regra aproximadamente 20% das causas são responsáveis por 80% dos resultados. <br><br></p>
+<p>Por exemplo:</p>
+<ul>
+<li>Na língua inglesa, 18% das palavras mais frequentes correspondem a 80% das ocorrências.</li>
+<li>Os 20% mais ricos correspondem a 82,7% de toda riqueza mundial.</li>
+<li>Nos EUA, 20% dos pacientes usam 80% dos recursos de saúde.</li>
+</ul>
+<p>Depois, o Zipf percebeu que esse padrão 80/20 era uma consequência do princípio do menor esforço. Os falantes de uma língua naturalmente preferem usar menos palavras possível para se expressar, resultando em menos trabalho. <br><br></p>
+<p>Por fim, veja um <a href="https://youtu.be/fCn8zs912OE">video ótimo do VSauce</a> sobre Zipf.</p>
+<h3 id="voltando-para-as-senhas">Voltando para as senhas:</h3>
+<p>Lembrando que o gráfico log-log da distribuição de Pareto é uma reta descreste, assim temos os gráficos:</p>
+<p><img src="mascaras-loglog.png" height="400" /><br><br></p>
+<p><img src="freq-loglog2.png" height="400" /><br><br></p>
+<p><img src="charsets-loglog2.png" height="400" /><br><br></p>
+<p>O Princípio de Pareto (20% das causas são responsáveis por 80% dos resultados) também ocorre em:</p>
+<ul>
+<li>20% dos grupos correspondem a 88% das senhas.</li>
+<li>14% dos tamanhos correspondem a 88% das senhas</li>
+</ul>
+<h2 id="entropia-de-shannon">Entropia de Shannon:</h2>
+<p>Intuitivamente pensamos que senha boa é uma senha toda complicada e difícil de lembrar, por exemplo “S&amp;nh5F0d@”. Ela tem 9 caracteres, maiúsculas, minúsculas, números e caracteres especiais — então ela deve ser boa. Porém, conforme veremos logo mais, essa senha é quebrada em segundos.<br><br></p>
+<p>Pense em um número entre 1 e 20. Você pensou em 17, 7 ou 13? <a href="http://scienceblogs.com/cognitivedaily/2007/02/05/is-17-the-most-random-number/">Esse post</a> mostrou que 17 é o mais escolhido pelas pessoas, e que elas tendem a escolher números primos.</p>
+<p>Outro exemplo é a falácia do apostador: um apostador deve apostar se uma bolinha vai cair no preto ou vermelho, depois dela ter caído, por exemplo, 4 vezes seguidas no vermelho. O apostador pensa que é mais “provável” que agora ela “deve” cair na preta. Porém, a bolinha tem 50%-50% de cair no preto e vermelho, <strong>INDEPENDENTEMENTE DO RESULTADOS ANTERIORES</strong>.</p>
+<p>Para fechar: escreva em um papel como você acha que será o resultado do lançamento de uma moeda 30 vezes e compare jogando de fato a moeda.</p>
+<p>As pessoas favorecem certas sequencias, por exemplo: tendem a evitar que caia o resultado anterior repetidas vezes: dificilmente você achará que a moeda cai cara 4 vezes seguidas.</p>
+<p>Veja <a href="https://youtu.be/vVXbgbMp0oY">esse vídeo da Khan Academy</a>, que mostra uma visualização dessa propriedade de estabilidade de frequência.</p>
+<p>(Quer mais um exemplo? Veja esse excelente <a href="https://youtu.be/K0zrUomGGHY">video do Isto é Matemática</a>, falando do problema de Monty Hall.)<br><br></p>
+<p>Ou seja: as pessoas têm uma intuição deturpada de um resultado aleatório. Esse comportamento de manada acaba produzindo senhas mais previsíveis.<br><br></p>
+<p>Então, como avaliar se uma senha é de fato boa? Precisamos introduzir um conceito da teoria da informação, que é o conceito de entropia de Shannon: a entropia é a “media” de informação que aquela senha contém.</p>
+<p>A entropia <em>H</em>, medida em bits, de uma senha com comprimento <em>L</em>, utilizando <em>N</em> símbolos é definida como log na base 2 de todas as combinações que ela senha pode ter, ou seja:</p>
+<p><img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=H%20%3D%20%5Clog_2%20%28N%5EL%29%20%3D%20L%20%5Ccdot%20%5Clog_2%20%28N%29" alt="H = \log_2 (N^L) = L \cdot \log_2 (N)" title="H = \log_2 (N^L) = L \cdot \log_2 (N)" /></p>
+<p>Agora que sabemos como calcular a entropia, podemos calcular a tabela abaixo:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Grupo</th>
+<th align="center">Num símbolos (N)</th>
+<th align="center">entropia/simbolo (H)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">números</td>
+<td align="center">10</td>
+<td align="center">3.32</td>
+</tr>
+<tr class="even">
+<td align="left">letras</td>
+<td align="center">26</td>
+<td align="center">4.7</td>
+</tr>
+<tr class="odd">
+<td align="left">base64</td>
+<td align="center">64</td>
+<td align="center">6</td>
+</tr>
+<tr class="even">
+<td align="left">“tudo”¹</td>
+<td align="center">94</td>
+<td align="center">6.5</td>
+</tr>
+<tr class="odd">
+<td align="left">palavra²</td>
+<td align="center">7776</td>
+<td align="center">12.92</td>
+</tr>
+</tbody>
+</table>
+<p>¹: tudo = maiúsculas (26) + minúsculas (26) + números (10) + caracteres especiais (32) = 94 símbolos.</p>
+<p>²: na próxima seção veremos por que uma palavra (diceware) tem essa entropia.</p>
+<p>Ou seja, de acordo com a tabela, uma senha <strong>verdadeiramente aleatória</strong> com 8 caracteres usando “tudo” tem <em>6,5 * 8 = 52</em> bits de entropia.<br><br></p>
+<p>Dito isso, não existe uma maneira melhor de começar a falar de senhas boas do que a tirinha do xkcd:</p>
+<div class="figure">
+<img src="xkcdptbr.png" height="550" />
+
+</div>
+<p>creditos : <a href="https://www.xkcd.com/936/">xkcd</a>, tradução: <a href="https://antivigilancia.org/pt/2015/06/abre-te-sesamo-as-senhas-da-nossa-vida-digital-2/">Oficina AntiVigilancia</a> <br><br></p>
+<p>Qual a lição dessa tirinha? Essas senhas todas complicadas e super difíceis de lembrar na verdade têm uma entropia bastante baixa, porque na realidade são baseadas em apenas uma palavra comum sobre a qual, basicamente, são feitas somente algumas substituições comuns (tipo o → 0), alguns maiúsculas e um número. Ou seja, apesar dessas senhas serem difíceis e complicadas para pessoas, para computadores elas são super fáceis de serem quebradas.<br><br></p>
+<p>Agora fica a pergunta: quanta entropia minha senha deve ter?</p>
+<p>No documentário <a href="http://www.imdb.com/title/tt4044364/">Citizenfour</a> o Snowden fala:</p>
+<blockquote>
+<p>Assume your adversary is capable of one trillion guesses per second.</p>
+</blockquote>
+<p>Assim, vamos presumir 1 trilhão de tentativas por segundos (que é um valor bastante razoável).</p>
+<p>O tempo para quebrar uma senha (<em>T</em>) é o número de combinações que aquela senha pode ter, dividido pelo número de tentativas por segundo (<em>P</em>) ou seja: <em>T = 2^(entropia) / P</em>.</p>
+<p>Portanto, vamos calcular a tabela abaixo (considerando <em>P = 1</em> trilhão/s) e o tamanho necessário da senha:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Entropia</th>
+<th align="center">Tempo para quebrar</th>
+<th align="left">base64</th>
+<th align="left">“tudo”</th>
+<th align="left">N. de palavras</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">40</td>
+<td align="center">1.1 segundo</td>
+<td align="left">7</td>
+<td align="left">7</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="left">50</td>
+<td align="center">19 minutos</td>
+<td align="left">9</td>
+<td align="left">8</td>
+<td align="left">4</td>
+</tr>
+<tr class="odd">
+<td align="left">60</td>
+<td align="center">13 dias</td>
+<td align="left">10</td>
+<td align="left">10</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">70</td>
+<td align="center">37 anos</td>
+<td align="left">12</td>
+<td align="left">11</td>
+<td align="left">6</td>
+</tr>
+<tr class="odd">
+<td align="left">80</td>
+<td align="center">38 milênios</td>
+<td align="left">14</td>
+<td align="left">13</td>
+<td align="left">6</td>
+</tr>
+<tr class="even">
+<td align="left">100</td>
+<td align="center">40 bilhões de anos</td>
+<td align="left">17</td>
+<td align="left">16</td>
+<td align="left">8</td>
+</tr>
+</tbody>
+</table>
+<p>(Observação importante: esse tempo é o tempo GARANTIDO de quebrar a senha. Ou seja, é o tempo que demora para percorrer TODAS as possibilidades. O tempo real para quebrar a senha pode ser menor.)<br><br></p>
+<p>Vendo a tabela podemos estabelecer que uma boa senha deve ter 80 bits (ou seja 13 caracteres usando “tudo”), dependendo de onde você vai usar essa senha.<br><br></p>
+<p>Quero saber se minha senha é boa: você pode olhar a primeira tabela e calcular manualmente a entropia dela, mas sugiro que use <a href="http://rumkin.com/tools/password/passchk.php">esse medidor de senha chamado Rumkin</a> ou <a href="https://github.com/dropbox/zxcvbn">a lib <code>zxcvbn</code></a> que <a href="https://dl.dropboxusercontent.com/u/209/zxcvbn/test/index.html">você pode usar aqui</a>.</p>
+<p>(Observação: esses dois medidores de senhas avaliam sua senha localmente no seu navegador, nunca enviando a senha para a internet. Você pode digitar sua senha neles sem medo.)<br><br></p>
+<p>Voltando pro exemplo do começo: a senha “S&amp;nh5F0d@” é baseada em 2 palavras comuns e somente feita algumas substituições comuns e etc…</p>
+<p>Segundo o Rumkin, ela tem 40,7 bits de entropia, que segundo a nossa tabela é quebrada em questão de segundos (o <code>zxcvbn</code> também mostrou isso).</p>
+<h2 id="método-diceware">Método Diceware :</h2>
+<p>Em suma, o diceware é um método de gerar senhas que é:</p>
+<ul>
+<li>Harder: as senhas geradas são verdadeiramente aleatórias as tornando bem mais difíceis de quebrar.</li>
+<li>Better: são melhores para lembrar.</li>
+<li>Faster: é mais rápido de pensar numa senha, basta jogar o dado (ou fazer no computador).</li>
+<li>Stronger: As senhas geradas são fortes, pois tem mais entropia.<br><br></li>
+</ul>
+<p>Preciso criar uma senha que senha fácil de lembrar e que tenha bastante entropia. Aí entra o método diceware (em português dadoware)</p>
+<p>Diceware é um método no qual, através de um dado, uma lista de palavras, papel e lápis podemos construir senhas mais seguras.</p>
+<p>Consulte o <a href="https://github.com/thoughtworks/dadoware">livreto</a> da ThoughtWorks para pegar a lista de palavras.</p>
+<p>O método foi inventado por Arnold G. Reinhold, ele mantém o <a href="http://world.std.com/~reinhold/diceware.html">site oficial</a> do diceware.</p>
+<p>O método consiste em usar o dado para sortear palavras da lista. Jogue o dado 5 vezes por palavra. Os dois primeiros números são as paginas do livreto e os três últimos, a palavra.<br><br></p>
+<p>Por exemplo: você tirou no dado: 2-6-5-1-3 : vá na pagina 2,6 do livreto e procure a palavra 513 = egípcio.<br><br></p>
+<p>Quantas palavras usar? Como para cada palavra jogamos o dado 5 vezes, a lista de palavras tem <em>6^5 = 7776</em> palavras e conforme calculamos isso resulta em 12,92 bits de entropia por palavra sorteada, então <strong>é indicado usar a 6 palavras</strong>.</p>
+<h3 id="aprimorando-o-diceware">Aprimorando o Diceware:</h3>
+<p>Para gerar senhas ainda mais seguras, usando o diceware, podemos:</p>
+<ul>
+<li>Colocar alguns caracteres especiais e números entre as palavras (no livreto tem uma tabela, para sorteá-los usando o dado).</li>
+<li>Colocar aleatoriamente algumas letras em maiúscula.</li>
+<li>Pessoalmente, gosto de, ao invés de sortear 6 palavras, sortear 5 e, para a última, uso uma palavra que não existe na lista, nem em dicionários, etc… usando por exemplo um termo técnico, ou nome de uma marca etc…<br><br></li>
+</ul>
+<p>Preciso usar um dado de verdade para gerar as senhas? Essa é uma longa discussão, mas resumidamente: usando um dado você terá uma boa garantia que nada dará errado, porém gerar os números aleatórios usando um computador normalmente é bom o suficiente.<br><br></p>
+<p>Dito isso, <a href="https://github.com/caioau/personal/blob/master/DicewareGen/dicewareGen.py">fiz esse código em Python</a> para gerar uma senha (ele também gera números e caracteres especiais), a principal função dele é:</p>
+<pre><code>from random import SystemRandom as cryptogen
+def GenDiceware(filename, n=6):
+    with open(filename) as f:
+        words = [line.strip() for line in f]
+    return [cryptogen().choice(words) for _ in range(n)]</code></pre>
+<p>Observação 1: além da <a href="https://github.com/thoughtworks/dadoware/blob/master/7776palavras.txt">lista de palavras do livreto</a>, você pode usar um pacote chamado wbrazilian <a href="https://github.com/caioau/personal/blob/master/DicewareGen/brazilian.utf8">link</a> (270 mil palavras = 18 bits de entropia / palavra).</p>
+<p>Observação 2: O que você <strong>DEVE</strong> atentar nesse código é o uso da classe SystemRandom, que utiliza um gerador de número pseudo-aleatório <strong>CRIPTOGRAFICAMENTE SEGURO</strong>, conforme a documentação:</p>
+<pre><code>Init signature: random.SystemRandom(self, x=None)
+Source:
+class SystemRandom(Random):
+    &quot;&quot;&quot;Alternate random number generator using sources provided
+    by the operating system (such as /dev/urandom on Unix or
+    CryptGenRandom on Windows).
+     Not available on all systems (see os.urandom() for details).
+    &quot;&quot;&quot;</code></pre>
+<p>e a documentação de os.urandom:</p>
+<pre><code>urandom(n) → str
+Return n random bytes suitable for cryptographic use.</code></pre>
+<p>Exemplo de senha gerada: <code>evocar encher acerto 833?LANCHE# azul &gt;Caloria&lt;</code></p>
+<p>Ela tem 47 caracteres e segundo o Rumkin ela tem 240 bits de entropia, ou seja uma senha bastante forte e fácil de lembrar \o/</p>
+<h2 id="password-manager">Password Manager:</h2>
+<p>Agora que sabemos como avaliar se uma senha é boa e como gerar boas senhas, ainda precisamos resolver o seguinte problema: precisamos ter uma senha para cada serviço, para o caso de que um serviço seja comprometido ou não implemente de maneira correta o armazenamento das senhas de seus clientes etc…<br><br></p>
+<p>Uma solução para isso é um password manager (gerenciador de senhas), é um programa que cria boas senhas aleatórias automaticamente, para cada site individualmente, guardando todas essas senhas trancadas com apenas uma senha mestra.<br><br></p>
+<p>Vou recomendar alguns gerenciadores de senhas:</p>
+<h3 id="keepasskeepassx">KeePass/KeePassX:</h3>
+<p>Minha recomendação padrão, ele é software livre, está disponível nas principais distros GNU/Linux e existe pra Android: <a href="https://f-droid.org/repository/browse/?fdfilter=keepass&amp;fdid=com.android.keepass">o KeePassDroid</a> (na F-Droid) e tem auto-type.</p>
+<div class="figure">
+<img src="keepassx.png" height="500" />
+
+</div>
+<p>O uso dele é: você cria seu banco de senhas (.kdb ou .kdbx), cadastra as entradas de seus serviços e, então, o programa gera uma senha aleatória, como por exemplo: <code>)U$*%0jqvm,s*&amp;TbZJ$DiFq[&amp;$GlQ?</code><br><br></p>
+<p>Quando você precisar acessar uma senha, você abre o arquivo, ele vai pedir sua senha mestra e então selecione a entrada que você precisa.</p>
+<p>Você terá duas opções: dar um control-C (com a entrada selecionada) e control-V no campo de senha (ele limpa automaticamente a senha do seu control-c); ou você pode usar o auto-type: vá em Extras → Configurações → Avançado → e configure um atalho pro auto-type, por fim vá no campo de usuário e digite o atalho então ele vai digitar seu usuário e senha sozinho.<br><br></p>
+<p>Dica: afim de melhorar ainda mais a segurança do KeePass, vá em configurações do database e clique no reloginho que aparece, Com isso, quando você abrir o KeePassX, ele vai demorar um pouco mais (tipo 1s no total), mas fica mais difícil de quebrar sua senha mestra pois cada tentativa demorará 1s (em computadores tão rápidos quanto o seu).</p>
+<h3 id="pass-the-standard-unix-password-manager"><a href="https://www.passwordstore.org/">pass</a>: the standard unix password manager</h3>
+<p>Minha segunda recomendação é um gerenciador de senhas pensado com a filosofia Unix. Ele é software livre, está disponível nas principais distros GNU/Linux, e tambémpara Android: o <a href="https://f-droid.org/repository/browse/?fdid=com.zeapo.pwdstore">Password Store</a> (na F-Droid).<br><br></p>
+<p>Ele funciona no terminal, conforme abaixo:</p>
+<pre><code>zx2c4@laptop ~ $ pass
+Password Store
+├── Business
+│   ├── some-silly-business-site.com
+│   └── another-business-site.net
+├── Email
+│   ├── donenfeld.com
+│   └── zx2c4.com
+└── France
+    ├── bank
+    ├── freebox
+    └── mobilephone</code></pre>
+<p>O diferencial dele é que ele criptografa suas senhas com PGP e suporta git, então você pode compartilhar senhas com outras pessoas -- basta criptografar as senhas com sua chave e a chave da outra pessoa e, então, sincronizar usando o git.</p>
+<h3 id="supergenpass">SuperGenPass:</h3>
+<p>Outro password manager, o diferencial dele é: ao contrario dos anteriores, ele não precisa ser instalado em seu computador e não tem um arquivo com suas senhas.<br><br></p>
+<p>Basta entrar no <a href="https://chriszarate.github.io/supergenpass/">site</a>, colocar a senha mestra, e ele gera a senha daquele site, conforme abaixo:</p>
+<div class="figure">
+<img src="sgp.png" />
+
+</div>
+<h3 id="passwordcard">PasswordCard:</h3>
+<p>Pra minha última recomendação, apresento o PasswordCard. Ele é um password manager físico. Entre no <a href="https://www.passwordcard.org/en">site</a> e gere um cartão novo, conforme o abaixo:</p>
+<div class="figure">
+<img src="passwordcard.png" height="200" />
+
+</div>
+<p>O cartão é uma “tabela” com algumas linhas com letras, números e caracteres especiais aleatórios. Para gerar uma senha, você escolhe onde a sua senha começa e qual a direção da senha -- com o cuidado de não colocar seu dedo enquanto lê a senha.</p>
+<h2 id="habilite-autenticação-em-duas-etapas">Habilite autenticação em duas etapas:</h2>
+<p>A ideia por trás da autenticação em duas etapas (2FA -- 2 factor authentication) é que para entrar na sua conta além da senha (que uma coisa que só você sabe), precisa de uma coisa que só você tem, no caso um app no celular.<br><br></p>
+<p>Como usar: cada serviço é diferente, veja aqui <a href="https://www.turnon2fa.com/">turnon2fa</a> como habilitar no serviço especifico. Normalmente, você escaneia um QR code com um app. Recomendo o <a href="https://f-droid.org/repository/browse/?fdfilter=freeotp&amp;fdid=org.fedorahosted.freeotp">freetop</a> (é software livre, tem na F-Droid e pra iOS).</p>
+<p>Quando você for entrar na sua conta, após colocar a senha, deverá colocar um número gerado pelo app. Cada número só dura 30s, então não tem problema se alguém ver o código num determinado momento, conforme mostrado abaixo:</p>
+<p><img src="freeotp.png" height="450" /><br><br></p>
+<p>Caso você não esteja convencido que precisa disso: veja essa reportagem que foi capa da <em>Wired</em> em Dez2012: <a href="https://www.wired.com/2012/11/ff-mat-honan-password-hacker/">Kill the Password: A String of Characters Won't Protect You</a>.</p>
+<p>Resumidamente: por meio de engenharia social, descobriram algumas informações pessoais dele, ligaram no suporte da Apple, falando que ele tinha esquecido a senha dele e com as informações dele conseguiram responder as perguntas de segurança. Assim, pegaram a senha do iCloud dele, entraram no Find My mac e mandaram deletar remotamente os dispositivos dele.</p>
+<p>Ou seja, muito embora o Mat Honan usasse senhas robustas, conseguiram “pegar tudo” dele.<br><br></p>
+<p>Curiosidade: existe uma empresa chamada KeyTrac, que desenvolveu uma sistema de biometria usando o teclado: baseado na velocidade na qual você digita e nos tempos entre o apertar das teclas, ele pode identificar por exemplo se alguém está acessando indevidamente a sua conta. <a href="https://www.keytrac.net/en/tryout">Experimente aqui</a>.</p>
+<p>Por um lado, isso pode evitar acessos indevidos a sua conta. Por outro, isso pode ser usado para te identificar e rastrear na internet.</p>
+<p>Também foi desenvolvido um <a href="https://github.com/vmonaco/kloak">projeto chamado kloak</a> que ofusca suas digitações.</p>
+<h3 id="autenticação-em-duas-etapas-com-sms">Autenticação em duas etapas com SMS:</h3>
+<p>Alguns serviços, como o Twitter, oferecem autenticação em duas etapas usando um SMS, ao invés de um app. Isso é um problema, pois SMSes e ligações telefônicas podem ser facilmente interceptadas por meio de IMSI Catchers, que são torres de celular falsas que fazem um ataque do tipo homem-no-meio.</p>
+<p>Veja um artigo da oficina anti-vigilância explicando como detectar e se prevenir contra esses ataques: <a href="https://antivigilancia.org/pt/2016/03/detectando-antenas-de-celular-espias/">Detectando antenas de celular espiãs</a>.<br><br></p>
+<p>Além disso, mesmo quando o celular está bloqueado, a notificação mostra a mensagem na tela de bloqueio, por exemplo:</p>
+<div class="figure">
+<img src="sms-inseguro.jpg" height="450" />
+
+</div>
+<p>Você pode resolver isso: vá em Configurações → Notificações, selecione o app de SMS e configure para não exibir notificações sensíveis. Resultado final:</p>
+<div class="figure">
+<img src="sms-seguro.jpg" height="450" />
+
+</div>
+<h2 id="boas-práticas">Boas práticas:</h2>
+<p>Para concluir o texto, vou falar de algumas boas praticas para senhas:</p>
+<h3 id="troque-sua-senha-com-certa-frequência">Troque sua senha com certa frequência:</h3>
+<p>É uma boa pratica, pois toda vez que você troca sua senha, normalmente automaticamente sua conta é deslogada de outros computadores que você deixou sua conta logada.<br><br></p>
+<p>Outro motivo para mudar suas senhas com frequência: às vezes você contou sua senha, digamos do Netflix, e não se lembra que outras pessoas podem estar usando sua conta.</p>
+<h3 id="nunca-crie-senhas-contendo-informações-pessoais">NUNCA crie senhas contendo informações pessoais</h3>
+<p>Parece óbvio, pois se você usa informações pessoais em suas senhas, é possível descobrir sua senha através de engenharia social.<br><br></p>
+<p>O Troy Hunt mantêm um site ótimo, chamado <a href="https://haveibeenpwned.com/">haveibeenpwned</a> no qual ele publica quando um serviço tem suas senhas vazadas. Ele publicou um post: <a href="https://www.troyhunt.com/science-of-password-selection/">The science of password selection</a> no qual ele analisou algumas senhas vazadas. No artigo, Troy mostra que pessoas têm suas senhas baseada apenas no nome, por exemplo: Email: murphy666@… Password: murphy666.</p>
+<h3 id="pincodes">Pincodes:</h3>
+<p>Aqui tem um post ótimo: <a href="http://www.datagenetics.com/blog/september32012/">PIN analysis</a> no qual ele analisa os pincodes vazados, e porque (provavelmente) seu pin code foi vazado. Veja o post para ter pincodes melhores.<br><br></p>
+<p>Se você usa o padrão do Android (aquela gradezinha 3x3): existem 389112 possibilidades que podem ser usadas, uma pesquisadora norueguesa chamada Marte Løge em sua tese de mestrado mostrou que mais de 10% dos padrões analisados, usa como padrão de desbloqueio uma &quot;letra&quot; que é a inicial do companheiro, filho, ou algo parecido.</p>
+<p>Finalmente, veja o artigo na arstechnica falando sobre o assunto: <a href="https://arstechnica.com/security/2015/08/new-data-uncovers-the-surprising-predictability-of-android-lock-patterns/">New data uncovers the surprising predictability of Android lock patterns</a></p>
+</body>
+</html>
