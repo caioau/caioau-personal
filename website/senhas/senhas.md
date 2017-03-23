@@ -20,12 +20,19 @@ vida longa e prospera
 
 # O elo mais fraco da nossa segurança: S&nh5s
 
+## Entenda o que são, como criar e gerenciar senhas fortes.
+
 Comecei a pesquisar e fazer a análise de senhas para um trabalho então resolvi escrever um texto sobre o assunto.
 
 ## Edits:
 
 * 16fev2017: 1a. revisão: agradecimento especial a revisão do Rafael (São Carlos Area Linux User Group -- [sancaLUG](https://sancalug.org/doku.php)) e a revisão do Zé e amigos da Unicamp.
-* 18fev2017: Publicação?
+* 18fev2017: Publicação!
+* 23mar2017: 2a. revisão: diff : agradecimento a correções do [\@corvolinoPUNK](https://twitter.com/corvolinoPUNK)
+
+## In Memoriam:
+
+Rodrigo Tambellini (Harry) grande amigo, entramos juntos na faculdade e vivemos juntos muitas coisas. Sdds Harry
 
 ## Dedicatória:
 
@@ -33,13 +40,13 @@ Não sou de fazer dedicatórias, mas como também não sou de escrever textos, e
 
 ## TL;DR (textão, nem li)
 * As senhas analisadas são bastante previsíveis (pois não temos uma boa intuição de aleatoriedade).
-* Use senhas verdadeiramente aleatórias, usando por exemplo o método diceware.
+* Use senhas verdadeiramente aleatórias, usando por exemplo o método dadoware (diceware).
 * Não repita a mesma senha em dois lugares.
 * Sua senha não pode conter datas, nomes ou qualquer coisa pessoal.
-* Use um Password Manager.
+* Use um Gerenciador de Senhas (Password Manager).
 * Habilite autenticação em duas etapas (2FA).
     + Sério!!! Passou a era da senha, não é ela sozinha que vai garantir sua segurança. Veja [Kill the Password: A String of Characters Wont Protect You](https://www.wired.com/2012/11/ff-mat-honan-password-hacker/).
-* Troque suas senhas com frequência (tipo uma vez por ano).
+* Troque suas senhas com frequência (tipo de 3 em 3 meses).
 * Assista [Citizenfour](http://www.imdb.com/title/tt4044364/).
 * **QUEM TEM COOKIE, TEM MEDO!**
 
@@ -79,13 +86,13 @@ Def: Engenharia social é a manipulação psicológica de pessoas para que reali
 
 Exemplo: Um dos hackers mais famosos do mundo é o Kevin Mitnick, que escreveu um livro chamado _A Arte de Enganar_. Ele sempre pregou que a estupidez humana é a maior falha de qualquer sistema. <br><br>
 
-Certa vez, uma operadora de telefonia americana tinha uma promoção na qual, na compra um celular, você ganhava um segundo aparelho por 1 centavo. O Mitnick ligou para a loja da operadora perguntando se tinham um determinado modelo de aparelho, há quanto tempo o funcionário trabalhava lá etc… Então, ele ligou em outra loja da operadora se identificando como o funcionário e dizendo que um cliente chamado Kevin Mitnick havia comprado um aparelho, mas que como não tinham um celular naquela loja, o cliente iria buscar na outra unidade. Ele chegou lá e pegou o aparelho de graça. <br><br>
+Certa vez, uma operadora de telefonia americana tinha uma promoção na qual, na compra de um celular, você ganhava um segundo aparelho por 1 centavo. O Mitnick ligou para a loja da operadora perguntando se tinham um determinado modelo de aparelho, há quanto tempo o funcionário trabalhava lá etc… Então, ele ligou em outra loja da operadora se identificando como o funcionário e dizendo que um cliente chamado Kevin Mitnick havia comprado um aparelho, mas que como não tinham um celular naquela loja, o cliente iria buscar na outra unidade. Ele chegou lá e pegou o aparelho de graça. <br><br>
 
 Repare que o Mitnick "hackeou" a operadora sem nem usar um computador, só persuadindo as pessoas.
 
 ## Motivação:
 
-No junho de 2016, houve um vazamento de senhas do LinkedIn. O [grupo resposável pelo vazamento](https://blog.korelogic.com/blog/2016/05/19/linkedin_passwords_2016) obteve 61 milhões de hashes (SHA1) de senhas distintas e em apenas duas horas eles conseguiram quebrar 65% das senhas :O <br><br>
+Em junho de 2016, houve um vazamento de senhas do LinkedIn. O [grupo resposável pelo vazamento](https://blog.korelogic.com/blog/2016/05/19/linkedin_passwords_2016) obteve 61 milhões de hashes (SHA1) de senhas distintas e em apenas duas horas eles conseguiram quebrar 65% das senhas :O <br><br>
 
 Um dos afetados foi o Mark Zukerberg (CEO do Facebook) que teve sua [senha vazada](https://www.theregister.co.uk/2016/06/06/facebook_zuckerberg_social_media_accnt_pwnage/). Sua senha era “dadada” e ele usava essa mesma senha no LinkedIn, Twitter e Pinterest.
 
@@ -282,7 +289,35 @@ Lembrando que o gráfico log-log da distribuição de Pareto é uma reta descres
 O Princípio de Pareto (20% das causas são responsáveis por 80% dos resultados) também ocorre em:
 
 * 20% dos grupos correspondem a 88% das senhas.
-* 14% dos tamanhos correspondem a 88% das senhas
+* 14% dos tamanhos correspondem a 88% das senhas.
+
+## Feynman: o abridor de cofres
+
+O Richard Fyanman foi um físico americano, seu trabalho era em mecânica quântica e física de partículas . Ele que inventou os diagramas de Faynman . Em 1965 ele ganhou o nobel de física.
+
+Em sua auto biografia _O senhor está brincando, Sr. Faynman!_ ele conta quando trabalhava no projeto Manhattan: 
+
+Afim de mostrar o quão insegura era a guarda de documentos secretos de fabricação de bombas atômicas ele gostava de abrir fechaduras e cofres.
+
+Os cofres eram compostos de um disco rotatório com 100 marcações e o segredo do cofre são 3 números, ou seja existem 1 milhão de combinações, demora uns 5 segundos por tentativa assim demoraria aproximadamente 60 dias para tentar todas as combinações, porém Faynman os abria em 1.5 minutos. 
+
+### Como ele conseguiu esse feito?
+
+* Ele tinha um cofre e percebeu que como os cofres são objetos mecânicos eles apresentavam uma tolerância mecânica de ± 2 , assim ele não precisava tentar as 100 combinações , mas apenas 20 ( 2 , 7 ,12 , 17 ... , 87, 92 , 97 ) , assim as 1 milhão de combinações caem para apenas 8 mil demorando 10 horas.
+
+* Muitas pessoas usavam uma data (DDMMAA) ou seja 30 , 12 e 45 combinações e considerando a tolerancia mecanica isso dá 162 combinações ou seja 18 minutos.
+
+* Muitos usavam como senha as constantes pi e _e_ ou seja 3.14159... → 31-41-59 , 2.71828... → 27-18-28.
+
+* Muitos não mudaram a senha padrão: 25-0-25 ou 50-25-50.
+
+* Enquanto conversa com seus colegas e seu cofre estava aberto, girando o disco ele ouvia 2 clicks, descobrindo os 2 ultimos numeros , assim ele tinha que testar 20 combinações, demorando 1.5 minutos.
+
+Em suma, Feynman tinha a reputação de abridor de cofres, pois:
+
+* teve um pouco de "mente aberta" e perceber a tolerância mecânica.
+* entender a natureza humana na escolha dos segredos.
+* Usava de eng. social para descobrir (grande parte) dos segredos.
 
 ## Entropia de Shannon:
 
@@ -304,7 +339,7 @@ Ou seja: as pessoas têm uma intuição deturpada de um resultado aleatório. Es
 
 Então, como avaliar se uma senha é de fato boa? Precisamos introduzir um conceito da teoria da informação, que é o conceito de entropia de Shannon: a entropia é a “media” de informação que aquela senha contém.
 
-A entropia _H_, medida em bits, de uma senha com comprimento _L_, utilizando _N_ símbolos é definida como log na base 2 de todas as combinações que ela senha pode ter, ou seja:
+A entropia _H_, medida em bits, de uma senha com comprimento _L_, utilizando _N_ símbolos é definida como log na base 2 de todas as combinações que a senha pode ter, ou seja:
 
 $H = \log_2 (N^L) = L \cdot \log_2 (N)$
 
@@ -349,6 +384,7 @@ Entropia    Tempo para quebrar     base64     “tudo”    N. de palavras
 40          1.1 segundo            7          7         3
 50          19 minutos             9          8         4
 60          13 dias                10         10        5
+65          1.1 anos               11         10        6
 70          37 anos                12         11        6
 80          38 milênios            14         13        6
 100         40 bilhões de anos     17         16        8
@@ -374,7 +410,7 @@ Em suma, o diceware é um método de gerar senhas que é:
 * Faster: é mais rápido de pensar numa senha, basta jogar o dado (ou fazer no computador).
 * Stronger: As senhas geradas são fortes, pois tem mais entropia.<br><br>
 
-Preciso criar uma senha que senha fácil de lembrar e que tenha bastante entropia. Aí entra o método diceware (em português dadoware)
+Preciso criar uma senha que seja fácil de lembrar e que tenha bastante entropia. Aí entra o método diceware (em português dadoware)
 
 Diceware é um método no qual, através de um dado, uma lista de palavras, papel e lápis podemos construir senhas mais seguras.
 
@@ -386,7 +422,7 @@ O método consiste em usar o dado para sortear palavras da lista. Jogue o dado 5
 
 Por exemplo: você tirou no dado: 2-6-5-1-3 : vá na pagina 2,6 do livreto e procure a palavra 513 = egípcio.<br><br>
 
-Quantas palavras usar? Como para cada palavra jogamos o dado 5 vezes, a lista de palavras tem _6^5 = 7776_ palavras e conforme calculamos isso resulta em 12,92 bits de entropia por palavra sorteada, então **é indicado usar a 6 palavras**.
+Quantas palavras usar? Como para cada palavra jogamos o dado 5 vezes, a lista de palavras tem _6^5 = 7776_ palavras e conforme calculamos isso resulta em 12,92 bits de entropia por palavra sorteada, então **é indicado usar 6 palavras**.
 
 ### Aprimorando o Diceware:
 
@@ -455,9 +491,11 @@ Você terá duas opções: dar um control-C (com a entrada selecionada) e contro
 
 Dica: afim de melhorar ainda mais a segurança do KeePass, vá em configurações do database e clique no reloginho que aparece, Com isso, quando você abrir o KeePassX, ele vai demorar um pouco mais (tipo 1s no total), mas fica mais difícil de quebrar sua senha mestra pois cada tentativa demorará 1s (em computadores tão rápidos quanto o seu).
 
+Como sincronizar minhas senhas com meu celular: Recomendo o software livre [Syncthing](https://syncthing.net/) é um app para Android e um programa pra pc, no qual ele sincroniza pastas entre seus dispositivos, criando assim sua nuvem pessoal e descentralizada. 
+
 ### [pass](https://www.passwordstore.org/): the standard unix password manager
 
-Minha segunda recomendação é um gerenciador de senhas pensado com a filosofia Unix. Ele é software livre, está disponível nas principais distros GNU/Linux, e tambémpara Android: o [Password Store](https://f-droid.org/repository/browse/?fdid=com.zeapo.pwdstore) (na F-Droid).<br><br>
+Minha segunda recomendação é um gerenciador de senhas pensado com a filosofia Unix. Ele é software livre, está disponível nas principais distros GNU/Linux, e também para Android: o [Password Store](https://f-droid.org/repository/browse/?fdid=com.zeapo.pwdstore) (na F-Droid).<br><br>
 
 Ele funciona no terminal, conforme abaixo:
 
@@ -526,7 +564,12 @@ Além disso, mesmo quando o celular está bloqueado, a notificação mostra a me
 
 ![](sms-inseguro.jpg){ height=450px }
 
-Você pode resolver isso: vá em Configurações → Notificações,  selecione o app de SMS e configure para não exibir notificações sensíveis. Resultado final:
+Você pode resolver isso: 
+
+* Android: vá em Configurações → Notificações,  selecione o app de SMS e configure para não exibir notificações sensíveis. 
+* Iphone: vá em Ajustes → Notificações → selecione o app de SMS → Mostrar Pré-visualizações e configure.
+
+Resultado final:
 
 ![](sms-seguro.jpg){ height=450px }
 
@@ -548,8 +591,17 @@ O Troy Hunt mantêm um site ótimo, chamado [haveibeenpwned](https://haveibeenpw
 
 ### Pincodes:
 
-Aqui tem um post ótimo: [PIN analysis](http://www.datagenetics.com/blog/september32012/) no qual ele analisa os pincodes vazados, e porque (provavelmente) seu pin code foi vazado. Veja o post para ter pincodes melhores.<br><br>
+Em excelente seu post ([PIN analysis](http://www.datagenetics.com/blog/september32012/)), Nick Berry analisou 3.4 milhões de PinCodes de 4 dígitos (10 mil combinações). E constatou:
 
-Se você usa o padrão do Android (aquela gradezinha 3x3): existem 389112 possibilidades que podem ser usadas, uma pesquisadora norueguesa chamada Marte Løge em sua tese de mestrado mostrou que mais de 10% dos padrões analisados, usa como padrão de desbloqueio uma "letra" que é a inicial do companheiro, filho, ou algo parecido.
+* Os top 20 pincodes são responsáveis por 27% do total.
+* Estatisticamente 1/3 de todos os PinCodes podem ser adivinhados apenas testando 61 combinações.
+    + 50% pode ser adivinhado testando apenas 426 combinações (muito menos que 5000).
+* PinCodes contendo Anos (19XX) e datas (MMDD) são muito frequentes.<br><br>
 
-Finalmente, veja o artigo na arstechnica falando sobre o assunto: [New data uncovers the surprising predictability of Android lock patterns](https://arstechnica.com/security/2015/08/new-data-uncovers-the-surprising-predictability-of-android-lock-patterns/)
+Se você usa o padrão do Android (aquela gradezinha 3x3): existem 389112 possibilidades que podem ser usadas (ou seja **usar um PinCode VERDADEIRAMENTE ALEATÓRIO de 6 dígitos é um pouco melhor** )
+
+uma pesquisadora norueguesa chamada Marte Løge em sua tese de mestrado mostrou que mais de 10% dos padrões analisados, usa como padrão de desbloqueio uma "letra" que é a inicial do companheiro, filho, ou algo parecido.
+
+veja o artigo na arstechnica falando sobre o assunto: [New data uncovers the surprising predictability of Android lock patterns](https://arstechnica.com/security/2015/08/new-data-uncovers-the-surprising-predictability-of-android-lock-patterns/)
+
+Recomendação: Use uma senha forte pra criptografia de disco e um PinCode de (pelo menos) 6 dígitos pra desbloquear o celular. Tem um App chamado SnooperStopper ([FDroid](https://f-droid.org/repository/browse/?fdfilter=snoop&fdid=cz.eutopia.snooperstopper)) ele depois de 3 tentativas erradas na tela de desbloqueio o celular reinicia , pedindo a senha forte. 
