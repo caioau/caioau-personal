@@ -28,6 +28,7 @@ vida longa e prospera
 
 veja abaixo os slides de algumas apresentações:
 
+* Apresentação: O elo mais fraco da nossa segurança: S&nh5s - 10Abr2017 - [DivulgaMat](https://divulgamatimeccblog.wordpress.com/) -> [slides](slides/DivulgaMat-Senhas.slides.html)
 * Apresentação: Aplicativos de mensagem seguros: Linux em Prosa - 11Fev2017 - São Carlos -> [slides](slides/SecureMessasingv3.html)
 * Apresentação: Oficina de Privacidade: Encripta tudo Unicamp - 14Set2016 -> [slides](slides/senhas-rev5.html)
 
