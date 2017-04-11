@@ -57,6 +57,7 @@ vida longa e prospera
 <li>Assista <a href="http://www.imdb.com/title/tt4044364/">Citizenfour</a>.</li>
 <li><strong>QUEM TEM COOKIE, TEM MEDO!</strong></li>
 </ul>
+<hr />
 <h2 id="glossário">Glossário:</h2>
 <p>Vou usar esses termos durante o texto, então melhor já tirar isso da frente.</p>
 <h3 id="hash">hash:</h3>
@@ -85,7 +86,8 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>Um dos afetados foi o Mark Zukerberg (CEO do Facebook) que teve sua <a href="https://www.theregister.co.uk/2016/06/06/facebook_zuckerberg_social_media_accnt_pwnage/">senha vazada</a>. Sua senha era “dadada” e ele usava essa mesma senha no LinkedIn, Twitter e Pinterest.</p>
 <p>O que aprendemos com esse episódio? Precisamos falar sobre senhas!!! Nosso dia a dia está rodeado de senhas, porém nem sempre essas elas são seguras.</p>
 <p>Às vezes utilizamos a mesma senha em vários sites, ou temos aquela senha que um/a ex ainda tem.</p>
-<h2 id="análise-de-senhas">análise de senhas:</h2>
+<hr />
+<h2 id="análise-de-senhas">Análise de senhas:</h2>
 <p>Para um trabalho, comecei a analisar um conjunto de dados com 10 milhões de senhas, em outros conjuntos de dados <a href="dictionnaryattack.png">muito bons</a>, porém acabei optando por <a href="https://xato.net/today-i-am-releasing-ten-million-passwords-b6278bbe7495#.6eti1aoge">esse</a> por causa do Departamento Vai Dar Merda. O responsável por esse conjunto de dados, Mark Burnett, colocou apenas senhas mais antigas (de 5 a 10 anos atrás) e tomou vários cuidados pra evitar que as pessoas se prejudiquem. <br><br></p>
 <p>Minha análise propõe estudar as seguintes características de interesse:</p>
 <ul>
@@ -694,6 +696,7 @@ class SystemRandom(Random):
 Return n random bytes suitable for cryptographic use.</code></pre>
 <p>Exemplo de senha gerada: <code>evocar encher acerto 833?LANCHE# azul &gt;Caloria&lt;</code></p>
 <p>Ela tem 47 caracteres e segundo o Rumkin ela tem 240 bits de entropia, ou seja uma senha bastante forte e fácil de lembrar \o/</p>
+<hr />
 <h2 id="password-manager">Password Manager:</h2>
 <p>Agora que sabemos como avaliar se uma senha é boa e como gerar boas senhas, ainda precisamos resolver o seguinte problema: precisamos ter uma senha para cada serviço, para o caso de que um serviço seja comprometido ou não implemente de maneira correta o armazenamento das senhas de seus clientes etc…<br><br></p>
 <p>Uma solução para isso é um password manager (gerenciador de senhas), é um programa que cria boas senhas aleatórias automaticamente, para cada site individualmente, guardando todas essas senhas trancadas com apenas uma senha mestra.<br><br></p>
@@ -739,6 +742,7 @@ Password Store
 
 </div>
 <p>O cartão é uma “tabela” com algumas linhas com letras, números e caracteres especiais aleatórios. Para gerar uma senha, você escolhe onde a sua senha começa e qual a direção da senha -- com o cuidado de não colocar seu dedo enquanto lê a senha.</p>
+<hr />
 <h2 id="habilite-autenticação-em-duas-etapas">Habilite autenticação em duas etapas:</h2>
 <p>A ideia por trás da autenticação em duas etapas (2FA -- 2 factor authentication) é que para entrar na sua conta além da senha (que uma coisa que só você sabe), precisa de uma coisa que só você tem, no caso um app no celular.<br><br></p>
 <p>Como usar: cada serviço é diferente, veja aqui <a href="https://www.turnon2fa.com/">turnon2fa</a> como habilitar no serviço especifico. Normalmente, você escaneia um QR code com um app. Recomendo o <a href="https://f-droid.org/repository/browse/?fdfilter=freeotp&amp;fdid=org.fedorahosted.freeotp">freetop</a> (é software livre, tem na F-Droid e pra iOS).</p>
@@ -768,6 +772,7 @@ Password Store
 <img src="sms-seguro.jpg" height="450" />
 
 </div>
+<hr />
 <h2 id="boas-práticas">Boas práticas:</h2>
 <p>Para concluir o texto, vou falar de algumas boas praticas para senhas:</p>
 <h3 id="troque-sua-senha-com-certa-frequência">Troque sua senha com certa frequência:</h3>
