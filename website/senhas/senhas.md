@@ -1,7 +1,7 @@
 <style>
   body          { color:#00FF00;background-color:#000000;}
   code          { color:#FFFFFF;background-color:#002b36;}
-  p             { font-family:monospace;}
+  p,li          { font-family:monospace;}
   a:link		{ color:#FFFFFF;}
   table,th,td   { border: 1px solid white; border-collapse: collapse}
 </style>
