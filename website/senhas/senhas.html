@@ -1,17 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-</head>
-<body>
 <style>
   body          { color:#00FF00;background-color:#000000;}
   code          { color:#FFFFFF;background-color:#002b36;}
-  p             { font-family:monospace;}
+  p,li          { font-family:monospace;}
   a:link        { color:#FFFFFF;}
   table,th,td   { border: 1px solid white; border-collapse: collapse}
 </style>
@@ -459,10 +449,16 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>Apesar do Zipf ter começado suas observações na língua inglesa, isso acontece em <a href="http://colala.bcs.rochester.edu/papers/piantadosi2014zipfs.pdf">todas as línguas</a>, inclusive em <a href="http://arxiv.org/pdf/0808.2904.pdf">línguas extintas</a> que ainda nem conseguimos traduzir. <br><br></p>
 <p>É surpreendente como coisa tão humana e criativa como a linguagem pode ser expressa de uma forma tão previsível. <br><br></p>
 <p>Na real, a lei de Zipf é o caso discreto da distribuição (continua) de Pareto, na qual densidade vale:</p>
-<p><img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=P%28x%29%20%3D%20%5Cfrac%7Bab%5Ea%7D%7Bx%5E%7Ba%2B1%7D%7D" alt="P(x) = \frac{ab^a}{x^{a+1}}" title="P(x) = \frac{ab^a}{x^{a+1}}" /></p>
+<div class="figure">
+<img src="pareto-pdf.png" />
+
+</div>
 <p>onde o suporte é <em>x ≥ b</em> e <em>a &gt; 1</em>;</p>
 <p>Perceba que se aplicarmos log na distribuição teremos:</p>
-<p><img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=%5Clog%28P%28x%29%29%20%3D%20%5Clog%5Cleft%28%5Cfrac%7Bab%5Ea%7D%7Bx%5E%7Ba%2B1%7D%7D%5Cright%29%20%3D%20%5Clog%28a%29%20%2B%20a%5Clog%28b%29%20-%20%28a%2B1%29%5Clog%28x%29" alt="\log(P(x)) = \log\left(\frac{ab^a}{x^{a+1}}\right) = \log(a) + a\log(b) - (a+1)\log(x)" title="\log(P(x)) = \log\left(\frac{ab^a}{x^{a+1}}\right) = \log(a) + a\log(b) - (a+1)\log(x)" /></p>
+<div class="figure">
+<img src="pareto-loglog.png" />
+
+</div>
 <p>ou seja, o gráfico log-log da distribuição de Pareto é uma reta decrescente. <br><br></p>
 <p>Dito isso, esse padrão não acontece apenas nas línguas, mas também descreve:</p>
 <ul>
@@ -523,7 +519,7 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>Ou seja: as pessoas têm uma intuição deturpada de um resultado aleatório. Esse comportamento de manada acaba produzindo senhas mais previsíveis.<br><br></p>
 <p>Então, como avaliar se uma senha é de fato boa? Precisamos introduzir um conceito da teoria da informação, que é o conceito de entropia de Shannon: a entropia é a “media” de informação que aquela senha contém.</p>
 <p>A entropia <em>H</em>, medida em bits, de uma senha com comprimento <em>L</em>, utilizando <em>N</em> símbolos é definida como log na base 2 de todas as combinações que a senha pode ter, ou seja:</p>
-<p><img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=H%20%3D%20%5Clog_2%20%28N%5EL%29%20%3D%20L%20%5Ccdot%20%5Clog_2%20%28N%29" alt="H = \log_2 (N^L) = L \cdot \log_2 (N)" title="H = \log_2 (N^L) = L \cdot \log_2 (N)" /></p>
+<p><span class="math inline"><em>H</em> = log<sub>2</sub>(<em>N</em><sup><em>L</em></sup>)=<em>L</em> ⋅ log<sub>2</sub>(<em>N</em>)</span></p>
 <p>Agora que sabemos como calcular a entropia, podemos calcular a tabela abaixo:</p>
 <table>
 <thead>
@@ -787,5 +783,3 @@ Password Store
 <p>uma pesquisadora norueguesa chamada Marte Løge em sua tese de mestrado mostrou que mais de 10% dos padrões analisados, usa como padrão de desbloqueio uma &quot;letra&quot; que é a inicial do companheiro, filho, ou algo parecido.</p>
 <p>veja o artigo na arstechnica falando sobre o assunto: <a href="https://arstechnica.com/security/2015/08/new-data-uncovers-the-surprising-predictability-of-android-lock-patterns/">New data uncovers the surprising predictability of Android lock patterns</a></p>
 <p>Recomendação: Use uma senha forte pra criptografia de disco e um PinCode de (pelo menos) 6 dígitos pra desbloquear o celular. Tem um App chamado SnooperStopper (<a href="https://f-droid.org/repository/browse/?fdfilter=snoop&amp;fdid=cz.eutopia.snooperstopper">FDroid</a>) ele depois de 3 tentativas erradas na tela de desbloqueio o celular reinicia , pedindo a senha forte.</p>
-</body>
-</html>

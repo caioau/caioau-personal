@@ -243,13 +243,13 @@ Apesar do Zipf ter começado suas observações na língua inglesa, isso acontec
 
 Na real, a lei de Zipf é o caso discreto da distribuição (continua) de Pareto, na qual densidade vale:
 
-$P(x) = \frac{ab^a}{x^{a+1}}$
+![](pareto-pdf.png)
 
 onde o suporte é _x ≥ b_ e _a > 1_;
 
 Perceba que se aplicarmos log na distribuição teremos:
 
-$\log(P(x)) = \log\left(\frac{ab^a}{x^{a+1}}\right) = \log(a) + a\log(b) - (a+1)\log(x)$
+![](pareto-loglog.png)
 
 ou seja, o gráfico log-log da distribuição de Pareto é uma reta decrescente. <br><br>
 
