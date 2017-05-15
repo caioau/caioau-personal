@@ -36,5 +36,9 @@ veja abaixo os slides de algumas apresentações:
 ### Contato:
 
 * twitter: [\@caioauv](https://twitter.com/caioauv)
-* email: [PGP](https://keybase.io/caioau/key.asc)
+* email: 210B C5A4 14FD 9274 6B6A 250E EFF5 B2E1 80F2 94CE
+    + [key.asc](https://keybase.io/caioau/key.asc)
+    + [mailto](https://encrypt.to/0xEFF5B2E180F294CE) (encrypt.to)
+    + [keybase-encrypt](https://keybase.io/encrypt#caioau)
+* [ricochet](https://ricochet.im/) : ricochet:rzzyo5juzt652faj
 * XMPP/OTR: caioau@jabber.calyxinstitute.org
