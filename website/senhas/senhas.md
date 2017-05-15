@@ -345,13 +345,13 @@ $H = \log_2 (N^L) = L \cdot \log_2 (N)$
 
 Agora que sabemos como calcular a entropia, podemos calcular a tabela abaixo:
 
-Grupo      Num símbolos (N)     entropia/simbolo (H)
--------   ------------------   ----------------------
-números           10                    3.32
-letras            26                    4.7
-base64            64                    6
-“tudo”¹           94                    6.5
-palavra²          7776                  12.92
+Grupo    |  Num símbolos (N)  |   entropia/simbolo (H)
+:--------|:------------------:|:-----------------------:
+números  |         10         |           3.32
+letras   |         26         |           4.7
+base64   |         64         |           6
+“tudo”¹  |         94         |           6.5
+palavra² |         7776       |           12.92
 
 ¹: tudo = maiúsculas (26) + minúsculas (26) + números (10) + caracteres especiais (32) = 94 símbolos.
 
@@ -379,15 +379,15 @@ O tempo para quebrar uma senha (_T_) é o número de combinações que aquela se
 
 Portanto, vamos calcular a tabela abaixo (considerando _P = 1_ trilhão/s) e o tamanho necessário da senha:
 
-Entropia    Tempo para quebrar     base64     “tudo”    N. de palavras
----------  --------------------    -------    ------    ----------------
-40          1.1 segundo            7          7         3
-50          19 minutos             9          8         4
-60          13 dias                10         10        5
-65          1.1 anos               11         10        6
-70          37 anos                12         11        6
-80          38 milênios            14         13        6
-100         40 bilhões de anos     17         16        8
+Entropia  |  Tempo para quebrar  |   base64  |   “tudo” |   N. de palavras
+----------|:--------------------:|:---------:|:--------:|:----------------:
+40        |  1.1 segundo         |   7       |   7      |   3
+50        |  19 minutos          |   9       |   8      |   4
+60        |  13 dias             |   10      |   10     |   5
+65        |  1.1 anos            |   11      |   10     |   6
+70        |  37 anos             |   12      |   11     |   6
+80        |  38 milênios         |   14      |   13     |   6
+100       |  40 bilhões de anos  |   17      |   16     |   8
 
 (Observação importante: esse tempo é o tempo GARANTIDO de quebrar a senha. Ou seja, é o tempo que demora para percorrer TODAS as possibilidades. O tempo real para quebrar a senha pode ser menor.)<br><br>
 
