@@ -130,99 +130,99 @@ Esse `awk` vai imprimir somente a segunda coluna do arquivo (descartando os user
 
 Vamos ao que interessa: são 5,1 milhões (5.189.333) de senhas únicas, que dão no total 9.997.922 senhas. Abaixo estão as 30 senhas mais frequentes, que juntas correspondem a 2,05% do total das senhas:
 
-Senha            %freq
-------           -------
-123456            0.56%
-password          0.20%
-12345678          0.14%
-qwerty            0.13%
-123456789         0.12%
-12345             0.11%
-1234              0.06%
-111111            0.06%
-1234567           0.05%
-dragon            0.04%
-123123            0.04%
-baseball          0.04%
-abc123            0.04%
-football          0.03%
-monkey            0.03%
-letmein           0.03%
-696969            0.03%
-shadow            0.03%
-master            0.03%
-666666            0.03%
-qwertyuiop        0.03%
-123321            0.03%
-mustang           0.03%
-1234567890        0.03%
-michael           0.03%
-654321            0.03%
-pussy             0.03%
-superman          0.03%
-1qaz2wsx          0.03%
-7777777           0.02%
+Senha          |  %freq
+---------------|-----------
+123456         |   0.56%
+password       |   0.20%
+12345678       |   0.14%
+qwerty         |   0.13%
+123456789      |   0.12%
+12345          |   0.11%
+1234           |   0.06%
+111111         |   0.06%
+1234567        |   0.05%
+dragon         |   0.04%
+123123         |   0.04%
+baseball       |   0.04%
+abc123         |   0.04%
+football       |   0.03%
+monkey         |   0.03%
+letmein        |   0.03%
+696969         |   0.03%
+shadow         |   0.03%
+master         |   0.03%
+666666         |   0.03%
+qwertyuiop     |   0.03%
+123321         |   0.03%
+mustang        |   0.03%
+1234567890     |   0.03%
+michael        |   0.03%
+654321         |   0.03%
+pussy          |   0.03%
+superman       |   0.03%
+1qaz2wsx       |   0.03%
+7777777        |   0.02%
 
 Abaixo os grupos:
 
-Grupos     %
--------    -------
-l          38.25%
-l+d        29.86%
-d          20.36%
-u+l+d      5.71%
-u+l        2.52%
-u+d        1.10%
-u          1.09%
-l+s        0.40%
-l+d+s      0.37%
-u+l+d+s    0.15%
-d+s        0.08%
-u+l+s      0.07%
-u+d+s      0.02%
-u+s        0.01%
-s          0.01%
+Grupos   |  %
+---------|----------
+l        |  38.25%
+l+d      |  29.86%
+d        |  20.36%
+u+l+d    |  5.71%
+u+l      |  2.52%
+u+d      |  1.10%
+u        |  1.09%
+l+s      |  0.40%
+l+d+s    |  0.37%
+u+l+d+s  |  0.15%
+d+s      |  0.08%
+u+l+s    |  0.07%
+u+d+s    |  0.02%
+u+s      |  0.01%
+s        |  0.01%
 
 Abaixo os 11 tamanhos mais frequentes:
 
-tam        %
---------   -------
-8          29.81%
-6          25.45%
-7          16.63%
-9          6.81%
-5          4.95%
-10         4.71%
-4          3.45%
-11         2.64%
-12         1.91%
-13         1.36%
-14         0.77%
+tam     |   %
+--------|------------
+8       |   29.81%
+6       |   25.45%
+7       |   16.63%
+9       |   6.81%
+5       |   4.95%
+10      |   4.71%
+4       |   3.45%
+11      |   2.64%
+12      |   1.91%
+13      |   1.36%
+14      |   0.77%
 
 Abaixo as 20 máscaras mais frequentes, que correspondem a 65% do total:
 
-máscara       %
-----------    -------
-llllll        11.76%
-llllllll      8.98%
-lllllll       7.50%
-dddddddd      7.40%
-dddddd        7.03%
-lllll         3.15%
-ddddddd       2.09%
-lllllldd      2.00%
-lllllllll     1.97%
-llll          1.74%
-dddd          1.42%
-llllllld      1.38%
-llllld        1.25%
-llllllllll    1.21%
-llllldd       1.19%
-lllldddd      1.10%
-lllllld       1.07%
-lllldd        1.05%
-lllllddd      0.94%
-ddddd         0.74%
+máscara     |  %
+------------|----------
+llllll      |  11.76%
+llllllll    |  8.98%
+lllllll     |  7.50%
+dddddddd    |  7.40%
+dddddd      |  7.03%
+lllll       |  3.15%
+ddddddd     |  2.09%
+lllllldd    |  2.00%
+lllllllll   |  1.97%
+llll        |  1.74%
+dddd        |  1.42%
+llllllld    |  1.38%
+llllld      |  1.25%
+llllllllll  |  1.21%
+llllldd     |  1.19%
+lllldddd    |  1.10%
+lllllld     |  1.07%
+lllldd      |  1.05%
+lllllddd    |  0.94%
+ddddd       |  0.74%
 
 
 Logo mais veremos que as senhas geradas por essas máscaras não são muito boas (pouca entropia). Por exemplo: a máscara mais frequente llllll (11%), tem apenas 28 bits ou seja em menos de 1s todas as senhas geradas por essa máscaras são quebradas.
