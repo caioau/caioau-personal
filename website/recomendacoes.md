@@ -20,7 +20,7 @@ vida longa e prospera
 
 # Recomendações:
 
-Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 28Mai2017 : diff)
+Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 28Mai2017 : [diff](https://github.com/caioau/caioau-personal/commit/db2fc500bd46bd265d410a9241e0647e3e8291e3#diff-8e64390df63bd44f42a6e92ef6427098))
 
 ## Torrent:
 
