@@ -42,7 +42,7 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 28Mai2017 : [dif
 * [Schneier on Security](https://www.schneier.com/) : pagina pessoal do Bruce Schneier.
 * [HAC](http://cacr.uwaterloo.ca/hac/) : Handbook of Applied Cryptography: Ebook gratuito de crypto :P 
 * [hello.processing.org](http://hello.processing.org/): Aprenda em uma hora a programar essa maravilhosa linguagem de programação gráfica que eh o [processing](https://processing.org/). 
-* [GetGnuLinux](www.getgnulinux.org) e [computefreely.org](https://computefreely.org/): O que é GNU/Linux? Porque GNU/Linux? Como Migrar?
+* [GetGnuLinux](http://www.getgnulinux.org) e [computefreely.org](https://computefreely.org/): O que é GNU/Linux? Porque GNU/Linux? Como Migrar?
 * [Labic](http://www.labic.net/): Laboratório de Estudos sobre Imagem e Cibercultura: Dentre outras coisas eles produzem cartografias das redes sociais.
 * [opsec.fluxo.info](https://opsec.fluxo.info/): Modelagem, Específicação e Treinamento em Segurança Operacional - OPSEC.
 * [math.uah.edu](http://www.math.uah.edu/stat/),[Cut The Knot](http://www.cut-the-knot.org/) e [Portal Action](http://www.portalaction.com.br/ambiente-virtual-de-aprendizado) sites bacanas para aprender matemática e estatística.
@@ -62,7 +62,7 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 28Mai2017 : [dif
     + Use um PinCode Forte (6 ou mais dígitos **VERDADEIRAMENTE ALEATÓRIOS**).
     + Não utilize sua digital para desbloquear seu aparelho, pois podem forçar você a colocar seu dedo no seu celular.
     + "Esconda" notificações sensíveis da tela de bloqueio.
-    + Desative "minhas atividades" do Google (histórico de buscas, localização, etc ...): [myactivity.google.com/myactivity](myactivity.google.com/myactivity)
+    + Desative "minhas atividades" do Google (histórico de buscas, localização, etc ...): [myactivity.google.com/myactivity](https://myactivity.google.com/myactivity)
     + Desative Backup do Google: histórico de chamadas, senhas do Wifi e Apps são salvos no Google.
     + Desative permissões desnecessárias.
 * [Meu celular sem Google!?](https://antivigilancia.org/pt/2017/05/seu-celular-sem-google/): Liberte seu Android!
