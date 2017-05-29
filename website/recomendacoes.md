@@ -20,7 +20,7 @@ vida longa e prospera
 
 # Recomendações:
 
-Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 14Fev2017)
+Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 28Mai2017 : diff)
 
 ## Torrent:
 
@@ -31,6 +31,7 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 14Fev2017)
 ## Sites:
 
 * [tem boi na linha?](https://temboinalinha.org/) : Guia prático de combate à vigilância na internet
+* [ssd-eff](https://ssd.eff.org/) : Autodefesa contra Vigilância - EFF
 * [ipleak](http://ipleak.net/): veja seu IP e se teste se existe um vazamento de IP.
 * [Rumkin](http://rumkin.com/tools/password/passchk.php) e [zxcvbn](https://github.com/dropbox/zxcvbn) teste a qualidade de suas senhas.
 * [ToS;DR](https://tosdr.org/): Terms of Service; Didn't Read. Mostra um resumo dos termos de serviços de vários sites.
@@ -40,17 +41,32 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 14Fev2017)
 * [';--have i been pwned?](https://haveibeenpwned.com/): verifique você foi afetado em algum hack dos serviços que utiliza.
 * [Schneier on Security](https://www.schneier.com/) : pagina pessoal do Bruce Schneier.
 * [HAC](http://cacr.uwaterloo.ca/hac/) : Handbook of Applied Cryptography: Ebook gratuito de crypto :P 
+* [hello.processing.org](http://hello.processing.org/): Aprenda em uma hora a programar essa maravilhosa linguagem de programação gráfica que eh o [processing](https://processing.org/). 
+* [GetGnuLinux](www.getgnulinux.org) e [computefreely.org](https://computefreely.org/): O que é GNU/Linux? Porque GNU/Linux? Como Migrar?
+* [Labic](http://www.labic.net/): Laboratório de Estudos sobre Imagem e Cibercultura: Dentre outras coisas eles produzem cartografias das redes sociais.
+* [opsec.fluxo.info](https://opsec.fluxo.info/): Modelagem, Específicação e Treinamento em Segurança Operacional - OPSEC.
+* [math.uah.edu](http://www.math.uah.edu/stat/),[Cut The Knot](http://www.cut-the-knot.org/) e [Portal Action](http://www.portalaction.com.br/ambiente-virtual-de-aprendizado) sites bacanas para aprender matemática e estatística.
 
 ## Textos:
 * [When Women Stopped Coding](http://www.npr.org/sections/money/2014/10/21/357629765/when-women-stopped-coding)
 * [Não há democracia sem garantia de anonimato na internet](https://antivigilancia.org/pt/2016/09/nao-ha-democracia-sem-anonimato/)
+* [Como identificar a veracidade de uma informação e não espalhar boatos](https://www.nexojornal.com.br/expresso/2016/10/11/Como-identificar-a-veracidade-de-uma-informa%C3%A7%C3%A3o-e-n%C3%A3o-espalhar-boatos)
 * [​O Guia Motherboard para não ser hackeado](https://motherboard.vice.com/pt_br/article/guia-motherboard-para-nao-ser-hackeado) 
     basicamente:
     + mantenha seu sistema e seus programas atualizados.
     + use um password manager.
-    + habilite [2FA](https://twofactorauth.org/).
-    + faça backups.
-* [Power in the Age of the Feudal Internet](http://en.collaboratory.de/w/Power_in_the_Age_of_the_Feudal_Internet)
+    + Habilite [2FA](https://twofactorauth.org/).
+    + Faça backups.
+    + FIQUE TRANQUILÃO.
+* [The Privacy Enthusiast's Guide to Using Android](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-android-1792432725): Dicas de privacidade no Android, resumidamente:
+    + Use um PinCode Forte (6 ou mais dígitos **VERDADEIRAMENTE ALEATÓRIOS**).
+    + Não utilize sua digital para desbloquear seu aparelho, pois podem forçar você a colocar seu dedo no seu celular.
+    + "Esconda" notificações sensíveis da tela de bloqueio.
+    + Desative "minhas atividades" do Google (histórico de buscas, localização, etc ...): [myactivity.google.com/myactivity](myactivity.google.com/myactivity)
+    + Desative Backup do Google: histórico de chamadas, senhas do Wifi e Apps são salvos no Google.
+    + Desative permissões desnecessárias.
+* [Meu celular sem Google!?](https://antivigilancia.org/pt/2017/05/seu-celular-sem-google/): Liberte seu Android!
+* [Power in the Age of the Feudal Internet](http://en.collaboratory.de/w/Power_in_the_Age_of_the_Feudal_Internet) -> [tedx](https://youtu.be/h0d_QDgl3gI)
 * Habits of highly mathematical people -> [medium](https://medium.com/@jeremyjkun/habits-of-highly-mathematical-people-b719df12d15e#.lx6p5d9a6)
 * [Como Criptografar e-mails com PGP](http://danielammorais.com/2016/05/29/criptografia-de-e-mails-com-pgp/)
 * [Briar – Next Step of The Crypto Messenger Evolution](https://blog.grobox.de/2016/briar-next-step-of-the-crypto-messenger-evolution/)
@@ -77,7 +93,19 @@ e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/ha
 * [AteuInforma-Copyright](https://youtu.be/gpOyng9q7nU) : Ele conta a historia do direito autoral e como ele se tornou um monstro.
 * [ARE-Internet](https://youtu.be/5pFX2P7JLwA) : The Terrifying Cost of "Free” Websites.
 * [CGP-Crypto](https://youtu.be/VPBH1eW28mo) : Vídeo excelente onde ele fala porque os governos quererem "banir" a criptografia é uma péssima ideia
+* [TheIntercept-CybersecurityProtest](https://youtu.be/6FS0Y7TwArE): Dicas de segurança para ir em um protesto.
 * [Kurzgesagt-QuantumComputer](https://youtu.be/JhHMJCUmq28): animação que explica o que são computadores quânticos.
+    + [Kurzgesagt-Terrorism](https://youtu.be/V9_PjdU3Mpo): outra animação desse canal falando sobre Terrorismo e Vigilância em massa.
+* [TomScott-CheckPasswords](https://youtu.be/y4GB_NDU43Q): Conto ficcional: se na pagina de login do Google aceitasse qualquer senha, dentre outras coisas questiona se devemos centralizar tantas informações no Google.
+* [Level1Linux-LinuxTerms](https://youtu.be/n9zyomJ_GfA): Display Manager? tty? Package Manager? Nesse video faz uma breve introdução dos termos presentes nos sistemas GNU/Linux.
+* [kaptainkristian-Gorillaz](https://youtu.be/Ws82rXrjBOI): Gorillaz - Deconstructing Genre
+* [NerdWriter1-Reddit](https://youtu.be/Pe0SmaBUZT0): Reddit is Improving My Life.
+* [Veritasium-Education](https://youtu.be/GEmuEWjHr5c): Video onde Derek Muller (Veritasium) fala sobre tese de doutorado: A eficacia das tecnologias que prometeram revolucionar a educação.
+* [DomainofScience-The Map of Mathematics](https://youtu.be/OmJ-4B-mS-Y): visão geral das áreas da matemática.
+* [3Blue1Brown-Hilbert's Curve](https://youtu.be/DuiryHHTrjU): animação falando sobre curvas de Hilbert.
+* [TedEd-How big is infinity?](https://youtu.be/UPA3bwVVzGI): animação falando sobre infinitos.
+* [Vsauce-1,2,3,4,5...](https://youtu.be/Pxb5lSPLy9c): video falando sobre contagem aditiva e logarítmica.
+* [PBSInfiniteSeries-The Devil's Staircase](https://youtu.be/dQXVn7pFsVI): Video falando sobre a função de cantor (também conhecida como escada do Diabo).
 
 ## Softwares:
 
@@ -88,7 +116,8 @@ As distros GNU/Linux que recomendo são:
 1. [debian](https://www.debian.org/)
 2. [Parabola GNU/Linux-libre](https://www.parabola.nu/) / [Arch](https://www.archlinux.org/)
 3. [Tails](https://tails.boum.org/)
-4. [Fedora](https://getfedora.org/)
+4. [Fedora](https://getfedora.org/) o Fedora vem com o Gnome, caso queira mais opções veja o [Fedora Spins](https://spins.fedoraproject.org/)
+    1. texto: [sudo dnf install fedora](http://danielammorais.com/2016/06/19/sudo-dnf-install-fedora/) : O mínimo que você deve saber sobre o Fedora.
 5. Estou muito ansioso com o [Subgraph OS](https://subgraph.com/) , está em Alpha.
 
 ### Password Manager:
