@@ -51,7 +51,7 @@ ele eh um app pra android e um programa pra pc, no qual ele sincroniza pastas en
 * quer melhorar a seguranca do seu firefox: [ffprofile](https://ffprofile.com/) permite que vc mude configuracoes internas do firefox, melhorando sua seguranca e privacidade.
 
 * criptografia de disco:
-    + ecryptfs: criptografa, de maneira transparente sua /home ou somente uma pasta:
+* ecryptfs: criptografa, de maneira transparente sua /home ou somente uma pasta:
 seu usuario NAO PODE ESTAR LOGADO, reinicie sua maquine e rode pelo tty, como root os comandos abaixo:
 ```
 sudo apt install ecryptfs-utils cryptsetup
@@ -60,7 +60,7 @@ ecryptfs-migrate-home -u <username>
 sudo ecryptfs-setup-swap
 ```
 
-    + ecryptfs no fedora:
+* ecryptfs no fedora:
     
 ```
 authconfig --enableecryptfs --updateall
@@ -68,9 +68,7 @@ usermod -aG ecryptfs USER
 ecryptfs-migrate-home -u USER
 sudo ecryptfs-setup-swap
 ```
-
-    
-    + luks volume: vamos criar um volume luks com 1GB (sempre da pra aumentar esse tamanho)
+* luks volume: vamos criar um volume luks com 1GB (sempre da pra aumentar esse tamanho)
 ```
 sudo dd if=/dev/zero of=luks-volume.img bs=1M count=1024
 sudo cryptsetup -v -y -s 512 -h sha512 -i 10000 --use-random luksFormat luks-volume.img
@@ -85,7 +83,7 @@ daqui pra frente, para abrir seu volume, basta rodar : `sudo cryptsetup luksOpen
 [fonte](https://www.digitalocean.com/community/tutorials/how-to-use-dm-crypt-to-create-an-encrypted-volume-on-an-ubuntu-vps)
 
 
-     + veracrypt: programa **queridinho** para cryptografar volumes, a vantagem dele eh que somente ele tem os [Hidden Volumes](https://veracrypt.codeplex.com/wikipage?title=Hidden%20Volume) , se vc for forcado falar sua senha do seu volume criptografado, com os hidden volumes vc tem uma segunda senha, protengendo esse outro volume.
+* veracrypt: programa **queridinho** para cryptografar volumes, a vantagem dele eh que somente ele tem os [Hidden Volumes](https://veracrypt.codeplex.com/wikipage?title=Hidden%20Volume) , se vc for forcado falar sua senha do seu volume criptografado, com os hidden volumes vc tem uma segunda senha, protengendo esse outro volume.
 
 
 ## recomendacoes finais:
