@@ -24,6 +24,7 @@ vida longa e prospera
 <li>16fev2017: 1a. revisão: agradecimento especial a revisão do Rafael (São Carlos Area Linux User Group -- <a href="https://sancalug.org/doku.php">sancaLUG</a>) e a revisão do Zé e amigos da Unicamp.</li>
 <li>18fev2017: Publicação!</li>
 <li>23mar2017: 2a. revisão: <a href="https://github.com/caioau/caioau-personal/commit/3931d7dbb5761b2c220e83a314d693c30a1709af#diff-9d2672cbaf33804746ef196e78b86a47">diff</a> : agradecimento a correções do <a href="https://twitter.com/corvolinoPUNK">@corvolinoPUNK</a></li>
+<li>23jul2017: 3a. revisão: adicionando logaritmo ao glossário : <a href="">diff</a> : agradecimento a revisão da Vulcanica</li>
 </ul>
 <h2 id="in-memoriam">In Memoriam:</h2>
 <p>Rodrigo Tambellini (Harry) grande amigo, entramos juntos na faculdade e vivemos juntos muitas coisas. Sdds Harry</p>
@@ -62,6 +63,48 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>(<strong>NUNCA</strong> use MD5 ou SHA1 ou somente o hash (sem salt) para armazenar senhas. Recomendo usar <a href="https://github.com/p-h-c/phc-winner-argon2">argon2</a> -- ganhadora da Password Hashing Competition)</p>
 <h3 id="distribuição-de-probabilidade">Distribuição de Probabilidade:</h3>
 <p>Def: Dado um espaço amostral de eventos (<em>S</em>), uma distribuição de probabilidade é uma função <em>P</em>, <em>P:S→[0,1]</em>, e a única restrição dessa função é que a soma de P aplicada em todos os eventos no espaço amostral vale 1 (caso discreto) e no caso continuo a integral sobre o domínio vale 1.</p>
+<h3 id="logaritmo">Logaritmo:</h3>
+<p>Imagine as potencias de 2: 2²=4 , 2³=8 etc ... sabemos por exemplo que 1024 é uma potencia de 2, mas é 2 elevado a quanto que temos 1024?</p>
+<p>ou seja, queremos encontrar o valor de x na equação: <span class="math inline">2<sup><em>x</em></sup> = 1024</span> , veremos que nesse caso x vale 10, mas como chegamos nessa resposta?</p>
+<h4 id="definição">Definição:</h4>
+<p>Sendo a e b reais positivos, com a ≠ 1, chama-se logaritmo de b na base a, o expoente que se deve dar à base a de modo que a potencia obtida seja igual a b.</p>
+<p>Em símbolos: se a,b ∈ ℝ, 0 &lt; a ≠ 1 e b &gt; 0 , então:</p>
+<blockquote>
+<p><span class="math inline">log<sub><em>a</em></sub><em>b</em> = <em>x</em> ⇔ <em>a</em><sup><em>x</em></sup> = <em>b</em></span></p>
+</blockquote>
+<h4 id="propriedades-dos-logaritmos">Propriedades dos logaritmos:</h4>
+<p>Abaixo segue as principais propriedades do logaritmos</p>
+<h5 id="logaritmo-do-produto">Logaritmo do produto:</h5>
+<blockquote>
+<p><span class="math inline">log<sub><em>a</em></sub>(<em>b</em> · <em>c</em>)=log<sub><em>a</em></sub><em>b</em> + log<sub><em>a</em></sub><em>c</em></span></p>
+</blockquote>
+<h5 id="logaritmo-da-potencia">Logaritmo da potencia:</h5>
+<blockquote>
+<p><span class="math inline">log<sub><em>a</em></sub><em>b</em><sup><em>c</em></sup> = <em>c</em> · log<sub><em>a</em></sub><em>b</em></span></p>
+</blockquote>
+<h5 id="logaritmo-do-quociente">Logaritmo do quociente:</h5>
+<blockquote>
+<p><span class="math inline">log<sub><em>a</em></sub>(<em>b</em>/<em>c</em>)=log<sub><em>a</em></sub><em>b</em> − log<sub><em>a</em></sub><em>c</em></span></p>
+</blockquote>
+<h5 id="mudança-de-base">Mudança de base:</h5>
+<blockquote>
+<p><span class="math inline">log<sub><em>a</em></sub><em>b</em> = log<sub><em>c</em></sub><em>b</em>/log<sub><em>c</em></sub><em>a</em></span></p>
+</blockquote>
+<p>Referencia: Essas definições e propriedades foram retiradas do excelente livro: Fundamentos da matemática elementar (FME):</p>
+<blockquote>
+<p>IEZZI, Gelson; DOLCE, Osvaldo; MURAKAMI, Carlos. Fundamentos de Matemática Elementar, Volume 2, LOGARITMOS . São Paulo: Editora Atual, 9 a Edição, 2004</p>
+</blockquote>
+<h4 id="ln-vs-log"><span class="math inline">ln</span> vs <span class="math inline">log</span></h4>
+<p>Quando escrevemos apenas <span class="math inline">log</span> estamos nos referindo a logaritmo em qual base?</p>
+<p>A verdade é que escrever apenas <span class="math inline">log</span> é ambíguo, pode estar se referindo ao logaritmo na base 10 ou na base <span class="math inline"><em>e</em></span> (numero de Euler: 2.71...), uma boa regra de dedão é: Se o que você está lendo é uma livro de engenharia é <span class="math inline">log</span> na base 10, se é um livro de matemática ou computação é na base <span class="math inline"><em>e</em></span>.</p>
+<p>Porém a notação <span class="math inline">ln</span> é sempre <span class="math inline">log</span> na base <span class="math inline"><em>e</em></span></p>
+<p>Voltando ao exemplo do começo: queremos encontrar <span class="math inline">log<sub>2</sub>1024</span> , algumas calculadoras tem a operação de <span class="math inline">log</span> na base 2 (pois é muito utilizado na computação), porém podemos usar a propriedade de mudança de base e teremos:</p>
+<p><span class="math inline">log<sub>2</sub>1024 = <em>l</em><em>n</em>(1024)/<em>l</em><em>n</em>(2)=6.9315/0.69315 = 10</span></p>
+<h4 id="escalas-logarítmicas">Escalas Logarítmicas:</h4>
+<p>Quando estamos lidando com quantidades que podem ser minusculas ou gigantescas , é difícil representar essas quantidades com seu valor absoluto , por exemplo: no nosso contexto de senhas: um PinCode de 4 dígitos teremos <span class="math inline">10<sup>4</sup>=</span> 10 mil combinações agora uma senha com maiúsculas , minusculas , números e caracteres especiais de tamanho 9 tem <span class="math inline">94<sup>9</sup>=</span> 572994802228616704 (572 quadrilhão) de combinações (spoiler alert: veremos logo a frente uma senha assim que é quebrada em segundos), ou seja como o número de combinações de uma senha cresce exponencialmente, essa quantidade vai ficando gigantesca e difícil de representar.</p>
+<p>Se liga na propriedade do logaritmo da potencia: se temos uma senha com comprimento L e utilizando N símbolos , o numero de combinações vale <span class="math inline"><em>N</em><sup><em>L</em></sup></span>, porém se aplicarmos <span class="math inline">log<sub>2</sub></span> dessa quantidade teremos: <span class="math inline">log<sub>2</sub>(<em>N</em><sup><em>L</em></sup>)=<em>L</em> · log<sub>2</sub>(<em>N</em>)</span> ou seja agora essa quantidade cresce linearmente conforme aumenta o comprimento, tornando mais fácil sua representação.</p>
+<p>Ou seja quando queremos medir a ordem de grandeza ou que a proporção é mais importante que o valor absoluto é conveniente utilizar uma escala logarítmica, alguns exemplos delas são: Richter (terremotos) , Decibel (som), oitavas (musica) e pH (química).</p>
+<p>Uma ultima reflexão: como vistos na escala Decibel, nossos sentidos percebem as quantidades físicas de forma logarítmica (Lei de Weber-Fechner), então por que não utilizar mais o logaritmo no nosso cotidiano? Por que não ao invés de contar de maneira linear: 1,2,3,4,5,6 ... contarmos de maneira logarítmica: 1,3,9,27,81 ... nesse excelente <a href="https://youtu.be/Pxb5lSPLy9c">video</a> VSauce explora essa reflexão.</p>
 <h3 id="engenharia-social">Engenharia Social:</h3>
 <p>Def: Engenharia social é a manipulação psicológica de pessoas para que realizem ações ou revelem informações. <br><br></p>
 <p>Exemplo: Um dos hackers mais famosos do mundo é o Kevin Mitnick, que escreveu um livro chamado <em>A Arte de Enganar</em>. Ele sempre pregou que a estupidez humana é a maior falha de qualquer sistema. <br><br></p>
@@ -96,130 +139,130 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th align="left">Senha</th>
-<th align="left">%freq</th>
+<th>Senha</th>
+<th>%freq</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">123456</td>
-<td align="left">0.56%</td>
+<td>123456</td>
+<td>0.56%</td>
 </tr>
 <tr class="even">
-<td align="left">password</td>
-<td align="left">0.20%</td>
+<td>password</td>
+<td>0.20%</td>
 </tr>
 <tr class="odd">
-<td align="left">12345678</td>
-<td align="left">0.14%</td>
+<td>12345678</td>
+<td>0.14%</td>
 </tr>
 <tr class="even">
-<td align="left">qwerty</td>
-<td align="left">0.13%</td>
+<td>qwerty</td>
+<td>0.13%</td>
 </tr>
 <tr class="odd">
-<td align="left">123456789</td>
-<td align="left">0.12%</td>
+<td>123456789</td>
+<td>0.12%</td>
 </tr>
 <tr class="even">
-<td align="left">12345</td>
-<td align="left">0.11%</td>
+<td>12345</td>
+<td>0.11%</td>
 </tr>
 <tr class="odd">
-<td align="left">1234</td>
-<td align="left">0.06%</td>
+<td>1234</td>
+<td>0.06%</td>
 </tr>
 <tr class="even">
-<td align="left">111111</td>
-<td align="left">0.06%</td>
+<td>111111</td>
+<td>0.06%</td>
 </tr>
 <tr class="odd">
-<td align="left">1234567</td>
-<td align="left">0.05%</td>
+<td>1234567</td>
+<td>0.05%</td>
 </tr>
 <tr class="even">
-<td align="left">dragon</td>
-<td align="left">0.04%</td>
+<td>dragon</td>
+<td>0.04%</td>
 </tr>
 <tr class="odd">
-<td align="left">123123</td>
-<td align="left">0.04%</td>
+<td>123123</td>
+<td>0.04%</td>
 </tr>
 <tr class="even">
-<td align="left">baseball</td>
-<td align="left">0.04%</td>
+<td>baseball</td>
+<td>0.04%</td>
 </tr>
 <tr class="odd">
-<td align="left">abc123</td>
-<td align="left">0.04%</td>
+<td>abc123</td>
+<td>0.04%</td>
 </tr>
 <tr class="even">
-<td align="left">football</td>
-<td align="left">0.03%</td>
+<td>football</td>
+<td>0.03%</td>
 </tr>
 <tr class="odd">
-<td align="left">monkey</td>
-<td align="left">0.03%</td>
+<td>monkey</td>
+<td>0.03%</td>
 </tr>
 <tr class="even">
-<td align="left">letmein</td>
-<td align="left">0.03%</td>
+<td>letmein</td>
+<td>0.03%</td>
 </tr>
 <tr class="odd">
-<td align="left">696969</td>
-<td align="left">0.03%</td>
+<td>696969</td>
+<td>0.03%</td>
 </tr>
 <tr class="even">
-<td align="left">shadow</td>
-<td align="left">0.03%</td>
+<td>shadow</td>
+<td>0.03%</td>
 </tr>
 <tr class="odd">
-<td align="left">master</td>
-<td align="left">0.03%</td>
+<td>master</td>
+<td>0.03%</td>
 </tr>
 <tr class="even">
-<td align="left">666666</td>
-<td align="left">0.03%</td>
+<td>666666</td>
+<td>0.03%</td>
 </tr>
 <tr class="odd">
-<td align="left">qwertyuiop</td>
-<td align="left">0.03%</td>
+<td>qwertyuiop</td>
+<td>0.03%</td>
 </tr>
 <tr class="even">
-<td align="left">123321</td>
-<td align="left">0.03%</td>
+<td>123321</td>
+<td>0.03%</td>
 </tr>
 <tr class="odd">
-<td align="left">mustang</td>
-<td align="left">0.03%</td>
+<td>mustang</td>
+<td>0.03%</td>
 </tr>
 <tr class="even">
-<td align="left">1234567890</td>
-<td align="left">0.03%</td>
+<td>1234567890</td>
+<td>0.03%</td>
 </tr>
 <tr class="odd">
-<td align="left">michael</td>
-<td align="left">0.03%</td>
+<td>michael</td>
+<td>0.03%</td>
 </tr>
 <tr class="even">
-<td align="left">654321</td>
-<td align="left">0.03%</td>
+<td>654321</td>
+<td>0.03%</td>
 </tr>
 <tr class="odd">
-<td align="left">pussy</td>
-<td align="left">0.03%</td>
+<td>pussy</td>
+<td>0.03%</td>
 </tr>
 <tr class="even">
-<td align="left">superman</td>
-<td align="left">0.03%</td>
+<td>superman</td>
+<td>0.03%</td>
 </tr>
 <tr class="odd">
-<td align="left">1qaz2wsx</td>
-<td align="left">0.03%</td>
+<td>1qaz2wsx</td>
+<td>0.03%</td>
 </tr>
 <tr class="even">
-<td align="left">7777777</td>
-<td align="left">0.02%</td>
+<td>7777777</td>
+<td>0.02%</td>
 </tr>
 </tbody>
 </table>
@@ -227,70 +270,70 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th align="left">Grupos</th>
-<th align="left">%</th>
+<th>Grupos</th>
+<th>%</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">l</td>
-<td align="left">38.25%</td>
+<td>l</td>
+<td>38.25%</td>
 </tr>
 <tr class="even">
-<td align="left">l+d</td>
-<td align="left">29.86%</td>
+<td>l+d</td>
+<td>29.86%</td>
 </tr>
 <tr class="odd">
-<td align="left">d</td>
-<td align="left">20.36%</td>
+<td>d</td>
+<td>20.36%</td>
 </tr>
 <tr class="even">
-<td align="left">u+l+d</td>
-<td align="left">5.71%</td>
+<td>u+l+d</td>
+<td>5.71%</td>
 </tr>
 <tr class="odd">
-<td align="left">u+l</td>
-<td align="left">2.52%</td>
+<td>u+l</td>
+<td>2.52%</td>
 </tr>
 <tr class="even">
-<td align="left">u+d</td>
-<td align="left">1.10%</td>
+<td>u+d</td>
+<td>1.10%</td>
 </tr>
 <tr class="odd">
-<td align="left">u</td>
-<td align="left">1.09%</td>
+<td>u</td>
+<td>1.09%</td>
 </tr>
 <tr class="even">
-<td align="left">l+s</td>
-<td align="left">0.40%</td>
+<td>l+s</td>
+<td>0.40%</td>
 </tr>
 <tr class="odd">
-<td align="left">l+d+s</td>
-<td align="left">0.37%</td>
+<td>l+d+s</td>
+<td>0.37%</td>
 </tr>
 <tr class="even">
-<td align="left">u+l+d+s</td>
-<td align="left">0.15%</td>
+<td>u+l+d+s</td>
+<td>0.15%</td>
 </tr>
 <tr class="odd">
-<td align="left">d+s</td>
-<td align="left">0.08%</td>
+<td>d+s</td>
+<td>0.08%</td>
 </tr>
 <tr class="even">
-<td align="left">u+l+s</td>
-<td align="left">0.07%</td>
+<td>u+l+s</td>
+<td>0.07%</td>
 </tr>
 <tr class="odd">
-<td align="left">u+d+s</td>
-<td align="left">0.02%</td>
+<td>u+d+s</td>
+<td>0.02%</td>
 </tr>
 <tr class="even">
-<td align="left">u+s</td>
-<td align="left">0.01%</td>
+<td>u+s</td>
+<td>0.01%</td>
 </tr>
 <tr class="odd">
-<td align="left">s</td>
-<td align="left">0.01%</td>
+<td>s</td>
+<td>0.01%</td>
 </tr>
 </tbody>
 </table>
@@ -298,54 +341,54 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th align="left">tam</th>
-<th align="left">%</th>
+<th>tam</th>
+<th>%</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">8</td>
-<td align="left">29.81%</td>
+<td>8</td>
+<td>29.81%</td>
 </tr>
 <tr class="even">
-<td align="left">6</td>
-<td align="left">25.45%</td>
+<td>6</td>
+<td>25.45%</td>
 </tr>
 <tr class="odd">
-<td align="left">7</td>
-<td align="left">16.63%</td>
+<td>7</td>
+<td>16.63%</td>
 </tr>
 <tr class="even">
-<td align="left">9</td>
-<td align="left">6.81%</td>
+<td>9</td>
+<td>6.81%</td>
 </tr>
 <tr class="odd">
-<td align="left">5</td>
-<td align="left">4.95%</td>
+<td>5</td>
+<td>4.95%</td>
 </tr>
 <tr class="even">
-<td align="left">10</td>
-<td align="left">4.71%</td>
+<td>10</td>
+<td>4.71%</td>
 </tr>
 <tr class="odd">
-<td align="left">4</td>
-<td align="left">3.45%</td>
+<td>4</td>
+<td>3.45%</td>
 </tr>
 <tr class="even">
-<td align="left">11</td>
-<td align="left">2.64%</td>
+<td>11</td>
+<td>2.64%</td>
 </tr>
 <tr class="odd">
-<td align="left">12</td>
-<td align="left">1.91%</td>
+<td>12</td>
+<td>1.91%</td>
 </tr>
 <tr class="even">
-<td align="left">13</td>
-<td align="left">1.36%</td>
+<td>13</td>
+<td>1.36%</td>
 </tr>
 <tr class="odd">
-<td align="left">14</td>
-<td align="left">0.77%</td>
+<td>14</td>
+<td>0.77%</td>
 </tr>
 </tbody>
 </table>
@@ -353,90 +396,90 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th align="left">máscara</th>
-<th align="left">%</th>
+<th>máscara</th>
+<th>%</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">llllll</td>
-<td align="left">11.76%</td>
+<td>llllll</td>
+<td>11.76%</td>
 </tr>
 <tr class="even">
-<td align="left">llllllll</td>
-<td align="left">8.98%</td>
+<td>llllllll</td>
+<td>8.98%</td>
 </tr>
 <tr class="odd">
-<td align="left">lllllll</td>
-<td align="left">7.50%</td>
+<td>lllllll</td>
+<td>7.50%</td>
 </tr>
 <tr class="even">
-<td align="left">dddddddd</td>
-<td align="left">7.40%</td>
+<td>dddddddd</td>
+<td>7.40%</td>
 </tr>
 <tr class="odd">
-<td align="left">dddddd</td>
-<td align="left">7.03%</td>
+<td>dddddd</td>
+<td>7.03%</td>
 </tr>
 <tr class="even">
-<td align="left">lllll</td>
-<td align="left">3.15%</td>
+<td>lllll</td>
+<td>3.15%</td>
 </tr>
 <tr class="odd">
-<td align="left">ddddddd</td>
-<td align="left">2.09%</td>
+<td>ddddddd</td>
+<td>2.09%</td>
 </tr>
 <tr class="even">
-<td align="left">lllllldd</td>
-<td align="left">2.00%</td>
+<td>lllllldd</td>
+<td>2.00%</td>
 </tr>
 <tr class="odd">
-<td align="left">lllllllll</td>
-<td align="left">1.97%</td>
+<td>lllllllll</td>
+<td>1.97%</td>
 </tr>
 <tr class="even">
-<td align="left">llll</td>
-<td align="left">1.74%</td>
+<td>llll</td>
+<td>1.74%</td>
 </tr>
 <tr class="odd">
-<td align="left">dddd</td>
-<td align="left">1.42%</td>
+<td>dddd</td>
+<td>1.42%</td>
 </tr>
 <tr class="even">
-<td align="left">llllllld</td>
-<td align="left">1.38%</td>
+<td>llllllld</td>
+<td>1.38%</td>
 </tr>
 <tr class="odd">
-<td align="left">llllld</td>
-<td align="left">1.25%</td>
+<td>llllld</td>
+<td>1.25%</td>
 </tr>
 <tr class="even">
-<td align="left">llllllllll</td>
-<td align="left">1.21%</td>
+<td>llllllllll</td>
+<td>1.21%</td>
 </tr>
 <tr class="odd">
-<td align="left">llllldd</td>
-<td align="left">1.19%</td>
+<td>llllldd</td>
+<td>1.19%</td>
 </tr>
 <tr class="even">
-<td align="left">lllldddd</td>
-<td align="left">1.10%</td>
+<td>lllldddd</td>
+<td>1.10%</td>
 </tr>
 <tr class="odd">
-<td align="left">lllllld</td>
-<td align="left">1.07%</td>
+<td>lllllld</td>
+<td>1.07%</td>
 </tr>
 <tr class="even">
-<td align="left">lllldd</td>
-<td align="left">1.05%</td>
+<td>lllldd</td>
+<td>1.05%</td>
 </tr>
 <tr class="odd">
-<td align="left">lllllddd</td>
-<td align="left">0.94%</td>
+<td>lllllddd</td>
+<td>0.94%</td>
 </tr>
 <tr class="even">
-<td align="left">ddddd</td>
-<td align="left">0.74%</td>
+<td>ddddd</td>
+<td>0.74%</td>
 </tr>
 </tbody>
 </table>
@@ -578,7 +621,7 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th align="left">Entropia</th>
+<th>Entropia</th>
 <th align="center">Tempo para quebrar</th>
 <th align="center">base64</th>
 <th align="center">“tudo”</th>
@@ -587,49 +630,49 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">40</td>
+<td>40</td>
 <td align="center">1.1 segundo</td>
 <td align="center">7</td>
 <td align="center">7</td>
 <td align="center">3</td>
 </tr>
 <tr class="even">
-<td align="left">50</td>
+<td>50</td>
 <td align="center">19 minutos</td>
 <td align="center">9</td>
 <td align="center">8</td>
 <td align="center">4</td>
 </tr>
 <tr class="odd">
-<td align="left">60</td>
+<td>60</td>
 <td align="center">13 dias</td>
 <td align="center">10</td>
 <td align="center">10</td>
 <td align="center">5</td>
 </tr>
 <tr class="even">
-<td align="left">65</td>
+<td>65</td>
 <td align="center">1.1 anos</td>
 <td align="center">11</td>
 <td align="center">10</td>
 <td align="center">6</td>
 </tr>
 <tr class="odd">
-<td align="left">70</td>
+<td>70</td>
 <td align="center">37 anos</td>
 <td align="center">12</td>
 <td align="center">11</td>
 <td align="center">6</td>
 </tr>
 <tr class="even">
-<td align="left">80</td>
+<td>80</td>
 <td align="center">38 milênios</td>
 <td align="center">14</td>
 <td align="center">13</td>
 <td align="center">6</td>
 </tr>
 <tr class="odd">
-<td align="left">100</td>
+<td>100</td>
 <td align="center">40 bilhões de anos</td>
 <td align="center">17</td>
 <td align="center">16</td>

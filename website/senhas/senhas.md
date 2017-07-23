@@ -29,6 +29,7 @@ Comecei a pesquisar e fazer a análise de senhas para um trabalho então resolvi
 * 16fev2017: 1a. revisão: agradecimento especial a revisão do Rafael (São Carlos Area Linux User Group -- [sancaLUG](https://sancalug.org/doku.php)) e a revisão do Zé e amigos da Unicamp.
 * 18fev2017: Publicação!
 * 23mar2017: 2a. revisão: [diff](https://github.com/caioau/caioau-personal/commit/3931d7dbb5761b2c220e83a314d693c30a1709af#diff-9d2672cbaf33804746ef196e78b86a47) : agradecimento a correções do [\@corvolinoPUNK](https://twitter.com/corvolinoPUNK)
+* 23jul2017: 3a. revisão: adicionando logaritmo ao glossário : [diff]() : agradecimento a revisão da Vulcanica
 
 ## In Memoriam:
 
@@ -79,6 +80,68 @@ Repare no efeito avalanche: as duas mensagens são muito parecidas, porém seus 
 ### Distribuição de Probabilidade:
 
 Def: Dado um espaço amostral de eventos (_S_), uma distribuição de probabilidade é uma função _P_, _P:S→[0,1]_, e a única restrição dessa função é que a soma de P aplicada em todos os eventos no espaço amostral vale 1 (caso discreto) e no caso continuo a integral sobre o domínio vale 1.
+
+
+### Logaritmo:
+
+Imagine as potencias de 2: 2²=4 , 2³=8 etc ... sabemos por exemplo que 1024 é uma potencia de 2, mas é 2 elevado a quanto que temos 1024?
+
+ou seja, queremos encontrar o valor de x na equação: $2^x = 1024$ , veremos que nesse caso x vale 10, mas como chegamos nessa resposta?
+
+#### Definição:
+
+Sendo a e b reais positivos, com a ≠ 1, chama-se logaritmo de b na base a, o expoente que se deve dar à base a de modo que a potencia obtida seja igual a b.
+
+Em símbolos: se a,b ∈ ℝ, 0 < a ≠ 1 e b > 0 , então:
+
+> $\log_a  b = x \Leftrightarrow a^x = b$
+
+
+#### Propriedades dos logaritmos:
+
+Abaixo segue as principais propriedades do logaritmos
+
+##### Logaritmo do produto:
+
+> $\log_a (b·c) = \log_a b + \log_a c$
+
+##### Logaritmo da potencia:
+
+> $\log_a b^c = c · \log_a b$
+
+##### Logaritmo do quociente:
+
+> $\log_a (b/c) = \log_a b - \log_a c$
+
+##### Mudança de base:
+
+> $\log_a b = \log_c b / \log_c a$
+
+Referencia: Essas definições e propriedades foram retiradas do excelente livro: Fundamentos da matemática elementar (FME):
+
+> IEZZI, Gelson; DOLCE, Osvaldo; MURAKAMI, Carlos. Fundamentos de Matemática Elementar, Volume 2, LOGARITMOS . São Paulo: Editora Atual, 9 a Edição, 2004
+
+#### $\ln$ vs $\log$
+
+Quando escrevemos apenas $\log$ estamos nos referindo a logaritmo em qual base? 
+
+A verdade é que escrever apenas $\log$ é ambíguo, pode estar se referindo ao logaritmo na base 10 ou na base $e$ (numero de Euler: 2.71...), uma boa regra de dedão é: Se o que você está lendo é uma livro de engenharia é $\log$ na base 10, se é um livro de matemática ou computação é na base $e$.
+
+Porém a notação $\ln$ é sempre $\log$ na base $e$
+
+Voltando ao exemplo do começo: queremos encontrar $\log_2 1024$ , algumas calculadoras tem a operação de $\log$ na base 2 (pois é muito utilizado na computação), porém podemos usar a propriedade de mudança de base e teremos:
+
+$\log_2 1024 = ln(1024)/ln(2) = 6.9315/0.69315 = 10$
+
+#### Escalas Logarítmicas: 
+
+Quando estamos lidando com quantidades que podem ser minusculas ou gigantescas , é difícil representar essas quantidades com seu valor absoluto , por exemplo: no nosso contexto de senhas: um PinCode de 4 dígitos teremos $10^4 =$ 10 mil combinações agora uma senha com maiúsculas , minusculas , números e caracteres especiais de tamanho 9 tem $94^9 =$ 572994802228616704 (572 quadrilhão) de combinações (spoiler alert: veremos logo a frente uma senha assim que é quebrada em segundos), ou seja como o número de combinações de uma senha cresce exponencialmente, essa quantidade vai ficando gigantesca e difícil de representar. 
+
+Se liga na propriedade do logaritmo da potencia: se temos uma senha com comprimento L e utilizando N símbolos , o numero de combinações vale $N^L$, porém se aplicarmos $\log_2$ dessa quantidade teremos: $\log_2(N^L) = L·\log_2(N)$ ou seja agora essa quantidade cresce linearmente conforme aumenta o comprimento, tornando mais fácil sua representação.
+
+Ou seja quando queremos medir a ordem de grandeza ou que a proporção é mais importante que o valor absoluto é conveniente utilizar uma escala logarítmica, alguns exemplos delas são: Richter (terremotos) , Decibel (som), oitavas (musica) e pH (química).
+
+Uma ultima reflexão: como vistos na escala Decibel, nossos sentidos percebem as quantidades físicas de forma logarítmica (Lei de Weber-Fechner), então por que não utilizar mais o logaritmo no nosso cotidiano? Por que não ao invés de contar de maneira linear: 1,2,3,4,5,6 ... contarmos de maneira logarítmica: 1,3,9,27,81 ... nesse excelente [video](https://youtu.be/Pxb5lSPLy9c) VSauce explora essa reflexão. 
 
 ### Engenharia Social:
 
