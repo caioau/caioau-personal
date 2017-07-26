@@ -29,7 +29,7 @@ Comecei a pesquisar e fazer a análise de senhas para um trabalho então resolvi
 * 16fev2017: 1a. revisão: agradecimento especial a revisão do Rafael (São Carlos Area Linux User Group -- [sancaLUG](https://sancalug.org/doku.php)) e a revisão do Zé e amigos da Unicamp.
 * 18fev2017: Publicação!
 * 23mar2017: 2a. revisão: [diff](https://github.com/caioau/caioau-personal/commit/3931d7dbb5761b2c220e83a314d693c30a1709af#diff-9d2672cbaf33804746ef196e78b86a47) : agradecimento a correções do [\@corvolinoPUNK](https://twitter.com/corvolinoPUNK)
-* 23jul2017: 3a. revisão: adicionando logaritmo ao glossário : [diff]() : agradecimento a revisão da Vulcanica
+* 23jul2017: 3a. revisão: adicionando logaritmo ao glossário : [diff](https://github.com/caioau/caioau-personal/commit/83929d54f45bffedac26e233dcd02dc33cdfbef4?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47) : agradecimento a revisão da Vulcanica
 
 ## In Memoriam:
 
