@@ -20,7 +20,7 @@ vida longa e prospera
 
 # Recomendações:
 
-Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 28Mai2017 : [diff](https://github.com/caioau/caioau-personal/commit/db2fc500bd46bd265d410a9241e0647e3e8291e3#diff-8e64390df63bd44f42a6e92ef6427098))
+Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 17Aug2017 : [diff](https://github.com/caioau/caioau-personal/commit/db2fc500bd46bd265d410a9241e0647e3e8291e3#diff-8e64390df63bd44f42a6e92ef6427098))
 
 ## Torrent:
 
@@ -46,11 +46,15 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 28Mai2017 : [dif
 * [Labic](http://www.labic.net/): Laboratório de Estudos sobre Imagem e Cibercultura: Dentre outras coisas eles produzem cartografias das redes sociais.
 * [opsec.fluxo.info](https://opsec.fluxo.info/): Modelagem, Específicação e Treinamento em Segurança Operacional - OPSEC.
 * [math.uah.edu](http://www.math.uah.edu/stat/),[Cut The Knot](http://www.cut-the-knot.org/) e [Portal Action](http://www.portalaction.com.br/ambiente-virtual-de-aprendizado) sites bacanas para aprender matemática e estatística.
+* Aulas filmadas: [UnivespTV](https://www.youtube.com/user/univesptv/playlists), [MITOpenCourseware](https://ocw.mit.edu), [Harvard Statistics 110: Probability](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo)
+* [Spurious-Correlations](http://www.tylervigen.com/spurious-correlations): Correlações espúrias: vale a máxima: Correlação não implica em causalidade.
+* [NothingPrivate](http://www.nothingprivate.ml/): A aba privativa não é tão anonima assim: Parece que o jogo virou, não é mesmo?
 
 ## Textos:
 * [When Women Stopped Coding](http://www.npr.org/sections/money/2014/10/21/357629765/when-women-stopped-coding)
 * [Não há democracia sem garantia de anonimato na internet](https://antivigilancia.org/pt/2016/09/nao-ha-democracia-sem-anonimato/)
 * [Como identificar a veracidade de uma informação e não espalhar boatos](https://www.nexojornal.com.br/expresso/2016/10/11/Como-identificar-a-veracidade-de-uma-informa%C3%A7%C3%A3o-e-n%C3%A3o-espalhar-boatos)
+* [ArsTechnica-OpSEC](https://arstechnica.com/information-technology/2017/07/how-i-learned-to-stop-worrying-mostly-and-love-my-threat-model/): Como eu aprendi a parar de me preocupar e amar meu modelo de ameaça : Excelente texto sobre modelagem de ameaças. 
 * [​O Guia Motherboard para não ser hackeado](https://motherboard.vice.com/pt_br/article/guia-motherboard-para-nao-ser-hackeado) 
     basicamente:
     + mantenha seu sistema e seus programas atualizados.
@@ -65,7 +69,10 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 28Mai2017 : [dif
     + Desative "minhas atividades" do Google (histórico de buscas, localização, etc ...): [myactivity.google.com/myactivity](https://myactivity.google.com/myactivity)
     + Desative Backup do Google: histórico de chamadas, senhas do Wifi e Apps são salvos no Google.
     + Desative permissões desnecessárias.
+    + Vá no app de Camera e desabilite a opção de Geolocalização.
+    + Use o app chamado Send Reduced que além de tirar metadados de fotos, reduz seu tamanho, [SendReduced](https://f-droid.org/packages/mobi.omegacentauri.SendReduced/)
 * [Meu celular sem Google!?](https://antivigilancia.org/pt/2017/05/seu-celular-sem-google/): Liberte seu Android!
+* [DontBreakDebian](https://wiki.debian.org/DontBreakDebian): Debian é um sistema robusto e confiável: dicas para não "quebrar" seu debian.
 * [Power in the Age of the Feudal Internet](http://en.collaboratory.de/w/Power_in_the_Age_of_the_Feudal_Internet) -> [tedx](https://youtu.be/h0d_QDgl3gI)
 * Habits of highly mathematical people -> [medium](https://medium.com/@jeremyjkun/habits-of-highly-mathematical-people-b719df12d15e#.lx6p5d9a6)
 * [Como Criptografar e-mails com PGP](http://danielammorais.com/2016/05/29/criptografia-de-e-mails-com-pgp/)
@@ -106,6 +113,8 @@ e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/ha
 * [TedEd-How big is infinity?](https://youtu.be/UPA3bwVVzGI): animação falando sobre infinitos.
 * [Vsauce-1,2,3,4,5...](https://youtu.be/Pxb5lSPLy9c): video falando sobre contagem aditiva e logarítmica.
 * [PBSInfiniteSeries-The Devil's Staircase](https://youtu.be/dQXVn7pFsVI): Video falando sobre a função de cantor (também conhecida como escada do Diabo).
+* [Numberphile-Fermat](https://youtu.be/qiNcEguuFSA): "Um problema digno a ser resolvido, prova seu valor atacando de volta", video onde Simon Singh, autor do Ultimo Teorema de Fermat, conta resumidamente a historia desse fascinante problema da matemática. 
+* [Nerdologia#143-Eleicoes](https://youtu.be/JLr2kX_ldzE): Eleições democráticas são impossíveis! veja também os videos da PBS Infinite Series: [Voting Systems and the Condorcet Paradox](https://youtu.be/HoAnYQZrNrQ) e do CGPGrey: [Quick and Easy Voting for Normal People](https://youtu.be/orybDrUj4vA)
 
 ## Softwares:
 
