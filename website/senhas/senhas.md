@@ -30,6 +30,7 @@ Comecei a pesquisar e fazer a análise de senhas para um trabalho então resolvi
 * 18fev2017: Publicação!
 * 23mar2017: 2a. revisão: [diff](https://github.com/caioau/caioau-personal/commit/3931d7dbb5761b2c220e83a314d693c30a1709af#diff-9d2672cbaf33804746ef196e78b86a47) : agradecimento a correções do [\@corvolinoPUNK](https://twitter.com/corvolinoPUNK)
 * 23jul2017: 3a. revisão: adicionando logaritmo ao glossário : [diff](https://github.com/caioau/caioau-personal/commit/83929d54f45bffedac26e233dcd02dc33cdfbef4?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47) : agradecimento a revisão da Vulcanica
+* 29aug2017: adicionado 2 ataques a pincodes e a historia do robô feito para abrir cofres: [diff]() : inspiração de lohe.
 
 ## In Memoriam:
 
@@ -382,6 +383,8 @@ Em suma, Feynman tinha a reputação de abridor de cofres, pois:
 * entender a natureza humana na escolha dos segredos.
 * Usava de eng. social para descobrir (grande parte) dos segredos.
 
+No caso do Feynman, ele precisava que o cofre estivesse aberto para que ele descobrisse os 2 últimos números, será que isso não é uma grande limitação? E ele fez isso durante a década de 40, será que os cofres atuais não são melhores? Saiu em jul2017 na wired uma matéria contando a historia de um engenheiro que construiu um robô para ficar tentando as combinações para abrir o cofre, como Feynman ele também descobriu alguns "atalhos" para diminuir o número de combinações, o robô demorou 15 minutos para descobrir a combinação do cofre, confira a matéria: [watch a homemade robot crack a safe in just 15 minutes](https://www.wired.com/story/watch-robot-crack-safe/)
+
 ## Entropia de Shannon:
 
 Intuitivamente pensamos que senha boa é uma senha toda complicada e difícil de lembrar, por exemplo “S&nh5F0d@”. Ela tem 9 caracteres, maiúsculas, minúsculas, números e caracteres especiais — então ela deve ser boa. Porém, conforme veremos logo mais, essa senha é quebrada em segundos.<br><br>
@@ -666,5 +669,21 @@ Se você usa o padrão do Android (aquela gradezinha 3x3): existem 389112 possib
 uma pesquisadora norueguesa chamada Marte Løge em sua tese de mestrado mostrou que mais de 10% dos padrões analisados, usa como padrão de desbloqueio uma "letra" que é a inicial do companheiro, filho, ou algo parecido.
 
 veja o artigo na arstechnica falando sobre o assunto: [New data uncovers the surprising predictability of Android lock patterns](https://arstechnica.com/security/2015/08/new-data-uncovers-the-surprising-predictability-of-android-lock-patterns/)
+
+#### Ataques a Pincodes:
+
+##### Câmera térmica: 
+
+Nesse video : [iPhone ATM PIN code hack- HOW TO PREVENT](https://youtu.be/8Vc-69M-UWk) ele mostra um "case" para iPhone que é uma câmera térmica e através do calor dos dedos é possível descobrir o pincode digitado, conforme a foto abaixo:
+
+![](pincode-Thermal.jpg){height=300px }
+
+note que as teclas que estão com uma coloração mais clara estão mais quentes, ou seja foram digitadas por ultimo: ou seja o pincode digitado foi 12345.
+
+para prevenir desse ataque ele sugere que enquanto digita o pincode mantenha os dedos sobre todas as outras teclas, assim todas as teclas ficaram com uma coloração mais clara. 
+
+##### Acelerômetro do celular: 
+
+Nesse paper: [Stealing PINs via Mobile Sensors: Actual Risk versus User Perception](https://arxiv.org/pdf/1605.05549v1.pdf) os pesquisadores conseguiram descobrir 80% dos pincodes digitados no celular através de um script no navegador que monitora o movimento através do acelerômetro.
 
 Recomendação: Use uma senha forte pra criptografia de disco e um PinCode de (pelo menos) 6 dígitos pra desbloquear o celular. Tem um App chamado SnooperStopper ([FDroid](https://f-droid.org/repository/browse/?fdfilter=snoop&fdid=cz.eutopia.snooperstopper)) ele depois de 3 tentativas erradas na tela de desbloqueio o celular reinicia , pedindo a senha forte. 
