@@ -525,9 +525,9 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>Por fim, veja um <a href="https://youtu.be/fCn8zs912OE">video ótimo do VSauce</a> sobre Zipf.</p>
 <h3 id="voltando-para-as-senhas">Voltando para as senhas:</h3>
 <p>Lembrando que o gráfico log-log da distribuição de Pareto é uma reta descreste, assim temos os gráficos:</p>
-<p><img src="mascaras-loglog.png" height="400" /><br><br></p>
-<p><img src="freq-loglog2.png" height="400" /><br><br></p>
-<p><img src="charsets-loglog2.png" height="400" /><br><br></p>
+<p><img src="mascaras-loglog.png" height="400"> <br><br></p>
+<p><img src="freq-loglog2.png" height="400"> <br><br></p>
+<p><img src="charsets-loglog2.png" height="400"> <br><br></p>
 <p>O Princípio de Pareto (20% das causas são responsáveis por 80% dos resultados) também ocorre em:</p>
 <ul>
 <li>20% dos grupos correspondem a 88% das senhas.</li>
@@ -606,10 +606,7 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>²: na próxima seção veremos por que uma palavra (diceware) tem essa entropia.</p>
 <p>Ou seja, de acordo com a tabela, uma senha <strong>verdadeiramente aleatória</strong> com 8 caracteres usando “tudo” tem <em>6,5 * 8 = 52</em> bits de entropia.<br><br></p>
 <p>Dito isso, não existe uma maneira melhor de começar a falar de senhas boas do que a tirinha do xkcd:</p>
-<div class="figure">
-<img src="xkcdptbr.png" height="550" />
-
-</div>
+<p><img src="xkcdptbr.png" height="550"></p>
 <p>creditos : <a href="https://www.xkcd.com/936/">xkcd</a>, tradução: <a href="https://antivigilancia.org/pt/2015/06/abre-te-sesamo-as-senhas-da-nossa-vida-digital-2/">Oficina AntiVigilancia</a> <br><br></p>
 <p>Qual a lição dessa tirinha? Essas senhas todas complicadas e super difíceis de lembrar na verdade têm uma entropia bastante baixa, porque na realidade são baseadas em apenas uma palavra comum sobre a qual, basicamente, são feitas somente algumas substituições comuns (tipo o → 0), alguns maiúsculas e um número. Ou seja, apesar dessas senhas serem difíceis e complicadas para pessoas, para computadores elas são super fáceis de serem quebradas.<br><br></p>
 <p>Agora fica a pergunta: quanta entropia minha senha deve ter?</p>
@@ -772,16 +769,13 @@ Password Store
 </div>
 <h3 id="passwordcard">PasswordCard:</h3>
 <p>Pra minha última recomendação, apresento o PasswordCard. Ele é um password manager físico. Entre no <a href="https://www.passwordcard.org/en">site</a> e gere um cartão novo, conforme o abaixo:</p>
-<div class="figure">
-<img src="passwordcard.png" height="200" />
-
-</div>
+<p><img src="passwordcard.png" height="200"></p>
 <p>O cartão é uma “tabela” com algumas linhas com letras, números e caracteres especiais aleatórios. Para gerar uma senha, você escolhe onde a sua senha começa e qual a direção da senha -- com o cuidado de não colocar seu dedo enquanto lê a senha.</p>
 <h2 id="habilite-autenticação-em-duas-etapas">Habilite autenticação em duas etapas:</h2>
 <p>A ideia por trás da autenticação em duas etapas (2FA -- 2 factor authentication) é que para entrar na sua conta além da senha (que uma coisa que só você sabe), precisa de uma coisa que só você tem, no caso um app no celular.<br><br></p>
 <p>Como usar: cada serviço é diferente, veja aqui <a href="https://www.turnon2fa.com/">turnon2fa</a> como habilitar no serviço especifico. Normalmente, você escaneia um QR code com um app. Recomendo o <a href="https://f-droid.org/repository/browse/?fdfilter=freeotp&amp;fdid=org.fedorahosted.freeotp">freetop</a> (é software livre, tem na F-Droid e pra iOS).</p>
 <p>Quando você for entrar na sua conta, após colocar a senha, deverá colocar um número gerado pelo app. Cada número só dura 30s, então não tem problema se alguém ver o código num determinado momento, conforme mostrado abaixo:</p>
-<p><img src="freeotp.png" height="450" /><br><br></p>
+<p><img src="freeotp.png" height="450"> <br><br></p>
 <p>Caso você não esteja convencido que precisa disso: veja essa reportagem que foi capa da <em>Wired</em> em Dez2012: <a href="https://www.wired.com/2012/11/ff-mat-honan-password-hacker/">Kill the Password: A String of Characters Won't Protect You</a>.</p>
 <p>Resumidamente: por meio de engenharia social, descobriram algumas informações pessoais dele, ligaram no suporte da Apple, falando que ele tinha esquecido a senha dele e com as informações dele conseguiram responder as perguntas de segurança. Assim, pegaram a senha do iCloud dele, entraram no Find My mac e mandaram deletar remotamente os dispositivos dele.</p>
 <p>Ou seja, muito embora o Mat Honan usasse senhas robustas, conseguiram “pegar tudo” dele.<br><br></p>
@@ -792,20 +786,14 @@ Password Store
 <p>Alguns serviços, como o Twitter, oferecem autenticação em duas etapas usando um SMS, ao invés de um app. Isso é um problema, pois SMSes e ligações telefônicas podem ser facilmente interceptadas por meio de IMSI Catchers, que são torres de celular falsas que fazem um ataque do tipo homem-no-meio.</p>
 <p>Veja um artigo da oficina anti-vigilância explicando como detectar e se prevenir contra esses ataques: <a href="https://antivigilancia.org/pt/2016/03/detectando-antenas-de-celular-espias/">Detectando antenas de celular espiãs</a>.<br><br></p>
 <p>Além disso, mesmo quando o celular está bloqueado, a notificação mostra a mensagem na tela de bloqueio, por exemplo:</p>
-<div class="figure">
-<img src="sms-inseguro.jpg" height="450" />
-
-</div>
+<p><img src="sms-inseguro.jpg" height="450"></p>
 <p>Você pode resolver isso:</p>
 <ul>
 <li>Android: vá em Configurações → Notificações, selecione o app de SMS e configure para não exibir notificações sensíveis.</li>
 <li>Iphone: vá em Ajustes → Notificações → selecione o app de SMS → Mostrar Pré-visualizações e configure.</li>
 </ul>
 <p>Resultado final:</p>
-<div class="figure">
-<img src="sms-seguro.jpg" height="450" />
-
-</div>
+<p><img src="sms-seguro.jpg" height="450"></p>
 <h2 id="boas-práticas">Boas práticas:</h2>
 <p>Para concluir o texto, vou falar de algumas boas praticas para senhas:</p>
 <h3 id="troque-sua-senha-com-certa-frequência">Troque sua senha com certa frequência:</h3>
@@ -830,10 +818,7 @@ Password Store
 <h4 id="ataques-a-pincodes">Ataques a Pincodes:</h4>
 <h5 id="câmera-térmica">Câmera térmica:</h5>
 <p>Nesse video : <a href="https://youtu.be/8Vc-69M-UWk">iPhone ATM PIN code hack- HOW TO PREVENT</a> ele mostra um &quot;case&quot; para iPhone que é uma câmera térmica e através do calor dos dedos é possível descobrir o pincode digitado, conforme a foto abaixo:</p>
-<div class="figure">
-<img src="pincode-Thermal.jpg" height="300" />
-
-</div>
+<p><img src="pincode-Thermal.jpg" height="300"></p>
 <p>note que as teclas que estão com uma coloração mais clara estão mais quentes, ou seja foram digitadas por ultimo: ou seja o pincode digitado foi 12345.</p>
 <p>para prevenir desse ataque ele sugere que enquanto digita o pincode mantenha os dedos sobre todas as outras teclas, assim todas as teclas ficaram com uma coloração mais clara.</p>
 <h5 id="acelerômetro-do-celular">Acelerômetro do celular:</h5>

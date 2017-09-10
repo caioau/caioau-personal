@@ -344,11 +344,11 @@ Por fim, veja um [video ótimo do VSauce](https://youtu.be/fCn8zs912OE) sobre Zi
 
 Lembrando que o gráfico log-log da distribuição de Pareto é uma reta descreste, assim temos os gráficos:
 
-![](mascaras-loglog.png){ height=400px }<br><br>
+<img src="mascaras-loglog.png" height="400"> <br><br>
 
-![](freq-loglog2.png){ height=400px }<br><br>
+<img src="freq-loglog2.png" height="400"> <br><br>
 
-![](charsets-loglog2.png){ height=400px }<br><br>
+<img src="charsets-loglog2.png" height="400"> <br><br>
 
 O Princípio de Pareto (20% das causas são responsáveis por 80% dos resultados) também ocorre em:
 
@@ -427,7 +427,7 @@ Ou seja, de acordo com a tabela, uma senha **verdadeiramente aleatória** com 8 
 
 Dito isso, não existe uma maneira melhor de começar a falar de senhas boas do que a tirinha do xkcd:
 
-![](xkcdptbr.png){ height=550px }
+<img src="xkcdptbr.png" height="550">
 
 creditos : [xkcd](https://www.xkcd.com/936/), tradução: [Oficina AntiVigilancia](https://antivigilancia.org/pt/2015/06/abre-te-sesamo-as-senhas-da-nossa-vida-digital-2/) <br><br>
 
@@ -594,7 +594,7 @@ Basta entrar no [site](https://chriszarate.github.io/supergenpass/), colocar a s
 
 Pra minha última recomendação, apresento o PasswordCard. Ele é um password manager físico. Entre no [site](https://www.passwordcard.org/en) e gere um cartão novo, conforme o abaixo:
 
-![](passwordcard.png){ height=200px }
+<img src="passwordcard.png" height="200">
 
 O cartão é uma “tabela” com algumas linhas com letras, números e caracteres especiais aleatórios. Para gerar uma senha, você escolhe onde a sua senha começa e qual a direção da senha -- com o cuidado de não colocar seu dedo enquanto lê a senha.
 
@@ -606,7 +606,7 @@ Como usar: cada serviço é diferente, veja aqui [turnon2fa](https://www.turnon2
 
 Quando você for entrar na sua conta, após colocar a senha, deverá colocar um número gerado pelo app. Cada número só dura 30s, então não tem problema se alguém ver o código num determinado momento, conforme mostrado abaixo:
 
-![](freeotp.png){ height=450px }<br><br>
+<img src="freeotp.png" height="450"> <br><br>
 
 Caso você não esteja convencido que precisa disso: veja essa reportagem que foi capa da _Wired_ em Dez2012: [Kill the Password: A String of Characters Won't Protect You](https://www.wired.com/2012/11/ff-mat-honan-password-hacker/).
 
@@ -628,7 +628,7 @@ Veja um artigo da oficina anti-vigilância explicando como detectar e se preveni
 
 Além disso, mesmo quando o celular está bloqueado, a notificação mostra a mensagem na tela de bloqueio, por exemplo:
 
-![](sms-inseguro.jpg){ height=450px }
+<img src="sms-inseguro.jpg" height="450">
 
 Você pode resolver isso: 
 
@@ -637,7 +637,7 @@ Você pode resolver isso:
 
 Resultado final:
 
-![](sms-seguro.jpg){ height=450px }
+<img src="sms-seguro.jpg" height="450">
 
 ## Boas práticas:
 
@@ -676,7 +676,7 @@ veja o artigo na arstechnica falando sobre o assunto: [New data uncovers the sur
 
 Nesse video : [iPhone ATM PIN code hack- HOW TO PREVENT](https://youtu.be/8Vc-69M-UWk) ele mostra um "case" para iPhone que é uma câmera térmica e através do calor dos dedos é possível descobrir o pincode digitado, conforme a foto abaixo:
 
-![](pincode-Thermal.jpg){height=300px }
+<img src="pincode-Thermal.jpg" height="300">
 
 note que as teclas que estão com uma coloração mais clara estão mais quentes, ou seja foram digitadas por ultimo: ou seja o pincode digitado foi 12345.
 
