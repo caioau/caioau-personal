@@ -21,7 +21,7 @@ def main():
     if len(argv) > 1: # detect if the number of words is passed throuth argv
         n = int(argv[1])
     print "n=%d\n" % n
-    res = GenDiceware('7776palavras.txt', n)  # default file with word list (pt-br)
+    res = GenDiceware('7776palavras-2e.txt', n)  # default file with word list (pt-br)
     print ' '.join(res)
     print GenNumAndSpe(2 * n)
 
