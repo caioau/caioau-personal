@@ -1,11 +1,3 @@
-<style>
-  body          { color:#00FF00;background-color:#000000;}
-  code          { color:#FFFFFF;background-color:#002b36;}
-  p,li          { font-family:monospace;}
-  a:link		{ color:#FFFFFF;}
-  table,th,td   { border: 1px solid white; border-collapse: collapse}
-</style>
-
 <!--
 que bom te ver por aqui!!!
 voce tambem toma cuidado com o que roda no seu navegador o/
@@ -17,6 +9,8 @@ a minha inspiração foi o https://websitedocaralho.com.br/
 
 vida longa e prospera
 -->
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../style.css">
 
 # O elo mais fraco da nossa segurança: S&nh5s
 

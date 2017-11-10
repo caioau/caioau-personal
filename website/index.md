@@ -1,22 +1,16 @@
-<style>
-  body          { color:#00FF00;background-color:#000000;}
-  code          { color:#FFFFFF;background-color:#002b36;}
-  p,li          { font-family:monospace;}
-  a:link        { color:#FFFFFF;}
-  table,th,td   { border: 1px solid white; border-collapse: collapse}
-</style>
-
 <!--
 que bom te ver por aqui!!!
 voce tambem toma cuidado com o que roda no seu navegador o/
 
-ta tranquilo: meu site é feito usando somente markdown + CSS:
+ta tranquilo, ta favoravel: meu site é feito usando somente markdown + CSS:
 uso o pandoc pra renderizar o html (pq to mais acostumado com ele e latex :P )
 
 a minha inspiração foi o https://websitedocaralho.com.br/
 
 vida longa e prospera
 -->
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
 
 # Página do Caio
 

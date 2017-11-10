@@ -1,0 +1,7 @@
+  body          { color:#00FF00;background-color:#000000;}
+  code          { color:#FFFFFF;background-color:#002b36;display:inline-block;border: 1px solid #0088ff;padding: 0.3em}
+  p,li          { font-family:monospace;}
+  a:link        { color:white;}
+  a:visited     { color:#E120F0;}
+  table,th,td   { border: 1px solid cyan; border-collapse: collapse}
+  blockquote    { color: #ff016d;border-left: 0.4em solid #ff016d;margin-left: 0.1em;padding-left: 1.7em;}

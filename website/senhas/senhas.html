@@ -1,10 +1,3 @@
-<style>
-  body          { color:#00FF00;background-color:#000000;}
-  code          { color:#FFFFFF;background-color:#002b36;}
-  p,li          { font-family:monospace;}
-  a:link        { color:#FFFFFF;}
-  table,th,td   { border: 1px solid white; border-collapse: collapse}
-</style>
 <!--
 que bom te ver por aqui!!!
 voce tambem toma cuidado com o que roda no seu navegador o/
@@ -16,6 +9,7 @@ a minha inspiração foi o https://websitedocaralho.com.br/
 
 vida longa e prospera
 -->
+<p><meta charset="UTF-8"> <link rel="stylesheet" type="text/css" href="../style.css"></p>
 <h1 id="o-elo-mais-fraco-da-nossa-segurança-snh5s">O elo mais fraco da nossa segurança: S&amp;nh5s</h1>
 <h2 id="entenda-o-que-são-como-criar-e-gerenciar-senhas-fortes.">Entenda o que são, como criar e gerenciar senhas fortes.</h2>
 <p>Comecei a pesquisar e fazer a análise de senhas para um trabalho então resolvi escrever um texto sobre o assunto.</p>
@@ -709,11 +703,11 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 </ul>
 <p>Preciso usar um dado de verdade para gerar as senhas? Essa é uma longa discussão, mas resumidamente: usando um dado você terá uma boa garantia que nada dará errado, porém gerar os números aleatórios usando um computador normalmente é bom o suficiente.<br><br></p>
 <p>Dito isso, <a href="https://github.com/caioau/personal/blob/master/DicewareGen/dicewareGen.py">fiz esse código em Python</a> para gerar uma senha (ele também gera números e caracteres especiais), a principal função dele é:</p>
-<pre><code>from random import SystemRandom as cryptogen
-def GenDiceware(filename, n=6):
-    with open(filename) as f:
-        words = [line.strip() for line in f]
-    return [cryptogen().choice(words) for _ in range(n)]</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> random <span class="im">import</span> SystemRandom <span class="im">as</span> cryptogen
+<span class="kw">def</span> GenDiceware(filename, n<span class="op">=</span><span class="dv">6</span>):
+    <span class="cf">with</span> <span class="bu">open</span>(filename) <span class="im">as</span> f:
+        words <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="op">in</span> f]
+    <span class="cf">return</span> [cryptogen().choice(words) <span class="cf">for</span> _ <span class="op">in</span> <span class="bu">range</span>(n)]</code></pre></div>
 <p>Observação 1: além da <a href="https://github.com/thoughtworks/dadoware/blob/master/7776palavras.txt">lista de palavras do livreto</a>, você pode usar um pacote chamado wbrazilian <a href="https://github.com/caioau/personal/blob/master/DicewareGen/brazilian.utf8">link</a> (270 mil palavras = 18 bits de entropia / palavra).</p>
 <p>Observação 2: O que você <strong>DEVE</strong> atentar nesse código é o uso da classe SystemRandom, que utiliza um gerador de número pseudo-aleatório <strong>CRIPTOGRAFICAMENTE SEGURO</strong>, conforme a documentação:</p>
 <pre><code>Init signature: random.SystemRandom(self, x=None)
