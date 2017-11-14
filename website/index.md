@@ -33,9 +33,13 @@ veja abaixo os slides de algumas apresentações:
 ### Contato:
 
 * twitter: [\@caioauv](https://twitter.com/caioauv)
-* email: 210B C5A4 14FD 9274 6B6A 250E **EFF5 B2E1 80F2 94CE**
-    + [key.asc](https://keybase.io/caioau/key.asc)
-    + [mailto](https://encrypt.to/0xEFF5B2E180F294CE) (encrypt.to)
-    + [keybase-encrypt](https://keybase.io/encrypt#caioau)
+* email: 
+    + rsa4096/0xEFF5B2E180F294CE: 210B C5A4 14FD 9274 6B6A  250E **EFF5 B2E1 80F2 94CE**
+        - [key.asc](https://keybase.io/caioau/key.asc)
+        - [mailto](https://encrypt.to/0xEFF5B2E180F294CE) (encrypt.to)
+        - [keybase-encrypt](https://keybase.io/encrypt#caioau)
+    + ed25519/0x9EBE8472C563456F: 427F 82CF C5AC 85CD 3D1D  CB6B **9EBE 8472 C563 456F**
+        - [key.asc](http://p80.pool.sks-keyservers.net/pks/lookup?op=get&search=0x9EBE8472C563456F)
+        - [mailto](https://encrypt.to/0x9EBE8472C563456F) (encrypt.to)
 * [ricochet](https://ricochet.im/) : ricochet:rzzyo5juzt652faj
 * XMPP/OTR: caioau@jabber.calyxinstitute.org
