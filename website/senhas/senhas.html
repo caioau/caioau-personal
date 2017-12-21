@@ -20,6 +20,7 @@ vida longa e prospera
 <li>23mar2017: 2a. revisão: <a href="https://github.com/caioau/caioau-personal/commit/3931d7dbb5761b2c220e83a314d693c30a1709af#diff-9d2672cbaf33804746ef196e78b86a47">diff</a> : agradecimento a correções do <a href="https://twitter.com/corvolinoPUNK">@corvolinoPUNK</a></li>
 <li>23jul2017: 3a. revisão: adicionando logaritmo ao glossário : <a href="https://github.com/caioau/caioau-personal/commit/83929d54f45bffedac26e233dcd02dc33cdfbef4?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47">diff</a> : agradecimento a revisão da Vulcanica</li>
 <li>29aug2017: adicionado 2 ataques a pincodes e a historia do robô feito para abrir cofres: <a href="https://github.com/caioau/caioau-personal/commit/20865027a29befee7264d3cf7915ae4f4a35c458#diff-9d2672cbaf33804746ef196e78b86a47">diff</a> : inspiração de lohe.</li>
+<li>21dez2017: boas praticas segurança, oraculo de teclado : <a href="">diff</a></li>
 </ul>
 <h2 id="in-memoriam">In Memoriam:</h2>
 <p>Rodrigo Tambellini (Harry) grande amigo, entramos juntos na faculdade e vivemos juntos muitas coisas. Sdds Harry</p>
@@ -27,6 +28,7 @@ vida longa e prospera
 <p>Não sou de fazer dedicatórias, mas como também não sou de escrever textos, esse texto é dedicado aos meus amigos que (coelhinhos voadores) sempre (coelhinhos voadores) me incentivaram em compartilhar essas paradas.</p>
 <h2 id="tldr-textão-nem-li">TL;DR (textão, nem li)</h2>
 <ul>
+<li>Boas praticas de segurança.</li>
 <li>As senhas analisadas são bastante previsíveis (pois não temos uma boa intuição de aleatoriedade).</li>
 <li>Use senhas verdadeiramente aleatórias, usando por exemplo o método dadoware (diceware).</li>
 <li>Não repita a mesma senha em dois lugares.</li>
@@ -39,6 +41,60 @@ vida longa e prospera
 <li>Troque suas senhas com frequência (tipo de 3 em 3 meses).</li>
 <li>Assista <a href="http://www.imdb.com/title/tt4044364/">Citizenfour</a>.</li>
 <li><strong>QUEM TEM COOKIE, TEM MEDO!</strong></li>
+</ul>
+<h2 id="boas-praticas-de-segurança">Boas Praticas de Segurança:</h2>
+<p>Neste texto vou falar vários aspectos de senhas porém como isso se reflete em mudança de hábitos é imprescindível dar um passo para trás e se esforçar em manter nossos dispositivos seguros, então vou destacar algumas dicas de como fazelo:</p>
+<h3 id="computador">Computador:</h3>
+<ul>
+<li>mantenha seu sistema e programas atualizados.</li>
+<li>não use flash (caso você precise utilize extensões como flash control que só habilita o flash nesses sites).</li>
+<li>faça backups.
+<ul>
+<li>Backup não é uma copia simples, ou seja o backup deve ser feito em outra mídia.</li>
+<li>deve ser automático e periódico, porém não confie cegamente no automático: certifique-se que está sendo feito.</li>
+</ul></li>
+<li>baixe apenas programas confiáveis de fontes confiáveis (tente ao máximo só utilizar os repos oficiais de sua distro).</li>
+<li>proteja seu wifi:
+<ul>
+<li>use uma senha forte.
+<ul>
+<li>dica: como passar sua senha forte: visite <a href="https://www.qrstuff.com/">qrstuff</a> selecione a opção Wifi Login e gere seu qr code e use o app <a href="https://f-droid.org/packages/com.google.zxing.client.android/">Barcode Scanner</a> para escanear o qr e salvar a rede no android.</li>
+</ul></li>
+<li>troque a senha padrão da administração e desabilite o acesso remoto.</li>
+<li>desabilite o UPnP e o WPS.</li>
+<li>mantenha o firmware do seu roteador atualizado (e se possível procure alternativas livres como librewrt)</li>
+</ul></li>
+</ul>
+<h3 id="dicas-especificas-pro-windows">Dicas especificas pro Windows:</h3>
+<ul>
+<li>crie apenas um usuário administrador e use apenas os usuários sem privilégios de administrador.</li>
+<li>use um antivírus e o mantenha atualizado.</li>
+<li>use uma conta local (não utilize sua conta microsoft).</li>
+<li>use e rode com frequência o CCleaner ou Advanced SystemCare.</li>
+<li>desinstale programas desnecessários.</li>
+</ul>
+<p>Windows 10: Desativar envio de seus dados: <a href="https://github.com/Nummer/Destroy-Windows-10-Spying">Destroy Windows 10 Spying</a></p>
+<h3 id="boas-praticas-de-segurança-android">Boas Praticas de Segurança: Android:</h3>
+<ul>
+<li><a href="http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-android-1792432725">The Privacy Enthusiast's Guide to Using Android</a>:
+<ul>
+<li>Use PinCode ou senha Forte (6+ digitos <strong>VERDADEIRAMENTE ALEATÓRIOS</strong>).</li>
+<li>tenha consciência que se você usa a digital para desbloquear seu aparelho podem te forçar você a colocar seu dedo.</li>
+<li>&quot;Esconda&quot; notificações sensíveis da tela de bloqueio.</li>
+<li>Desative &quot;minhas atividades&quot; do Google (histórico de buscas, localização, etc ...): <a href="https://myactivity.google.com/myactivity">myactivity.google.com/myactivity</a></li>
+<li>Desative Backup do Google: histórico de chamadas, senhas do Wifi e Apps são salvos no Google.</li>
+<li>Desative permissões desnecessárias.</li>
+<li>Vá no app de Camera e desabilite a opção de Geolocalização.</li>
+<li>Use o app chamado Send Reduced que além de tirar metadados de fotos, reduz seu tamanho, <a href="https://f-droid.org/repository/browse/?fdfilter=size&amp;fdid=mobi.omegacentauri.SendReduced">fdroid</a></li>
+</ul></li>
+</ul>
+<h3 id="leituras-complementares">Leituras complementares:</h3>
+<p>Além dessas dicas de segurança vou indicar algumas leituras complementares:</p>
+<ul>
+<li><a href="https://cartilha.cert.br/">Cartilhas de segurança para internet - CERT.br</a>.</li>
+<li><a href="https://motherboard.vice.com/en_us/article/d3devm/motherboard-guide-to-not-getting-hacked-online-safety-guide">The Motherboard Guide to Not Getting Hacked</a> <a href="https://motherboard.vice.com/pt_br/article/9aqe47/guia-motherboard-para-nao-ser-hackeado">pt-br</a></li>
+<li><a href="https://www.wired.com/2017/12/digital-security-guide/">The WIRED Guide to Digital Security</a></li>
+<li><a href="https://spreadprivacy.com/tag/device-privacy-tips/">Device Privacy Tips - DuckDuckGo</a></li>
 </ul>
 <h2 id="glossário">Glossário:</h2>
 <p>Vou usar esses termos durante o texto, então melhor já tirar isso da frente.</p>
@@ -89,11 +145,11 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <blockquote>
 <p>IEZZI, Gelson; DOLCE, Osvaldo; MURAKAMI, Carlos. Fundamentos de Matemática Elementar, Volume 2, LOGARITMOS . São Paulo: Editora Atual, 9 a Edição, 2004</p>
 </blockquote>
-<h4 id="ln-vs-log"><span class="math inline">ln</span> vs <span class="math inline">log</span></h4>
-<p>Quando escrevemos apenas <span class="math inline">log</span> estamos nos referindo a logaritmo em qual base?</p>
-<p>A verdade é que escrever apenas <span class="math inline">log</span> é ambíguo, pode estar se referindo ao logaritmo na base 10 ou na base <span class="math inline"><em>e</em></span> (numero de Euler: 2.71...), uma boa regra de dedão é: Se o que você está lendo é uma livro de engenharia é <span class="math inline">log</span> na base 10, se é um livro de matemática ou computação é na base <span class="math inline"><em>e</em></span>.</p>
-<p>Porém a notação <span class="math inline">ln</span> é sempre <span class="math inline">log</span> na base <span class="math inline"><em>e</em></span></p>
-<p>Voltando ao exemplo do começo: queremos encontrar <span class="math inline">log<sub>2</sub>1024</span> , algumas calculadoras tem a operação de <span class="math inline">log</span> na base 2 (pois é muito utilizado na computação), porém podemos usar a propriedade de mudança de base e teremos:</p>
+<h4 id="ln-vs-log"><span class="math inline">ln </span> vs <span class="math inline">log </span></h4>
+<p>Quando escrevemos apenas <span class="math inline">log </span> estamos nos referindo a logaritmo em qual base?</p>
+<p>A verdade é que escrever apenas <span class="math inline">log </span> é ambíguo, pode estar se referindo ao logaritmo na base 10 ou na base <span class="math inline"><em>e</em></span> (numero de Euler: 2.71...), uma boa regra de dedão é: Se o que você está lendo é uma livro de engenharia é <span class="math inline">log </span> na base 10, se é um livro de matemática ou computação é na base <span class="math inline"><em>e</em></span>.</p>
+<p>Porém a notação <span class="math inline">ln </span> é sempre <span class="math inline">log </span> na base <span class="math inline"><em>e</em></span></p>
+<p>Voltando ao exemplo do começo: queremos encontrar <span class="math inline">log<sub>2</sub>1024</span> , algumas calculadoras tem a operação de <span class="math inline">log </span> na base 2 (pois é muito utilizado na computação), porém podemos usar a propriedade de mudança de base e teremos:</p>
 <p><span class="math inline">log<sub>2</sub>1024 = <em>l</em><em>n</em>(1024)/<em>l</em><em>n</em>(2)=6.9315/0.69315 = 10</span></p>
 <h4 id="escalas-logarítmicas">Escalas Logarítmicas:</h4>
 <p>Quando estamos lidando com quantidades que podem ser minusculas ou gigantescas , é difícil representar essas quantidades com seu valor absoluto , por exemplo: no nosso contexto de senhas: um PinCode de 4 dígitos teremos <span class="math inline">10<sup>4</sup>=</span> 10 mil combinações agora uma senha com maiúsculas , minusculas , números e caracteres especiais de tamanho 9 tem <span class="math inline">94<sup>9</sup>=</span> 572994802228616704 (572 quadrilhão) de combinações (spoiler alert: veremos logo a frente uma senha assim que é quebrada em segundos), ou seja como o número de combinações de uma senha cresce exponencialmente, essa quantidade vai ficando gigantesca e difícil de representar.</p>
@@ -556,6 +612,7 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>Veja <a href="https://youtu.be/vVXbgbMp0oY">esse vídeo da Khan Academy</a>, que mostra uma visualização dessa propriedade de estabilidade de frequência.</p>
 <p>(Quer mais um exemplo? Veja esse excelente <a href="https://youtu.be/K0zrUomGGHY">video do Isto é Matemática</a>, falando do problema de Monty Hall.)<br><br></p>
 <p>Ou seja: as pessoas têm uma intuição deturpada de um resultado aleatório. Esse comportamento de manada acaba produzindo senhas mais previsíveis.<br><br></p>
+<p>Oraculo de teclado: Quer testar o quão previsível você é? entre nesse <a href="http://people.ischool.berkeley.edu/~nick/aaronson-oracle/index.html">link</a> e vá digitando d e f e a pagina vai mostrar com que precisão ele conseguiu prever.</p>
 <p>Então, como avaliar se uma senha é de fato boa? Precisamos introduzir um conceito da teoria da informação, que é o conceito de entropia de Shannon: a entropia é a “media” de informação que aquela senha contém.</p>
 <p>A entropia <em>H</em>, medida em bits, de uma senha com comprimento <em>L</em>, utilizando <em>N</em> símbolos é definida como log na base 2 de todas as combinações que a senha pode ter, ou seja:</p>
 <p><span class="math inline"><em>H</em> = log<sub>2</sub>(<em>N</em><sup><em>L</em></sup>)=<em>L</em> ⋅ log<sub>2</sub>(<em>N</em>)</span></p>
@@ -703,11 +760,11 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 </ul>
 <p>Preciso usar um dado de verdade para gerar as senhas? Essa é uma longa discussão, mas resumidamente: usando um dado você terá uma boa garantia que nada dará errado, porém gerar os números aleatórios usando um computador normalmente é bom o suficiente.<br><br></p>
 <p>Dito isso, <a href="https://github.com/caioau/personal/blob/master/DicewareGen/dicewareGen.py">fiz esse código em Python</a> para gerar uma senha (ele também gera números e caracteres especiais), a principal função dele é:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> random <span class="im">import</span> SystemRandom <span class="im">as</span> cryptogen
-<span class="kw">def</span> GenDiceware(filename, n<span class="op">=</span><span class="dv">6</span>):
-    <span class="cf">with</span> <span class="bu">open</span>(filename) <span class="im">as</span> f:
-        words <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="op">in</span> f]
-    <span class="cf">return</span> [cryptogen().choice(words) <span class="cf">for</span> _ <span class="op">in</span> <span class="bu">range</span>(n)]</code></pre></div>
+<pre><code>from random import SystemRandom as cryptogen
+def GenDiceware(filename, n=6):
+    with open(filename) as f:
+        words = [line.strip() for line in f]
+    return [cryptogen().choice(words) for _ in range(n)]</code></pre>
 <p>Observação 1: além da <a href="https://github.com/thoughtworks/dadoware/blob/master/7776palavras.txt">lista de palavras do livreto</a>, você pode usar um pacote chamado wbrazilian <a href="https://github.com/caioau/personal/blob/master/DicewareGen/brazilian.utf8">link</a> (270 mil palavras = 18 bits de entropia / palavra).</p>
 <p>Observação 2: O que você <strong>DEVE</strong> atentar nesse código é o uso da classe SystemRandom, que utiliza um gerador de número pseudo-aleatório <strong>CRIPTOGRAFICAMENTE SEGURO</strong>, conforme a documentação:</p>
 <pre><code>Init signature: random.SystemRandom(self, x=None)
@@ -767,7 +824,8 @@ Password Store
 <p>O cartão é uma “tabela” com algumas linhas com letras, números e caracteres especiais aleatórios. Para gerar uma senha, você escolhe onde a sua senha começa e qual a direção da senha -- com o cuidado de não colocar seu dedo enquanto lê a senha.</p>
 <h2 id="habilite-autenticação-em-duas-etapas">Habilite autenticação em duas etapas:</h2>
 <p>A ideia por trás da autenticação em duas etapas (2FA -- 2 factor authentication) é que para entrar na sua conta além da senha (que uma coisa que só você sabe), precisa de uma coisa que só você tem, no caso um app no celular.<br><br></p>
-<p>Como usar: cada serviço é diferente, veja aqui <a href="https://www.turnon2fa.com/">turnon2fa</a> como habilitar no serviço especifico. Normalmente, você escaneia um QR code com um app. Recomendo o <a href="https://f-droid.org/repository/browse/?fdfilter=freeotp&amp;fdid=org.fedorahosted.freeotp">freetop</a> (é software livre, tem na F-Droid e pra iOS).</p>
+<p>Como usar: cada serviço é diferente, veja aqui <a href="https://www.turnon2fa.com/">turnon2fa</a> como habilitar no serviço especifico. Normalmente, você escaneia um QR code com um app. Recomendo o <a href="https://f-droid.org/repository/browse/?fdfilter=freeotp&amp;fdid=org.fedorahosted.freeotp">freeotp</a> (é software livre, tem na F-Droid e pra iOS).</p>
+<p>Uma alternativa legal ao FreeOTP é o <a href="https://f-droid.org/packages/org.shadowice.flocke.andotp/">andOTP</a> o diferencial dele é que ele permite realizar backup.</p>
 <p>Quando você for entrar na sua conta, após colocar a senha, deverá colocar um número gerado pelo app. Cada número só dura 30s, então não tem problema se alguém ver o código num determinado momento, conforme mostrado abaixo:</p>
 <p><img src="freeotp.png" height="450"> <br><br></p>
 <p>Caso você não esteja convencido que precisa disso: veja essa reportagem que foi capa da <em>Wired</em> em Dez2012: <a href="https://www.wired.com/2012/11/ff-mat-honan-password-hacker/">Kill the Password: A String of Characters Won't Protect You</a>.</p>
@@ -815,6 +873,8 @@ Password Store
 <p><img src="pincode-Thermal.jpg" height="300"></p>
 <p>note que as teclas que estão com uma coloração mais clara estão mais quentes, ou seja foram digitadas por ultimo: ou seja o pincode digitado foi 12345.</p>
 <p>para prevenir desse ataque ele sugere que enquanto digita o pincode mantenha os dedos sobre todas as outras teclas, assim todas as teclas ficaram com uma coloração mais clara.</p>
+<p>resultado:</p>
+<p><img src="pincode-Thermal2.jpg" height="300"></p>
 <h5 id="acelerômetro-do-celular">Acelerômetro do celular:</h5>
 <p>Nesse paper: <a href="https://arxiv.org/pdf/1605.05549v1.pdf">Stealing PINs via Mobile Sensors: Actual Risk versus User Perception</a> os pesquisadores conseguiram descobrir 80% dos pincodes digitados no celular através de um script no navegador que monitora o movimento através do acelerômetro.</p>
 <p>Recomendação: Use uma senha forte pra criptografia de disco e um PinCode de (pelo menos) 6 dígitos pra desbloquear o celular. Tem um App chamado SnooperStopper (<a href="https://f-droid.org/repository/browse/?fdfilter=snoop&amp;fdid=cz.eutopia.snooperstopper">FDroid</a>) ele depois de 3 tentativas erradas na tela de desbloqueio o celular reinicia , pedindo a senha forte.</p>

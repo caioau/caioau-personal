@@ -25,6 +25,7 @@ Comecei a pesquisar e fazer a análise de senhas para um trabalho então resolvi
 * 23mar2017: 2a. revisão: [diff](https://github.com/caioau/caioau-personal/commit/3931d7dbb5761b2c220e83a314d693c30a1709af#diff-9d2672cbaf33804746ef196e78b86a47) : agradecimento a correções do [\@corvolinoPUNK](https://twitter.com/corvolinoPUNK)
 * 23jul2017: 3a. revisão: adicionando logaritmo ao glossário : [diff](https://github.com/caioau/caioau-personal/commit/83929d54f45bffedac26e233dcd02dc33cdfbef4?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47) : agradecimento a revisão da Vulcanica
 * 29aug2017: adicionado 2 ataques a pincodes e a historia do robô feito para abrir cofres: [diff](https://github.com/caioau/caioau-personal/commit/20865027a29befee7264d3cf7915ae4f4a35c458#diff-9d2672cbaf33804746ef196e78b86a47) : inspiração de lohe.
+* 21dez2017: boas praticas segurança, oraculo de teclado : [diff]()
 
 ## In Memoriam:
 
@@ -35,6 +36,7 @@ Rodrigo Tambellini (Harry) grande amigo, entramos juntos na faculdade e vivemos 
 Não sou de fazer dedicatórias, mas como também não sou de escrever textos, esse texto é dedicado aos meus amigos que (coelhinhos voadores) sempre (coelhinhos voadores) me incentivaram em compartilhar essas paradas.
 
 ## TL;DR (textão, nem li)
+* Boas praticas de segurança.
 * As senhas analisadas são bastante previsíveis (pois não temos uma boa intuição de aleatoriedade).
 * Use senhas verdadeiramente aleatórias, usando por exemplo o método dadoware (diceware).
 * Não repita a mesma senha em dois lugares.
@@ -45,6 +47,57 @@ Não sou de fazer dedicatórias, mas como também não sou de escrever textos, e
 * Troque suas senhas com frequência (tipo de 3 em 3 meses).
 * Assista [Citizenfour](http://www.imdb.com/title/tt4044364/).
 * **QUEM TEM COOKIE, TEM MEDO!**
+
+## Boas Praticas de Segurança: 
+
+Neste texto vou falar  vários aspectos de senhas porém como isso se reflete em mudança de hábitos é imprescindível dar um passo para trás e se esforçar em manter nossos dispositivos seguros, então vou destacar algumas dicas de como fazelo:
+
+### Computador:
+
+* mantenha seu sistema e programas atualizados.
+* não use flash (caso você precise utilize extensões como flash control que só habilita o flash nesses sites).
+* faça backups.
+    + Backup não é uma copia simples, ou seja o backup deve ser feito em outra mídia.
+    + deve ser automático e periódico, porém não confie cegamente no automático: certifique-se que está sendo feito.
+* baixe apenas programas confiáveis de fontes confiáveis (tente ao máximo só utilizar os repos oficiais de sua distro).
+* proteja seu wifi:
+    + use uma senha forte. 
+        - dica: como passar sua senha forte: visite [qrstuff](https://www.qrstuff.com/) selecione a opção Wifi Login e gere seu qr code e use o app [Barcode Scanner](https://f-droid.org/packages/com.google.zxing.client.android/) para escanear o qr e salvar a rede no android.
+    + troque a senha padrão da administração e desabilite o acesso remoto.
+    + desabilite o UPnP e o WPS.
+    + mantenha o firmware do seu roteador atualizado (e se possível procure alternativas livres como librewrt)
+
+### Dicas especificas pro Windows:
+
+* crie apenas um usuário administrador e use apenas os usuários sem privilégios de administrador.
+* use um antivírus e o mantenha atualizado. 
+* use uma conta local (não utilize sua conta microsoft).
+* use e rode com frequência o CCleaner ou Advanced SystemCare.
+* desinstale programas desnecessários. 
+
+Windows 10: Desativar envio de seus dados: [Destroy Windows 10 Spying](https://github.com/Nummer/Destroy-Windows-10-Spying)
+
+
+### Boas Praticas de Segurança: Android:
+* [The Privacy Enthusiast's Guide to Using Android](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-android-1792432725): 
+    + Use PinCode ou senha Forte (6+ digitos **VERDADEIRAMENTE ALEATÓRIOS**).
+    + tenha consciência que se você usa a digital para desbloquear seu aparelho podem te forçar você a colocar seu dedo.
+    + "Esconda" notificações sensíveis da tela de bloqueio.
+    + Desative "minhas atividades" do Google (histórico de buscas, localização, etc ...): [myactivity.google.com/myactivity](https://myactivity.google.com/myactivity)
+    + Desative Backup do Google: histórico de chamadas, senhas do Wifi e Apps são salvos no Google.
+    + Desative permissões desnecessárias.
+    + Vá no app de Camera e desabilite a opção de Geolocalização.
+    + Use o app chamado Send Reduced que além de tirar metadados de fotos, reduz seu tamanho, [fdroid](https://f-droid.org/repository/browse/?fdfilter=size&fdid=mobi.omegacentauri.SendReduced)
+    
+### Leituras complementares:
+
+Além dessas dicas de segurança vou indicar algumas leituras complementares:
+
+* [Cartilhas de segurança para internet - CERT.br](https://cartilha.cert.br/).
+* [The Motherboard Guide to Not Getting Hacked](https://motherboard.vice.com/en_us/article/d3devm/motherboard-guide-to-not-getting-hacked-online-safety-guide) [pt-br](https://motherboard.vice.com/pt_br/article/9aqe47/guia-motherboard-para-nao-ser-hackeado)
+* [The WIRED Guide to Digital Security](https://www.wired.com/2017/12/digital-security-guide/)
+* [Device Privacy Tips - DuckDuckGo](https://spreadprivacy.com/tag/device-privacy-tips/)
+
 
 ## Glossário:
 
@@ -397,6 +450,8 @@ Veja [esse vídeo da Khan Academy](https://youtu.be/vVXbgbMp0oY), que mostra uma
 
 Ou seja: as pessoas têm uma intuição deturpada de um resultado aleatório. Esse comportamento de manada acaba produzindo senhas mais previsíveis.<br><br>
 
+Oraculo de teclado: Quer testar o quão previsível você é? entre nesse [link](http://people.ischool.berkeley.edu/~nick/aaronson-oracle/index.html) e vá digitando d e f e a pagina vai mostrar com que precisão ele conseguiu prever.
+
 Então, como avaliar se uma senha é de fato boa? Precisamos introduzir um conceito da teoria da informação, que é o conceito de entropia de Shannon: a entropia é a “media” de informação que aquela senha contém.
 
 A entropia _H_, medida em bits, de uma senha com comprimento _L_, utilizando _N_ símbolos é definida como log na base 2 de todas as combinações que a senha pode ter, ou seja:
@@ -596,7 +651,9 @@ O cartão é uma “tabela” com algumas linhas com letras, números e caracter
 
 A ideia por trás da autenticação em duas etapas (2FA -- 2 factor authentication) é que para entrar na sua conta além da senha (que uma coisa que só você sabe), precisa de uma coisa que só você tem, no caso um app no celular.<br><br>
 
-Como usar: cada serviço é diferente, veja aqui [turnon2fa](https://www.turnon2fa.com/) como habilitar no serviço especifico. Normalmente, você escaneia um QR code com um app. Recomendo o [freetop](https://f-droid.org/repository/browse/?fdfilter=freeotp&fdid=org.fedorahosted.freeotp) (é software livre, tem na F-Droid e pra iOS).
+Como usar: cada serviço é diferente, veja aqui [turnon2fa](https://www.turnon2fa.com/) como habilitar no serviço especifico. Normalmente, você escaneia um QR code com um app. Recomendo o [freeotp](https://f-droid.org/repository/browse/?fdfilter=freeotp&fdid=org.fedorahosted.freeotp) (é software livre, tem na F-Droid e pra iOS).
+
+Uma alternativa legal ao FreeOTP é o [andOTP](https://f-droid.org/packages/org.shadowice.flocke.andotp/) o diferencial dele é que ele permite realizar backup.
 
 Quando você for entrar na sua conta, após colocar a senha, deverá colocar um número gerado pelo app. Cada número só dura 30s, então não tem problema se alguém ver o código num determinado momento, conforme mostrado abaixo:
 
@@ -675,6 +732,10 @@ Nesse video : [iPhone ATM PIN code hack- HOW TO PREVENT](https://youtu.be/8Vc-69
 note que as teclas que estão com uma coloração mais clara estão mais quentes, ou seja foram digitadas por ultimo: ou seja o pincode digitado foi 12345.
 
 para prevenir desse ataque ele sugere que enquanto digita o pincode mantenha os dedos sobre todas as outras teclas, assim todas as teclas ficaram com uma coloração mais clara. 
+
+resultado:
+
+<img src="pincode-Thermal2.jpg" height="300">
 
 ##### Acelerômetro do celular: 
 
