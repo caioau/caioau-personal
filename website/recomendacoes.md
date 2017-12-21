@@ -43,6 +43,9 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 17Aug2017 : [dif
 * Aulas filmadas: [UnivespTV](https://www.youtube.com/user/univesptv/playlists), [MITOpenCourseware](https://ocw.mit.edu), [Harvard Statistics 110: Probability](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo)
 * [Spurious-Correlations](http://www.tylervigen.com/spurious-correlations): Correlações espúrias: vale a máxima: Correlação não implica em causalidade.
 * [NothingPrivate](http://www.nothingprivate.ml/): A aba privativa não é tão anonima assim: Parece que o jogo virou, não é mesmo?
+* [TLDR pages](http://tldr.sh/): man pages simplificadas e com exemplos práticos. 
+* [security planner](https://securityplanner.org/): dicas identificar necessidades de segurança digital.
+* [De-google-ify Internet](https://degooglisons-internet.org/alternative): lista com alternativas aos serviços google.
 
 ## Textos:
 * [When Women Stopped Coding](http://www.npr.org/sections/money/2014/10/21/357629765/when-women-stopped-coding)
@@ -109,6 +112,7 @@ e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/ha
 * [PBSInfiniteSeries-The Devil's Staircase](https://youtu.be/dQXVn7pFsVI): Video falando sobre a função de cantor (também conhecida como escada do Diabo).
 * [Numberphile-Fermat](https://youtu.be/qiNcEguuFSA): "Um problema digno a ser resolvido, prova seu valor atacando de volta", video onde Simon Singh, autor do Ultimo Teorema de Fermat, conta resumidamente a historia desse fascinante problema da matemática. 
 * [Nerdologia#143-Eleicoes](https://youtu.be/JLr2kX_ldzE): Eleições democráticas são impossíveis! veja também os videos da PBS Infinite Series: [Voting Systems and the Condorcet Paradox](https://youtu.be/HoAnYQZrNrQ) e do CGPGrey: [Quick and Easy Voting for Normal People](https://youtu.be/orybDrUj4vA)
+* [Don't Talk to the Police](https://www.youtube.com/watch?v=d-7o9xYp7eE)
 
 ## Softwares:
 
@@ -121,6 +125,7 @@ As distros GNU/Linux que recomendo são:
 3. [Tails](https://tails.boum.org/)
 4. [Fedora](https://getfedora.org/) o Fedora vem com o Gnome, caso queira mais opções veja o [Fedora Spins](https://spins.fedoraproject.org/)
     1. texto: [sudo dnf install fedora](http://danielammorais.com/2016/06/19/sudo-dnf-install-fedora/) : O mínimo que você deve saber sobre o Fedora.
+    2. [freed-ora](http://www.fsfla.org/ikiwiki/selibre/linux-libre/freed-ora.en.html) (GNU Linux-libre)
 5. Estou muito ansioso com o [Subgraph OS](https://subgraph.com/) , está em Alpha.
 
 ### Password Manager:
