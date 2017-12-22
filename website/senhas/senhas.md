@@ -26,6 +26,7 @@ Comecei a pesquisar e fazer a análise de senhas para um trabalho então resolvi
 * 23jul2017: 3a. revisão: adicionando logaritmo ao glossário : [diff](https://github.com/caioau/caioau-personal/commit/83929d54f45bffedac26e233dcd02dc33cdfbef4?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47) : agradecimento a revisão da Vulcanica
 * 29aug2017: adicionado 2 ataques a pincodes e a historia do robô feito para abrir cofres: [diff](https://github.com/caioau/caioau-personal/commit/20865027a29befee7264d3cf7915ae4f4a35c458#diff-9d2672cbaf33804746ef196e78b86a47) : inspiração de lohe.
 * 21dez2017: boas praticas segurança, oraculo de teclado : [diff](https://github.com/caioau/caioau-personal/commit/83a7f1035b46a121a018711b7074f3f75fab64a3?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47)
+* 22dez2017: correções: agradecimentos estatísticos ao bola: [diff]()
 
 ## In Memoriam:
 
@@ -35,7 +36,7 @@ Rodrigo Tambellini (Harry) grande amigo, entramos juntos na faculdade e vivemos 
 
 Não sou de fazer dedicatórias, mas como também não sou de escrever textos, esse texto é dedicado aos meus amigos que (coelhinhos voadores) sempre (coelhinhos voadores) me incentivaram em compartilhar essas paradas.
 
-## TL;DR (textão, nem li)
+## TL;DR (textão, nem li nem lerei)
 * Boas praticas de segurança.
 * As senhas analisadas são bastante previsíveis (pois não temos uma boa intuição de aleatoriedade).
 * Use senhas verdadeiramente aleatórias, usando por exemplo o método dadoware (diceware).
@@ -52,7 +53,7 @@ Não sou de fazer dedicatórias, mas como também não sou de escrever textos, e
 
 Neste texto vou falar  vários aspectos de senhas porém como isso se reflete em mudança de hábitos é imprescindível dar um passo para trás e se esforçar em manter nossos dispositivos seguros, então vou destacar algumas dicas de como fazelo:
 
-### Computador:
+### Boas Praticas de Segurança: Computador:
 
 * mantenha seu sistema e programas atualizados.
 * não use flash (caso você precise utilize extensões como flash control que só habilita o flash nesses sites).
@@ -62,7 +63,7 @@ Neste texto vou falar  vários aspectos de senhas porém como isso se reflete em
 * baixe apenas programas confiáveis de fontes confiáveis (tente ao máximo só utilizar os repos oficiais de sua distro).
 * proteja seu wifi:
     + use uma senha forte. 
-        - dica: como passar sua senha forte: visite [qrstuff](https://www.qrstuff.com/) selecione a opção Wifi Login e gere seu qr code e use o app [Barcode Scanner](https://f-droid.org/packages/com.google.zxing.client.android/) para escanear o qr e salvar a rede no android.
+        - dica: como passar sua senha forte: visite [qrstuff.com](https://www.qrstuff.com/) selecione a opção Wifi Login e gere seu qr code e use o app [Barcode Scanner](https://f-droid.org/packages/com.google.zxing.client.android/) para escanear o qr e salvar a rede no android.
     + troque a senha padrão da administração e desabilite o acesso remoto.
     + desabilite o UPnP e o WPS.
     + mantenha o firmware do seu roteador atualizado (e se possível procure alternativas livres como librewrt)
@@ -89,7 +90,7 @@ Windows 10: Desativar envio de seus dados: [Destroy Windows 10 Spying](https://g
     + Vá no app de Camera e desabilite a opção de Geolocalização.
     + Use o app chamado Send Reduced que além de tirar metadados de fotos, reduz seu tamanho, [fdroid](https://f-droid.org/repository/browse/?fdfilter=size&fdid=mobi.omegacentauri.SendReduced)
     
-### Leituras complementares:
+### Leituras Complementares:
 
 Além dessas dicas de segurança vou indicar algumas leituras complementares:
 
@@ -103,7 +104,7 @@ Além dessas dicas de segurança vou indicar algumas leituras complementares:
 
 Vou usar esses termos durante o texto, então melhor já tirar isso da frente.
 
-### hash:
+### Hash:
 
 Def: uma função de hash é uma função que recebe em sua entrada mensagens de qualquer tamanho e as “resume” numa saída de tamanho fixo (normalmente a saída é representada em hexadecimal).
 
@@ -127,7 +128,7 @@ Repare no efeito avalanche: as duas mensagens são muito parecidas, porém seus 
 
 ### Distribuição de Probabilidade:
 
-Def: Dado um espaço amostral de eventos (_S_), uma distribuição de probabilidade é uma função _P_, _P:S→[0,1]_, e a única restrição dessa função é que a soma de P aplicada em todos os eventos no espaço amostral vale 1 (caso discreto) e no caso continuo a integral sobre o domínio vale 1.
+Def: Dado um espaço amostral de eventos (_S_), uma distribuição de probabilidade é uma função _P_, _P:S→[0,1]_, e deve satisfazer duas restrições: a soma de P aplicada em todos os eventos no espaço amostral vale 1 (caso discreto) e no caso continuo a integral sobre o domínio vale 1 e a probabilidade da união de eventos disjuntos vale como a soma das probabilidades dos eventos disjuntos.
 
 
 ### Logaritmo:
@@ -171,7 +172,7 @@ Referencia: Essas definições e propriedades foram retiradas do excelente livro
 
 #### $\ln$ vs $\log$
 
-Quando escrevemos apenas $\log$ estamos nos referindo a logaritmo em qual base? 
+Quando escrevemos apenas $\log$ nos referimos ao logaritmo em qual base? 
 
 A verdade é que escrever apenas $\log$ é ambíguo, pode estar se referindo ao logaritmo na base 10 ou na base $e$ (numero de Euler: 2.71...), uma boa regra de dedão é: Se o que você está lendo é uma livro de engenharia é $\log$ na base 10, se é um livro de matemática ou computação é na base $e$.
 
@@ -183,7 +184,7 @@ $\log_2 1024 = ln(1024)/ln(2) = 6.9315/0.69315 = 10$
 
 #### Escalas Logarítmicas: 
 
-Quando estamos lidando com quantidades que podem ser minusculas ou gigantescas , é difícil representar essas quantidades com seu valor absoluto , por exemplo: no nosso contexto de senhas: um PinCode de 4 dígitos teremos $10^4 =$ 10 mil combinações agora uma senha com maiúsculas , minusculas , números e caracteres especiais de tamanho 9 tem $94^9 =$ 572994802228616704 (572 quadrilhão) de combinações (spoiler alert: veremos logo a frente uma senha assim que é quebrada em segundos), ou seja como o número de combinações de uma senha cresce exponencialmente, essa quantidade vai ficando gigantesca e difícil de representar. 
+Quando lidamos com quantidades que podem ser minusculas ou gigantescas , é difícil representar essas quantidades com seu valor absoluto , por exemplo: no nosso contexto de senhas: um PinCode de 4 dígitos teremos $10^4 =$ 10 mil combinações agora uma senha com maiúsculas , minusculas , números e caracteres especiais de tamanho 9 tem $94^9 =$ 572994802228616704 (572 quadrilhão) de combinações (spoiler alert: veremos logo a frente uma senha assim que é quebrada em segundos), ou seja como o número de combinações de uma senha cresce exponencialmente, essa quantidade vai ficando gigantesca e difícil de representar. 
 
 Se liga na propriedade do logaritmo da potencia: se temos uma senha com comprimento L e utilizando N símbolos , o numero de combinações vale $N^L$, porém se aplicarmos $\log_2$ dessa quantidade teremos: $\log_2(N^L) = L·\log_2(N)$ ou seja agora essa quantidade cresce linearmente conforme aumenta o comprimento, tornando mais fácil sua representação.
 
@@ -211,11 +212,11 @@ O que aprendemos com esse episódio? Precisamos falar sobre senhas!!! Nosso dia 
 
 Às vezes utilizamos a mesma senha em vários sites, ou temos aquela senha que um/a ex ainda tem.
 
-## análise de senhas:
+## Análise de Senhas:
 
 Para um trabalho, comecei a analisar um conjunto de dados com 10 milhões de senhas, em outros conjuntos de dados [muito bons](dictionnaryattack.png), porém acabei optando por [esse](https://xato.net/today-i-am-releasing-ten-million-passwords-b6278bbe7495#.6eti1aoge) por causa do Departamento Vai Dar Merda. O responsável por esse conjunto de dados, Mark Burnett, colocou apenas senhas mais antigas (de 5 a 10 anos atrás) e tomou vários cuidados pra evitar que as pessoas se prejudiquem. <br><br>
 
-Minha análise propõe estudar as seguintes características de interesse:
+A análise propõe estudar as seguintes características de interesse:
 
 * As senhas mais comuns.
 * Os tamanhos das senhas.
@@ -344,7 +345,7 @@ Logo mais veremos que as senhas geradas por essas máscaras não são muito boas
 
 A lei de Zipf foi nomeada em homenagem ao linguista americano George Kingsley Zipf, que a popularizou.
 
-A lei diz que se observamos o quão frequente uma palavra é em um livro (ou numa língua inteira), a _k_-sima palavra mais frequente vai aparecer proporcionalmente a _1/k_.
+A lei diz que se observamos o quão frequente uma palavra é em um livro (ou numa língua inteira), a _k_-esima palavra mais frequente vai aparecer proporcionalmente a _1/k_.
 
 Ou seja, a segunda palavra mais frequente vai ocorrer aproximadamente metade das vezes do que a primeira mais frequente; já a terceira palavra mais frequente, um terço da primeira mais frequente e assim por diante… <br><br>
 
@@ -387,7 +388,7 @@ Depois, o Zipf percebeu que esse padrão 80/20 era uma consequência do princíp
 
 Por fim, veja um [video ótimo do VSauce](https://youtu.be/fCn8zs912OE) sobre Zipf.
 
-### Voltando para as senhas:
+### De volta aos Resultados:
 
 Lembrando que o gráfico log-log da distribuição de Pareto é uma reta descreste, assim temos os gráficos:
 
@@ -402,27 +403,27 @@ O Princípio de Pareto (20% das causas são responsáveis por 80% dos resultados
 * 20% dos grupos correspondem a 88% das senhas.
 * 14% dos tamanhos correspondem a 88% das senhas.
 
-## Feynman: o abridor de cofres
+## Feynman: o Abridor de Cofres
 
-O Richard Fyanman foi um físico americano, seu trabalho era em mecânica quântica e física de partículas . Ele que inventou os diagramas de Faynman . Em 1965 ele ganhou o nobel de física.
+O Richard Feynman foi um físico americano, seu trabalho era em mecânica quântica e física de partículas . Ele que inventou os diagramas de Feynman . Em 1965 ele ganhou o nobel de física.
 
-Em sua auto biografia _O senhor está brincando, Sr. Faynman!_ ele conta quando trabalhava no projeto Manhattan: 
+Em sua auto biografia _O senhor está brincando, Sr. Feynman!_ ele conta quando trabalhava no projeto Manhattan: 
 
 Afim de mostrar o quão insegura era a guarda de documentos secretos de fabricação de bombas atômicas ele gostava de abrir fechaduras e cofres.
 
-Os cofres eram compostos de um disco rotatório com 100 marcações e o segredo do cofre são 3 números, ou seja existem 1 milhão de combinações, demora uns 5 segundos por tentativa assim demoraria aproximadamente 60 dias para tentar todas as combinações, porém Faynman os abria em 1.5 minutos. 
+Os cofres eram compostos de um disco rotatório com 100 marcações e o segredo do cofre são 3 números, ou seja existem 1 milhão de combinações, demora uns 5 segundos por tentativa assim demoraria aproximadamente 60 dias para tentar todas as combinações, porém Feynman os abria em 1.5 minutos. 
 
 ### Como ele conseguiu esse feito?
 
 * Ele tinha um cofre e percebeu que como os cofres são objetos mecânicos eles apresentavam uma tolerância mecânica de ± 2 , assim ele não precisava tentar as 100 combinações , mas apenas 20 ( 2 , 7 ,12 , 17 ... , 87, 92 , 97 ) , assim as 1 milhão de combinações caem para apenas 8 mil demorando 10 horas.
 
-* Muitas pessoas usavam uma data (DDMMAA) ou seja 30 , 12 e 45 combinações e considerando a tolerancia mecanica isso dá 162 combinações ou seja 18 minutos.
+* Muitas pessoas usavam uma data (DDMMAA) ou seja 30 , 12 e 45 combinações e considerando a tolerância mecânica isso dá 162 combinações ou seja 18 minutos.
 
 * Muitos usavam como senha as constantes pi e _e_ ou seja 3.14159... → 31-41-59 , 2.71828... → 27-18-28.
 
 * Muitos não mudaram a senha padrão: 25-0-25 ou 50-25-50.
 
-* Enquanto conversa com seus colegas e seu cofre estava aberto, girando o disco ele ouvia 2 clicks, descobrindo os 2 ultimos numeros , assim ele tinha que testar 20 combinações, demorando 1.5 minutos.
+* Enquanto conversa com seus colegas e seu cofre estava aberto, girando o disco ele ouvia 2 clicks, descobrindo os 2 últimos números , assim ele tinha que testar 20 combinações, demorando 1.5 minutos.
 
 Em suma, Feynman tinha a reputação de abridor de cofres, pois:
 
@@ -472,7 +473,11 @@ palavra² |         7776       |           12.92
 
 ²: na próxima seção veremos por que uma palavra (diceware) tem essa entropia.
 
-Ou seja, de acordo com a tabela, uma senha **verdadeiramente aleatória** com 8 caracteres usando “tudo” tem _6,5 \* 8 = 52_ bits de entropia.<br><br>
+Ou seja, de acordo com a tabela, uma senha **verdadeiramente aleatória** com 8 caracteres usando “tudo” tem _6,5 \* 8 = 52_ bits de entropia.
+
+Uma referencia legal para estudar teoria da informação é:
+
+> Cover, T. M., & Thomas, J. A. (2006). Elements of information theory. Chichester: Wiley-Interscience.
 
 Dito isso, não existe uma maneira melhor de começar a falar de senhas boas do que a tirinha do xkcd:
 

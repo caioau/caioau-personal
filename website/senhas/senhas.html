@@ -21,12 +21,13 @@ vida longa e prospera
 <li>23jul2017: 3a. revisão: adicionando logaritmo ao glossário : <a href="https://github.com/caioau/caioau-personal/commit/83929d54f45bffedac26e233dcd02dc33cdfbef4?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47">diff</a> : agradecimento a revisão da Vulcanica</li>
 <li>29aug2017: adicionado 2 ataques a pincodes e a historia do robô feito para abrir cofres: <a href="https://github.com/caioau/caioau-personal/commit/20865027a29befee7264d3cf7915ae4f4a35c458#diff-9d2672cbaf33804746ef196e78b86a47">diff</a> : inspiração de lohe.</li>
 <li>21dez2017: boas praticas segurança, oraculo de teclado : <a href="https://github.com/caioau/caioau-personal/commit/83a7f1035b46a121a018711b7074f3f75fab64a3?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47">diff</a></li>
+<li>22dez2017: correções: agradecimentos estatísticos ao bola: <a href="">diff</a></li>
 </ul>
 <h2 id="in-memoriam">In Memoriam:</h2>
 <p>Rodrigo Tambellini (Harry) grande amigo, entramos juntos na faculdade e vivemos juntos muitas coisas. Sdds Harry</p>
 <h2 id="dedicatória">Dedicatória:</h2>
 <p>Não sou de fazer dedicatórias, mas como também não sou de escrever textos, esse texto é dedicado aos meus amigos que (coelhinhos voadores) sempre (coelhinhos voadores) me incentivaram em compartilhar essas paradas.</p>
-<h2 id="tldr-textão-nem-li">TL;DR (textão, nem li)</h2>
+<h2 id="tldr-textão-nem-li-nem-lerei">TL;DR (textão, nem li nem lerei)</h2>
 <ul>
 <li>Boas praticas de segurança.</li>
 <li>As senhas analisadas são bastante previsíveis (pois não temos uma boa intuição de aleatoriedade).</li>
@@ -44,7 +45,7 @@ vida longa e prospera
 </ul>
 <h2 id="boas-praticas-de-segurança">Boas Praticas de Segurança:</h2>
 <p>Neste texto vou falar vários aspectos de senhas porém como isso se reflete em mudança de hábitos é imprescindível dar um passo para trás e se esforçar em manter nossos dispositivos seguros, então vou destacar algumas dicas de como fazelo:</p>
-<h3 id="computador">Computador:</h3>
+<h3 id="boas-praticas-de-segurança-computador">Boas Praticas de Segurança: Computador:</h3>
 <ul>
 <li>mantenha seu sistema e programas atualizados.</li>
 <li>não use flash (caso você precise utilize extensões como flash control que só habilita o flash nesses sites).</li>
@@ -58,7 +59,7 @@ vida longa e prospera
 <ul>
 <li>use uma senha forte.
 <ul>
-<li>dica: como passar sua senha forte: visite <a href="https://www.qrstuff.com/">qrstuff</a> selecione a opção Wifi Login e gere seu qr code e use o app <a href="https://f-droid.org/packages/com.google.zxing.client.android/">Barcode Scanner</a> para escanear o qr e salvar a rede no android.</li>
+<li>dica: como passar sua senha forte: visite <a href="https://www.qrstuff.com/">qrstuff.com</a> selecione a opção Wifi Login e gere seu qr code e use o app <a href="https://f-droid.org/packages/com.google.zxing.client.android/">Barcode Scanner</a> para escanear o qr e salvar a rede no android.</li>
 </ul></li>
 <li>troque a senha padrão da administração e desabilite o acesso remoto.</li>
 <li>desabilite o UPnP e o WPS.</li>
@@ -88,7 +89,7 @@ vida longa e prospera
 <li>Use o app chamado Send Reduced que além de tirar metadados de fotos, reduz seu tamanho, <a href="https://f-droid.org/repository/browse/?fdfilter=size&amp;fdid=mobi.omegacentauri.SendReduced">fdroid</a></li>
 </ul></li>
 </ul>
-<h3 id="leituras-complementares">Leituras complementares:</h3>
+<h3 id="leituras-complementares">Leituras Complementares:</h3>
 <p>Além dessas dicas de segurança vou indicar algumas leituras complementares:</p>
 <ul>
 <li><a href="https://cartilha.cert.br/">Cartilhas de segurança para internet - CERT.br</a>.</li>
@@ -98,7 +99,7 @@ vida longa e prospera
 </ul>
 <h2 id="glossário">Glossário:</h2>
 <p>Vou usar esses termos durante o texto, então melhor já tirar isso da frente.</p>
-<h3 id="hash">hash:</h3>
+<h3 id="hash">Hash:</h3>
 <p>Def: uma função de hash é uma função que recebe em sua entrada mensagens de qualquer tamanho e as “resume” numa saída de tamanho fixo (normalmente a saída é representada em hexadecimal).</p>
 <p>Boas funções de hash têm algumas propriedades, dentre elas vou destacar:</p>
 <ul>
@@ -113,7 +114,7 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>Repare no efeito avalanche: as duas mensagens são muito parecidas, porém seus hashes são muito diferentes. <br><br></p>
 <p>(<strong>NUNCA</strong> use MD5 ou SHA1 ou somente o hash (sem salt) para armazenar senhas. Recomendo usar <a href="https://github.com/p-h-c/phc-winner-argon2">argon2</a> -- ganhadora da Password Hashing Competition)</p>
 <h3 id="distribuição-de-probabilidade">Distribuição de Probabilidade:</h3>
-<p>Def: Dado um espaço amostral de eventos (<em>S</em>), uma distribuição de probabilidade é uma função <em>P</em>, <em>P:S→[0,1]</em>, e a única restrição dessa função é que a soma de P aplicada em todos os eventos no espaço amostral vale 1 (caso discreto) e no caso continuo a integral sobre o domínio vale 1.</p>
+<p>Def: Dado um espaço amostral de eventos (<em>S</em>), uma distribuição de probabilidade é uma função <em>P</em>, <em>P:S→[0,1]</em>, e deve satisfazer duas restrições: a soma de P aplicada em todos os eventos no espaço amostral vale 1 (caso discreto) e no caso continuo a integral sobre o domínio vale 1 e a probabilidade da união de eventos disjuntos vale como a soma das probabilidades dos eventos disjuntos.</p>
 <h3 id="logaritmo">Logaritmo:</h3>
 <p>Imagine as potencias de 2: 2²=4 , 2³=8 etc ... sabemos por exemplo que 1024 é uma potencia de 2, mas é 2 elevado a quanto que temos 1024?</p>
 <p>ou seja, queremos encontrar o valor de x na equação: <span class="math inline">2<sup><em>x</em></sup> = 1024</span> , veremos que nesse caso x vale 10, mas como chegamos nessa resposta?</p>
@@ -146,13 +147,13 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>IEZZI, Gelson; DOLCE, Osvaldo; MURAKAMI, Carlos. Fundamentos de Matemática Elementar, Volume 2, LOGARITMOS . São Paulo: Editora Atual, 9 a Edição, 2004</p>
 </blockquote>
 <h4 id="ln-vs-log"><span class="math inline">ln </span> vs <span class="math inline">log </span></h4>
-<p>Quando escrevemos apenas <span class="math inline">log </span> estamos nos referindo a logaritmo em qual base?</p>
+<p>Quando escrevemos apenas <span class="math inline">log </span> nos referimos ao logaritmo em qual base?</p>
 <p>A verdade é que escrever apenas <span class="math inline">log </span> é ambíguo, pode estar se referindo ao logaritmo na base 10 ou na base <span class="math inline"><em>e</em></span> (numero de Euler: 2.71...), uma boa regra de dedão é: Se o que você está lendo é uma livro de engenharia é <span class="math inline">log </span> na base 10, se é um livro de matemática ou computação é na base <span class="math inline"><em>e</em></span>.</p>
 <p>Porém a notação <span class="math inline">ln </span> é sempre <span class="math inline">log </span> na base <span class="math inline"><em>e</em></span></p>
 <p>Voltando ao exemplo do começo: queremos encontrar <span class="math inline">log<sub>2</sub>1024</span> , algumas calculadoras tem a operação de <span class="math inline">log </span> na base 2 (pois é muito utilizado na computação), porém podemos usar a propriedade de mudança de base e teremos:</p>
 <p><span class="math inline">log<sub>2</sub>1024 = <em>l</em><em>n</em>(1024)/<em>l</em><em>n</em>(2)=6.9315/0.69315 = 10</span></p>
 <h4 id="escalas-logarítmicas">Escalas Logarítmicas:</h4>
-<p>Quando estamos lidando com quantidades que podem ser minusculas ou gigantescas , é difícil representar essas quantidades com seu valor absoluto , por exemplo: no nosso contexto de senhas: um PinCode de 4 dígitos teremos <span class="math inline">10<sup>4</sup>=</span> 10 mil combinações agora uma senha com maiúsculas , minusculas , números e caracteres especiais de tamanho 9 tem <span class="math inline">94<sup>9</sup>=</span> 572994802228616704 (572 quadrilhão) de combinações (spoiler alert: veremos logo a frente uma senha assim que é quebrada em segundos), ou seja como o número de combinações de uma senha cresce exponencialmente, essa quantidade vai ficando gigantesca e difícil de representar.</p>
+<p>Quando lidamos com quantidades que podem ser minusculas ou gigantescas , é difícil representar essas quantidades com seu valor absoluto , por exemplo: no nosso contexto de senhas: um PinCode de 4 dígitos teremos <span class="math inline">10<sup>4</sup>=</span> 10 mil combinações agora uma senha com maiúsculas , minusculas , números e caracteres especiais de tamanho 9 tem <span class="math inline">94<sup>9</sup>=</span> 572994802228616704 (572 quadrilhão) de combinações (spoiler alert: veremos logo a frente uma senha assim que é quebrada em segundos), ou seja como o número de combinações de uma senha cresce exponencialmente, essa quantidade vai ficando gigantesca e difícil de representar.</p>
 <p>Se liga na propriedade do logaritmo da potencia: se temos uma senha com comprimento L e utilizando N símbolos , o numero de combinações vale <span class="math inline"><em>N</em><sup><em>L</em></sup></span>, porém se aplicarmos <span class="math inline">log<sub>2</sub></span> dessa quantidade teremos: <span class="math inline">log<sub>2</sub>(<em>N</em><sup><em>L</em></sup>)=<em>L</em> · log<sub>2</sub>(<em>N</em>)</span> ou seja agora essa quantidade cresce linearmente conforme aumenta o comprimento, tornando mais fácil sua representação.</p>
 <p>Ou seja quando queremos medir a ordem de grandeza ou que a proporção é mais importante que o valor absoluto é conveniente utilizar uma escala logarítmica, alguns exemplos delas são: Richter (terremotos) , Decibel (som), oitavas (musica) e pH (química).</p>
 <p>Uma ultima reflexão: como vistos na escala Decibel, nossos sentidos percebem as quantidades físicas de forma logarítmica (Lei de Weber-Fechner), então por que não utilizar mais o logaritmo no nosso cotidiano? Por que não ao invés de contar de maneira linear: 1,2,3,4,5,6 ... contarmos de maneira logarítmica: 1,3,9,27,81 ... nesse excelente <a href="https://youtu.be/Pxb5lSPLy9c">video</a> VSauce explora essa reflexão.</p>
@@ -166,9 +167,9 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <p>Um dos afetados foi o Mark Zukerberg (CEO do Facebook) que teve sua <a href="https://www.theregister.co.uk/2016/06/06/facebook_zuckerberg_social_media_accnt_pwnage/">senha vazada</a>. Sua senha era “dadada” e ele usava essa mesma senha no LinkedIn, Twitter e Pinterest.</p>
 <p>O que aprendemos com esse episódio? Precisamos falar sobre senhas!!! Nosso dia a dia está rodeado de senhas, porém nem sempre essas elas são seguras.</p>
 <p>Às vezes utilizamos a mesma senha em vários sites, ou temos aquela senha que um/a ex ainda tem.</p>
-<h2 id="análise-de-senhas">análise de senhas:</h2>
+<h2 id="análise-de-senhas">Análise de Senhas:</h2>
 <p>Para um trabalho, comecei a analisar um conjunto de dados com 10 milhões de senhas, em outros conjuntos de dados <a href="dictionnaryattack.png">muito bons</a>, porém acabei optando por <a href="https://xato.net/today-i-am-releasing-ten-million-passwords-b6278bbe7495#.6eti1aoge">esse</a> por causa do Departamento Vai Dar Merda. O responsável por esse conjunto de dados, Mark Burnett, colocou apenas senhas mais antigas (de 5 a 10 anos atrás) e tomou vários cuidados pra evitar que as pessoas se prejudiquem. <br><br></p>
-<p>Minha análise propõe estudar as seguintes características de interesse:</p>
+<p>A análise propõe estudar as seguintes características de interesse:</p>
 <ul>
 <li>As senhas mais comuns.</li>
 <li>Os tamanhos das senhas.</li>
@@ -538,7 +539,7 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <h2 id="lei-de-zipf">Lei de Zipf:</h2>
 <p><strong>Aviso: a secção abaixo VAI EXPLODIR SUA MENTE !!! Caso sua mente não exploda: VOCÊ NÃO TEM EMOÇÃO (continue com cuidado).</strong><br><br></p>
 <p>A lei de Zipf foi nomeada em homenagem ao linguista americano George Kingsley Zipf, que a popularizou.</p>
-<p>A lei diz que se observamos o quão frequente uma palavra é em um livro (ou numa língua inteira), a <em>k</em>-sima palavra mais frequente vai aparecer proporcionalmente a <em>1/k</em>.</p>
+<p>A lei diz que se observamos o quão frequente uma palavra é em um livro (ou numa língua inteira), a <em>k</em>-esima palavra mais frequente vai aparecer proporcionalmente a <em>1/k</em>.</p>
 <p>Ou seja, a segunda palavra mais frequente vai ocorrer aproximadamente metade das vezes do que a primeira mais frequente; já a terceira palavra mais frequente, um terço da primeira mais frequente e assim por diante… <br><br></p>
 <p>Apesar do Zipf ter começado suas observações na língua inglesa, isso acontece em <a href="http://colala.bcs.rochester.edu/papers/piantadosi2014zipfs.pdf">todas as línguas</a>, inclusive em <a href="http://arxiv.org/pdf/0808.2904.pdf">línguas extintas</a> que ainda nem conseguimos traduzir. <br><br></p>
 <p>É surpreendente como coisa tão humana e criativa como a linguagem pode ser expressa de uma forma tão previsível. <br><br></p>
@@ -573,7 +574,7 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 </ul>
 <p>Depois, o Zipf percebeu que esse padrão 80/20 era uma consequência do princípio do menor esforço. Os falantes de uma língua naturalmente preferem usar menos palavras possível para se expressar, resultando em menos trabalho. <br><br></p>
 <p>Por fim, veja um <a href="https://youtu.be/fCn8zs912OE">video ótimo do VSauce</a> sobre Zipf.</p>
-<h3 id="voltando-para-as-senhas">Voltando para as senhas:</h3>
+<h3 id="de-volta-aos-resultados">De volta aos Resultados:</h3>
 <p>Lembrando que o gráfico log-log da distribuição de Pareto é uma reta descreste, assim temos os gráficos:</p>
 <p><img src="mascaras-loglog.png" height="400"> <br><br></p>
 <p><img src="freq-loglog2.png" height="400"> <br><br></p>
@@ -583,18 +584,18 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 <li>20% dos grupos correspondem a 88% das senhas.</li>
 <li>14% dos tamanhos correspondem a 88% das senhas.</li>
 </ul>
-<h2 id="feynman-o-abridor-de-cofres">Feynman: o abridor de cofres</h2>
-<p>O Richard Fyanman foi um físico americano, seu trabalho era em mecânica quântica e física de partículas . Ele que inventou os diagramas de Faynman . Em 1965 ele ganhou o nobel de física.</p>
-<p>Em sua auto biografia <em>O senhor está brincando, Sr. Faynman!</em> ele conta quando trabalhava no projeto Manhattan:</p>
+<h2 id="feynman-o-abridor-de-cofres">Feynman: o Abridor de Cofres</h2>
+<p>O Richard Feynman foi um físico americano, seu trabalho era em mecânica quântica e física de partículas . Ele que inventou os diagramas de Feynman . Em 1965 ele ganhou o nobel de física.</p>
+<p>Em sua auto biografia <em>O senhor está brincando, Sr. Feynman!</em> ele conta quando trabalhava no projeto Manhattan:</p>
 <p>Afim de mostrar o quão insegura era a guarda de documentos secretos de fabricação de bombas atômicas ele gostava de abrir fechaduras e cofres.</p>
-<p>Os cofres eram compostos de um disco rotatório com 100 marcações e o segredo do cofre são 3 números, ou seja existem 1 milhão de combinações, demora uns 5 segundos por tentativa assim demoraria aproximadamente 60 dias para tentar todas as combinações, porém Faynman os abria em 1.5 minutos.</p>
+<p>Os cofres eram compostos de um disco rotatório com 100 marcações e o segredo do cofre são 3 números, ou seja existem 1 milhão de combinações, demora uns 5 segundos por tentativa assim demoraria aproximadamente 60 dias para tentar todas as combinações, porém Feynman os abria em 1.5 minutos.</p>
 <h3 id="como-ele-conseguiu-esse-feito">Como ele conseguiu esse feito?</h3>
 <ul>
 <li><p>Ele tinha um cofre e percebeu que como os cofres são objetos mecânicos eles apresentavam uma tolerância mecânica de ± 2 , assim ele não precisava tentar as 100 combinações , mas apenas 20 ( 2 , 7 ,12 , 17 ... , 87, 92 , 97 ) , assim as 1 milhão de combinações caem para apenas 8 mil demorando 10 horas.</p></li>
-<li><p>Muitas pessoas usavam uma data (DDMMAA) ou seja 30 , 12 e 45 combinações e considerando a tolerancia mecanica isso dá 162 combinações ou seja 18 minutos.</p></li>
+<li><p>Muitas pessoas usavam uma data (DDMMAA) ou seja 30 , 12 e 45 combinações e considerando a tolerância mecânica isso dá 162 combinações ou seja 18 minutos.</p></li>
 <li><p>Muitos usavam como senha as constantes pi e <em>e</em> ou seja 3.14159... → 31-41-59 , 2.71828... → 27-18-28.</p></li>
 <li><p>Muitos não mudaram a senha padrão: 25-0-25 ou 50-25-50.</p></li>
-<li><p>Enquanto conversa com seus colegas e seu cofre estava aberto, girando o disco ele ouvia 2 clicks, descobrindo os 2 ultimos numeros , assim ele tinha que testar 20 combinações, demorando 1.5 minutos.</p></li>
+<li><p>Enquanto conversa com seus colegas e seu cofre estava aberto, girando o disco ele ouvia 2 clicks, descobrindo os 2 últimos números , assim ele tinha que testar 20 combinações, demorando 1.5 minutos.</p></li>
 </ul>
 <p>Em suma, Feynman tinha a reputação de abridor de cofres, pois:</p>
 <ul>
@@ -655,7 +656,11 @@ md5(&#39;senha1&#39;) = 92f20dafc5e5ac1c66820903c492cc04</code></pre>
 </table>
 <p>¹: tudo = maiúsculas (26) + minúsculas (26) + números (10) + caracteres especiais (32) = 94 símbolos.</p>
 <p>²: na próxima seção veremos por que uma palavra (diceware) tem essa entropia.</p>
-<p>Ou seja, de acordo com a tabela, uma senha <strong>verdadeiramente aleatória</strong> com 8 caracteres usando “tudo” tem <em>6,5 * 8 = 52</em> bits de entropia.<br><br></p>
+<p>Ou seja, de acordo com a tabela, uma senha <strong>verdadeiramente aleatória</strong> com 8 caracteres usando “tudo” tem <em>6,5 * 8 = 52</em> bits de entropia.</p>
+<p>Uma referencia legal para estudar teoria da informação é:</p>
+<blockquote>
+<p>Cover, T. M., &amp; Thomas, J. A. (2006). Elements of information theory. Chichester: Wiley-Interscience.</p>
+</blockquote>
 <p>Dito isso, não existe uma maneira melhor de começar a falar de senhas boas do que a tirinha do xkcd:</p>
 <p><img src="xkcdptbr.png" height="550"></p>
 <p>creditos : <a href="https://www.xkcd.com/936/">xkcd</a>, tradução: <a href="https://antivigilancia.org/pt/2015/06/abre-te-sesamo-as-senhas-da-nossa-vida-digital-2/">Oficina AntiVigilancia</a> <br><br></p>
