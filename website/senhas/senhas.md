@@ -26,7 +26,7 @@ Comecei a pesquisar e fazer a análise de senhas para um trabalho então resolvi
 * 23jul2017: 3a. revisão: adicionando logaritmo ao glossário : [diff](https://github.com/caioau/caioau-personal/commit/83929d54f45bffedac26e233dcd02dc33cdfbef4?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47) : agradecimento a revisão da Vulcanica
 * 29aug2017: adicionado 2 ataques a pincodes e a historia do robô feito para abrir cofres: [diff](https://github.com/caioau/caioau-personal/commit/20865027a29befee7264d3cf7915ae4f4a35c458#diff-9d2672cbaf33804746ef196e78b86a47) : inspiração de lohe.
 * 21dez2017: boas praticas segurança, oraculo de teclado : [diff](https://github.com/caioau/caioau-personal/commit/83a7f1035b46a121a018711b7074f3f75fab64a3?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47)
-* 22dez2017: correções: agradecimentos estatísticos ao bola: [diff]()
+* 22dez2017: correções: agradecimentos estatísticos ao bola: [diff](https://github.com/caioau/caioau-personal/commit/60d5b14b13ea4010d65f5b44cd9ceadb68106a19?short_path=9d2672c#diff-9d2672cbaf33804746ef196e78b86a47)
 
 ## In Memoriam:
 
