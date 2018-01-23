@@ -14,18 +14,22 @@ vida longa e prospera
 
 # Recomendações:
 
-Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 21Dez2017 : [diff](https://github.com/caioau/caioau-personal/commit/84f63aa5a9baacfc6c4d0a161fcfb49627f5cda4#diff-8e64390df63bd44f42a6e92ef6427098))
+Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 19Jan2018 : [diff]())
 
 ## Torrent:
 
 * [TorrentFreak](https://torrentfreak.com/) : muito bom para acompanhar noticias sobre torrent, veja [aqui](https://torrentfreak.com/top-10-most-popular-torrent-sites-of-2017-170107/) os sites mais populares de torrent de 2017 
 * [WebTorrent](https://webtorrent.io/) : programa que permite "tocar" torrents enquanto baixa.
 * [showRSS](https://showrss.info/): site que você escolhe as séries que quer acompanhar, ele gera um feed RSS com o torrent.
+* [ZeroNet](https://zeronet.io/) : um projeto de "web" descentralizada.
+    + [ZeroPlay](http://127.0.0.1:43110/1PLAYgDQboKojowD3kwdb3CtWmWaokXvfp/) : filmes.
+    + [TV Episodes](http://127.0.0.1:43110/tvepisodes.bit/): series. 
 
 ## Sites:
 
 * [tem boi na linha?](https://temboinalinha.org/) : Guia prático de combate à vigilância na internet
 * [ssd-eff](https://ssd.eff.org/) : Autodefesa contra Vigilância - EFF
+* [Your guide to Digital Defenders vs. Data Intruders – Privacy for kids! - EDRi](https://edri.org/files/privacy4kids_booklet_web.pdf)
 * [ipleak](http://ipleak.net/): veja seu IP e se teste se existe um vazamento de IP.
 * [Rumkin](http://rumkin.com/tools/password/passchk.php) e [zxcvbn](https://github.com/dropbox/zxcvbn) teste a qualidade de suas senhas.
 * [ToS;DR](https://tosdr.org/): Terms of Service; Didn't Read. Mostra um resumo dos termos de serviços de vários sites.
@@ -43,6 +47,7 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 21Dez2017 : [dif
 * Aulas filmadas: [UnivespTV](https://www.youtube.com/user/univesptv/playlists), [MITOpenCourseware](https://ocw.mit.edu), [Harvard Statistics 110: Probability](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo)
 * [Spurious-Correlations](http://www.tylervigen.com/spurious-correlations): Correlações espúrias: vale a máxima: Correlação não implica em causalidade.
 * [NothingPrivate](http://www.nothingprivate.ml/): A aba privativa não é tão anonima assim: Parece que o jogo virou, não é mesmo?
+    + [IKnowWhatYouDownload.com](https://iknowwhatyoudownload.com/en/peer/): torrent não é anonimo: este site mostra os torrents baixados pelo seu ip.
 * [TLDR pages](http://tldr.sh/): man pages simplificadas e com exemplos práticos. 
 * [security planner](https://securityplanner.org/): dicas identificar necessidades de segurança digital.
 * [De-google-ify Internet](https://degooglisons-internet.org/alternative): lista com alternativas aos serviços google.
@@ -88,9 +93,35 @@ doesn't want anybody to know. Privacy is the power to selectively
 reveal oneself to the world.  
 ```
 
+* [Hacker Manifesto](http://phrack.org/issues/7/3.html)
+
+```
+[...]
+We explore... and you call us criminals.  We seek
+after knowledge... and you call us criminals.  We exist without skin color,
+without nationality, without religious bias... and you call us criminals.
+You build atomic bombs, you wage wars, you murder, cheat, and lie to us
+and try to make us believe it's for our own good, yet we're the criminals.
+
+        Yes, I am a criminal.  My crime is that of curiosity.  My crime is
+that of judging people by what they say and think, not what they look like.
+My crime is that of outsmarting you, something that you will never forgive me
+for.
+
+        I am a hacker, and this is my manifesto.  You may stop this individual,
+but you can't stop us all... after all, we're all alike.
+```
+
+* [Copyfight: Pirataria e Cultura Livre](http://skarnio.tv/wp-content/uploads/Copyfight-Pirataria-e-Cultura-Livre.pdf)
+* [Introduction to Methods of Applied Mathematics](applied_math.pdf)
+* [Get your loved ones off Facebook.](http://www.salimvirani.com/facebook/)
+* [Why We Must Fight for the Right to Repair Our Electronics](https://spectrum.ieee.org/green-tech/conservation/why-we-must-fight-for-the-right-to-repair-our-electronics)
+* [Quatro maneiras de usar a vitória de Rafaela Silva para confirmar o que você já pensa](http://www.bbc.com/portuguese/brasil-37022870)
+
 ## Videos:
 
 * [Maciej Ceglowski – The Internet With a Human Face](https://vimeo.com/102717446) : Palestra excelente sobre o estado da internet.
+    + [Haunted by Data](https://youtu.be/GAXLHM-1Psk): Excelente paralelo entre a industria de dados e perturbada energia nuclear.
 * [We're On the Right Track](https://youtu.be/ZMBJ87ZTuJY): Mostra como o mundo tem melhorado , ele cita um TED [Steven Pinker: The surprising decline in violence](https://www.ted.com/talks/steven_pinker_on_the_myth_of_violence?language=en) 
 e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty)
 * [quidsup-LinuxAV](https://youtu.be/3HY62oA1R6E) : Ele mostra alguns passos para manter seu PC com GNU/Linux seguro sem precisar de um antivírus.
@@ -113,8 +144,32 @@ e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/ha
 * [Numberphile-Fermat](https://youtu.be/qiNcEguuFSA): "Um problema digno a ser resolvido, prova seu valor atacando de volta", video onde Simon Singh, autor do Ultimo Teorema de Fermat, conta resumidamente a historia desse fascinante problema da matemática. 
 * [Nerdologia#143-Eleicoes](https://youtu.be/JLr2kX_ldzE): Eleições democráticas são impossíveis! veja também os videos da PBS Infinite Series: [Voting Systems and the Condorcet Paradox](https://youtu.be/HoAnYQZrNrQ) e do CGPGrey: [Quick and Easy Voting for Normal People](https://youtu.be/orybDrUj4vA)
 * [Don't Talk to the Police](https://www.youtube.com/watch?v=d-7o9xYp7eE)
+* [Why no one cares about privacy and my advice to online privacy advocates how to persuade more people
+](https://youtu.be/0cKEyag7jBM)
+* [Juice Rap News - Big Brother is WWWatching You](https://youtu.be/o66FUc61MvU)
+* [Dust](https://www.youtube.com/channel/UC7sDT8jZ76VLV1u__krUutA/videos) : canal de curta metragem scifi.
+* [Can a robot pass a university entrance exam? | Noriko Arai](https://youtu.be/BXcFEhl7ynM): TED que conta a historia da inteligencia artificial feita com o ambiciosa meta de passar no vestibular da Universidade de Tóquio (no qual apenas 5% dos alunos são aprovados), SPOILER: a critica é como a educação humana está ruim.
 
 ## Softwares:
+
+### Coisas para terminal:
+
+1. [fish shell](https://fishshell.com/) (friendly interactive shell): shell que curto: com autossugestões perfeitas.
+2. [powerline](https://powerline.readthedocs.io/en/latest/): status line excelente.
+
+* `telnet towel.blinkenlights.nl` : assista star wars IV (A New Hope).
+* ` ssh sshtron.zachlatta.com` : jogue tron.
+* `ssh neo@chat.shazow.net` : chatroom por ssh ([Why aren’t we using SSH for everything?](https://medium.com/@shazow/ssh-how-does-it-even-9e43586e4ffc))
+* `curl ifconfig.co/json` : Qual meu ip? 
+    + `curl --socks5-hostname  127.0.0.1:9050 ifconfig.co/json` : utilizando o tor (caso não funcione troque 9050 por 9150).
+
+### Navegadores: 
+
+1. [Tor Browser](https://www.torproject.org/): Navegador que protege suas comunicações (erroneamente conhecido como deepweb)
+    1. Caso o site esteja bloqueado para você: vá em [GetTor](https://gettor.torproject.org/) e peça por email, twitter ou xmpp
+    2. Agora se tor não esteja conectando: utilize as [Bridges](https://bridges.torproject.org/)
+2. [Brave](https://brave.com) : Excelente Navegador: rápido, bloqueia por padrão propagandas, cookies e rastreadores. (também tem pra smartphone)
+3. [qutebrowser](https://www.qutebrowser.org/) : Navegador leve feito para ser usado com teclado utilizando comandos vim.
 
 ### Distros GNU/Linux:
 
@@ -127,10 +182,12 @@ As distros GNU/Linux que recomendo são:
     1. texto: [sudo dnf install fedora](http://danielammorais.com/2016/06/19/sudo-dnf-install-fedora/) : O mínimo que você deve saber sobre o Fedora.
     2. [freed-ora](http://www.fsfla.org/ikiwiki/selibre/linux-libre/freed-ora.en.html) (GNU Linux-libre)
 5. Estou muito ansioso com o [Subgraph OS](https://subgraph.com/) , está em Alpha.
+6. [Solus](https://solus-project.com/)
 
 ### Password Manager:
 
-1. keepass/keepassx : minha recomendação default de password manager, funciona bem, tem auto-type e tem uma implementação pra android e na [fdroid](https://f-droid.org/repository/browse/?fdfilter=keepass&fdid=com.android.keepass)
+1. keepass/keepassx : minha recomendação default de password manager, funciona bem, tem auto-type e tem uma implementação pra android e na [fdroid](https://f-droid.org/repository/browse/?fdfilter=keepass&fdid=com.android.keepass) 
+    1. [KeePassXC](https://keepassxc.org/): fork mais ativo do keepassx.
 2. [supergenpass](http://chriszarate.github.io/supergenpass/)
 3. [pass](https://www.passwordstore.org/) the standard unix password manager
 4. [PasswordCard](http://www.passwordcard.org/en)

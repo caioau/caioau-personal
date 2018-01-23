@@ -18,7 +18,7 @@ vida longa e prospera
 
 ### Olar! eu sou o Caio, qual é a boa?
 
-### Recomendações: veja [aqui](recomendacoes.html) algumas coisas que gosto e recomendo (ultimo update = 21dez2017).
+### Recomendações: veja [aqui](recomendacoes.html) algumas coisas que gosto e recomendo (ultimo update = 23Jan2018).
 
 ### Senhas: Escrevi um texto sobre: [O elo mais fraco da nossa segurança: S&nh5s](senhas/senhas.html)
 
