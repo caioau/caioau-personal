@@ -14,7 +14,7 @@ vida longa e prospera
 
 # Recomendações:
 
-Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 23Jan2018 : [diff](https://github.com/caioau/caioau-personal/commit/ea9073ce91efa368c46660bdd0c3550629d4a73a?short_path=8e64390#diff-8e64390df63bd44f42a6e92ef6427098))
+Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 8Fev2018 : [diff]())
 
 ## Torrent:
 
@@ -51,7 +51,11 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 23Jan2018 : [dif
 * [TLDR pages](http://tldr.sh/): man pages simplificadas e com exemplos práticos. 
 * [security planner](https://securityplanner.org/): dicas identificar necessidades de segurança digital.
 * [De-google-ify Internet](https://degooglisons-internet.org/alternative): lista com alternativas aos serviços google.
-
+    + [cryptpad.fr](https://cryptpad.fr/): excelente alternativa google drive.
+* [CV Dazzle: Camouflage from Face Detection](https://cvdazzle.com/)
+    + [MakeUp Tutorial HOW TO HIDE FROM CAMERAS -- Jillian Mayer](https://youtu.be/kGGnnp43uNM)
+    + [Invisível na foto: como funciona o lenço anti-paparazzi ](https://www.nexojornal.com.br/expresso/2016/06/30/Invis%C3%ADvel-na-foto-como-funciona-o-len%C3%A7o-anti-paparazzi)
+    
 ## Textos:
 * [When Women Stopped Coding](http://www.npr.org/sections/money/2014/10/21/357629765/when-women-stopped-coding)
 * [Não há democracia sem garantia de anonimato na internet](https://antivigilancia.org/pt/2016/09/nao-ha-democracia-sem-anonimato/)
@@ -103,12 +107,12 @@ without nationality, without religious bias... and you call us criminals.
 You build atomic bombs, you wage wars, you murder, cheat, and lie to us
 and try to make us believe it's for our own good, yet we're the criminals.
 
-        Yes, I am a criminal.  My crime is that of curiosity.  My crime is
+Yes, I am a criminal.  My crime is that of curiosity.  My crime is
 that of judging people by what they say and think, not what they look like.
 My crime is that of outsmarting you, something that you will never forgive me
 for.
 
-        I am a hacker, and this is my manifesto.  You may stop this individual,
+I am a hacker, and this is my manifesto.  You may stop this individual,
 but you can't stop us all... after all, we're all alike.
 ```
 
@@ -117,6 +121,7 @@ but you can't stop us all... after all, we're all alike.
 * [Get your loved ones off Facebook.](http://www.salimvirani.com/facebook/)
 * [Why We Must Fight for the Right to Repair Our Electronics](https://spectrum.ieee.org/green-tech/conservation/why-we-must-fight-for-the-right-to-repair-our-electronics)
 * [Quatro maneiras de usar a vitória de Rafaela Silva para confirmar o que você já pensa](http://www.bbc.com/portuguese/brasil-37022870)
+* [Mãe é quem clica: estamos parindo crias do chupadados](https://chupadados.codingrights.org/vc-e-oq-vc-clica/): Texto excelente da [Coding Rights](codingrights.org) explicando como somos rastreados na internet, como são construídos nossos perfis de compra e como se defender.
 
 ## Videos:
 
@@ -149,6 +154,11 @@ e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/ha
 * [Juice Rap News - Big Brother is WWWatching You](https://youtu.be/o66FUc61MvU)
 * [Dust](https://www.youtube.com/channel/UC7sDT8jZ76VLV1u__krUutA/videos) : canal de curta metragem scifi.
 * [Can a robot pass a university entrance exam? | Noriko Arai](https://youtu.be/BXcFEhl7ynM): TED que conta a historia da inteligencia artificial feita com o ambiciosa meta de passar no vestibular da Universidade de Tóquio (no qual apenas 5% dos alunos são aprovados), SPOILER: a critica é como a educação humana está ruim.
+* [Aldous Huxley on Technodictators](https://youtu.be/oIgjujAI6eE): Excelente entrevista com Aldous Huxley (autor do admirável mundo novo).
+* [Oligopólio dos provedores de internet brasileiros](https://youtu.be/sKFEN2fhSHw): No brasil apenas 3 provedores de acesso à internet possuem 86,7% do mercado. Nesse vídeo é explicado como é desenhado a cadeia de acesso a internet. E como resolver esse problema do oligopólio. 
+    + [resposta](https://youtu.be/GGRt6mmCjqE): Será que a regulação da internet que causa o problema do oligopólio no brasil?  
+* [The Bayesian Trap -- Veritasium](https://youtu.be/R13BD8qKeTg)
+* [A visual guide to Bayesian thinking -- Julia Galef](https://youtu.be/BrK7X_XlGB8)
 
 ## Softwares:
 
@@ -156,6 +166,8 @@ e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/ha
 
 1. [fish shell](https://fishshell.com/) (friendly interactive shell): shell que curto: com autossugestões perfeitas.
 2. [powerline](https://powerline.readthedocs.io/en/latest/): status line excelente.
+3. [cheat.sh](http://cheat.sh/) : consulte opções de comandos.
+4. [explainshell.com](https://explainshell.com/): referencia legal para aprender a usar shell.
 
 * `telnet towel.blinkenlights.nl` : assista star wars IV (A New Hope).
 * ` ssh sshtron.zachlatta.com` : jogue tron.
@@ -168,7 +180,7 @@ e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/ha
 1. [Tor Browser](https://www.torproject.org/): Navegador que protege suas comunicações (erroneamente conhecido como deepweb)
     1. Caso o site esteja bloqueado para você: vá em [GetTor](https://gettor.torproject.org/) e peça por email, twitter ou xmpp
     2. Agora se tor não esteja conectando: utilize as [Bridges](https://bridges.torproject.org/)
-2. [Brave](https://brave.com) : Excelente Navegador: rápido, bloqueia por padrão propagandas, cookies e rastreadores. (também tem pra smartphone)
+2. [Brave](https://brave.com) : Excelente Navegador: rápido, bloqueia por padrão: propagandas, cookies e rastreadores. (também tem pra smartphone)
 3. [qutebrowser](https://www.qutebrowser.org/) : Navegador leve feito para ser usado com teclado utilizando comandos vim.
 
 ### Distros GNU/Linux:
