@@ -36,22 +36,25 @@ gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "8439 38DF 228D 22F7 B374
 gpg --verify SHA256SUMS.gpg SHA256SUMS
 
 ```
-Se aparecer OK e depois Good signature from "Ubuntu CD Image Automatic Signing Key <cdimage@ubuntu.com>" 
-então está tudo certo :)
+Se aparecer OK e depois Good signature from "Ubuntu CD Image Automatic Signing Key <cdimage@ubuntu.com>", então está tudo certo :)
 
-Agora bora para a gravação em si: rode `lsblk` antes e depois de conectar o pendrive no seu pc e compare os resultados. Sensurgiu o sdb, para gravar basta abrir o terminal na pasta onde a iso está e rodar o comando: `sudo dd if=imagem.iso of=/dev/sdb bs=4M status=progress && sync`
+Agora bora para a gravação em si: rode `lsblk` antes e depois de conectar o pendrive no seu pc e compare os resultados. Se surgiu o sdb, para gravar basta abrir o terminal na pasta onde a iso está e rodar o comando 
 
-**Importante**: tome cuidado para não colocar /dev/sdb1 , é para ser apenas /dev/sdb (sem numero).
+```
+sudo dd if=imagem.iso of=/dev/sdb bs=4M status=progress && sync
+```
+
+**Importante**: tome cuidado para não colocar /dev/sdb1 ! É para ser apenas /dev/sdb (sem numero).
 
 Para gravar a imagem usando o windows, você pode usar o [etcher](https://etcher.io/) ou o [rufus](https://rufus.akeo.ie/).
 
-Pronto, a primeira parte ja foi!:D
+Pronto, a primeira parte ja foi!:D`
 
 ## Desativação do Secure Boot.
 
 Se deseja se livrar do windows, pule este passo.
 
-O que é o secure boot?
+O que é o Secure Boot?
 
 Secure boot é um mecanismo disparado durante o boot para verificar se o sistema instalado na sua maquina é o mesmo que o fabricante colocou.
 
@@ -63,27 +66,27 @@ Clique na botão do windows no canto inferior esquerdo → Configurações → R
 
 Depois da sua maquina reiniciar vá em solução de problemas → opções avançadas → configurações de firmware UEFI clique reiniar.
 
-entre na sua bios e procure a opção de secure boot, desative-a e salve as alterações.
+Entre na sua bios e procure a opção de secure boot, desative-a e salve as alterações.
 
 ## Instalação em si do Ubuntu
 
-Boote o seu computador pelo pendrive que gravamos anteriormente, e quando chegar na hora de particionar o disco: identifique a partição do windows (normalmente a maior partição), diminua-a para dar espaço para o Ubuntu (botão magico)
+Boote seu computador pelo pendrive que gravamos anteriormente. Quando chegar na hora de particionar o disco, identifique a partição do windows (normalmente a maior partição) e a diminua para dar espaço ao Ubuntu (botão magico)
 
 Caso queira se livrar completamente do windows, coloque para utilizar todo o disco.
 
-pronto! o seu ubuntu foi instalado com sucesso :D
+Pronto! o seu ubuntu foi instalado com sucesso :D
 
 ## Sugestões
 
 Esse passo é completamente opcional, vou recomendar programas e coisas para fazer.
 
-para instalar os programas abaixo basta rodar `sudo apt install pacote`, então daqui para frente vou colocar apenas os nomes dos pacotes.
+Para instalar os programas abaixo basta rodar `sudo apt install nome_do_pacote`, então daqui para frente vou colocar apenas os nomes dos pacotes.
 
 ### Gerenciador de senhas: 
 
 Sugiro o `keepassx` , porém o [keepassxc](https://keepassxc.org/) é um excelente fork mais ativo dele.
 
-quer compartilhar senhas necessarias com colegas de um projeto? `pass` é um gerenciador de senhas que permite compartilhar as senhas com git e as criptografa usando pgp.
+Quer compartilhar senhas necessarias com colegas de um projeto? `pass` é um gerenciador de senhas que permite compartilhar as senhas com git e as criptografa usando pgp.
 
 ### Media Players:
 
@@ -107,12 +110,11 @@ Está acostumado com chrome? instale o `chromium`, que é o navegador no qual o 
 
 O ubuntu já vem com firewall, porém desativado, para ativa-lo: `sudo ufw enable`
 
-usa bastante pgp? instale o `openpgp-applet`, ele é um ícone que permite que você criptografe facilmente o que está no seu Control-C.
+Usa bastante pgp? instale o `openpgp-applet`, ele é um ícone que permite que você criptografe facilmente o que está no seu Control-C.
 
-usa dropbox, googledrive, etc? tudo proprietario! recomendo o `syncthing` ([syncthing.net](https://syncthing.net/)):
-ele eh um app pra android e um programa pra pc, no qual ele sincroniza pastas entre seus dispositivos, criando assim sua nuvem pessoal e descentralizada.
+Usa Dropbox, Googledrive, etc? Tudo proprietario! Recomendo o `syncthing` ([syncthing.net](https://syncthing.net/)). Syncthing é um app pra android e programa pra pc, no qual sincroniza pastas entre seus dispositivos e cria sua nuvem pessoal descentralizada.
 
-para acompanhar seus feeds rss, sugiro o `liferea`
+Para acompanhar seus feeds rss, sugiro o `liferea`.
 
 ### coisas para terminal: 
 
