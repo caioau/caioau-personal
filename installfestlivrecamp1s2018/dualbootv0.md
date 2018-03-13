@@ -110,6 +110,9 @@ Está acostumado com chrome? instale o `chromium`, que é o navegador no qual o 
 
 O ubuntu já vem com firewall, porém desativado, para ativa-lo: `sudo ufw enable`
 
+Quer que seus programas abram mais rapido? instale o `preload`: ele ve os programas que vc mais usa e
+"precarrega" as libs que eles precisam , as carregando durante o boot, tornando assim a inicializacao deles mais rapida
+
 Usa bastante pgp? instale o `openpgp-applet`, ele é um ícone que permite que você criptografe facilmente o que está no seu Control-C.
 
 Usa Dropbox, Googledrive, etc? Tudo proprietario! Recomendo o `syncthing` ([syncthing.net](https://syncthing.net/)). Syncthing é um app pra android e programa pra pc, no qual sincroniza pastas entre seus dispositivos e cria sua nuvem pessoal descentralizada.
