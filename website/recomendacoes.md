@@ -14,7 +14,7 @@ vida longa e prospera
 
 # Recomendações:
 
-Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 8Fev2018 : [diff](https://github.com/caioau/caioau-personal/commit/28e3819ed6366db1c5cf87bcad7a0784ae57f751?short_path=8e64390#diff-8e64390df63bd44f42a6e92ef6427098))
+Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 21Mar2018 : [diff]())
 
 ## Torrent:
 
@@ -55,7 +55,12 @@ Abaixo colocarei coisas que gosto e recomendo: (ultimo update = 8Fev2018 : [diff
 * [CV Dazzle: Camouflage from Face Detection](https://cvdazzle.com/)
     + [MakeUp Tutorial HOW TO HIDE FROM CAMERAS -- Jillian Mayer](https://youtu.be/kGGnnp43uNM)
     + [Invisível na foto: como funciona o lenço anti-paparazzi ](https://www.nexojornal.com.br/expresso/2016/06/30/Invis%C3%ADvel-na-foto-como-funciona-o-len%C3%A7o-anti-paparazzi)
-    
+* [electronics-tutorials.ws](https://www.electronics-tutorials.ws), [circuits.io](https://circuits.io/home/learn), [falstad.com/circuit](http://www.falstad.com/circuit/) e [Circuits and Electronics -- edX](https://www.edx.org/course/circuits-electronics-1-basic-circuit-mitx-6-002-1x-0) excelentes sites, simulador e curso para aprender eletrônica. 
+* [CoCalc.com](https://cocalc.com): antigamente conhecido como SageMathCloud: site que permite programar e trabalhar com documentos de forma colaborativa.
+* [project euler](https://projecteuler.net/) e [UVa online judge](https://uva.onlinejudge.org/) excelentes sites para aprender a programar com ótimos problemas.
+* [Observatory of Economic Complexity](https://atlas.media.mit.edu): excelentes visualizações de dados sociais e econômicos.
+    + [dataviva](http://dataviva.info): dados mais completos do brasil.
+
 ## Textos:
 * [When Women Stopped Coding](http://www.npr.org/sections/money/2014/10/21/357629765/when-women-stopped-coding)
 * [Não há democracia sem garantia de anonimato na internet](https://antivigilancia.org/pt/2016/09/nao-ha-democracia-sem-anonimato/)
@@ -117,11 +122,12 @@ but you can't stop us all... after all, we're all alike.
 ```
 
 * [Copyfight: Pirataria e Cultura Livre](http://skarnio.tv/wp-content/uploads/Copyfight-Pirataria-e-Cultura-Livre.pdf)
-* [Introduction to Methods of Applied Mathematics](applied_math.pdf)
+* [Introduction to Methods of Applied Mathematics -- Sean Mauch](applied_math.pdf): Excelente "resumão" para matemática.
 * [Get your loved ones off Facebook.](http://www.salimvirani.com/facebook/)
 * [Why We Must Fight for the Right to Repair Our Electronics](https://spectrum.ieee.org/green-tech/conservation/why-we-must-fight-for-the-right-to-repair-our-electronics)
 * [Quatro maneiras de usar a vitória de Rafaela Silva para confirmar o que você já pensa](http://www.bbc.com/portuguese/brasil-37022870)
-* [Mãe é quem clica: estamos parindo crias do chupadados](https://chupadados.codingrights.org/vc-e-oq-vc-clica/): Texto excelente da [Coding Rights](codingrights.org) explicando como somos rastreados na internet, como são construídos nossos perfis de compra e como se defender.
+* [Mãe é quem clica: estamos parindo crias do chupadados](https://chupadados.codingrights.org/vc-e-oq-vc-clica/): Texto excelente da [Coding Rights](https://codingrights.org) explicando como somos rastreados na internet, como são construídos nossos perfis de compra e como se defender.
+* [How to Persuade the People You Love to Use Linux](https://www.makeuseof.com/tag/persuade-people-linux/)
 
 ## Videos:
 
@@ -157,6 +163,7 @@ e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/ha
 * [Aldous Huxley on Technodictators](https://youtu.be/oIgjujAI6eE): Excelente entrevista com Aldous Huxley (autor do admirável mundo novo).
 * [Oligopólio dos provedores de internet brasileiros](https://youtu.be/sKFEN2fhSHw): No brasil apenas 3 provedores de acesso à internet possuem 86,7% do mercado. Nesse vídeo é explicado como é desenhado a cadeia de acesso a internet. E como resolver esse problema do oligopólio. 
     + [resposta](https://youtu.be/GGRt6mmCjqE): Será que a regulação da internet que causa o problema do oligopólio no brasil?  
+    + [AMA fev/2018](https://redd.it/7z97ly)
 * [The Bayesian Trap -- Veritasium](https://youtu.be/R13BD8qKeTg)
 * [A visual guide to Bayesian thinking -- Julia Galef](https://youtu.be/BrK7X_XlGB8)
 
@@ -178,9 +185,9 @@ e outro TED [Hans Rosling: New insights on poverty](https://www.ted.com/talks/ha
 ### Navegadores: 
 
 1. [Tor Browser](https://www.torproject.org/): Navegador que protege suas comunicações (erroneamente conhecido como deepweb)
-    1. Caso o site esteja bloqueado para você: vá em [GetTor](https://gettor.torproject.org/) e peça por email, twitter ou xmpp
+    1. Caso o site esteja bloqueado para você: vá em [github.com/TheTorProject/gettorbrowser](https://github.com/TheTorProject/gettorbrowser) ou [GetTor](https://gettor.torproject.org/).
     2. Agora se tor não esteja conectando: utilize as [Bridges](https://bridges.torproject.org/)
-2. [Brave](https://brave.com) : Excelente Navegador: rápido, bloqueia por padrão: propagandas, cookies e rastreadores. (também tem pra smartphone)
+2. [Brave](https://brave.com) : Excelente Navegador: rápido, já vem com webtorrent, bloqueia por padrão: propagandas, cookies e rastreadores. (também tem pra smartphone)
 3. [qutebrowser](https://www.qutebrowser.org/) : Navegador leve feito para ser usado com teclado utilizando comandos vim.
 
 ### Distros GNU/Linux:
