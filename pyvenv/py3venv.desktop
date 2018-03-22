@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=python3
+Comment=abre terminal com venv do python
+Exec=bash -c '$SHELL --init-file <(echo "source ~/.bashrc ; source ~/py3VirtualEnv/bin/activate")'
+Icon=python
+Terminal=true
+Type=Application
+Categories=Application;
