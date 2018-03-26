@@ -108,6 +108,8 @@ Está acostumado com chrome? instale o `chromium`, que é o navegador no qual o 
 
 ## Miscelânea:
 
+Usa bastante o computador anoite? Le bastante pdf? use o `redshift-gtk` para ajustar a temperatura de cor de sua tela e cansar menos a vista.
+
 O ubuntu já vem com firewall, porém desativado, para ativa-lo: `sudo ufw enable`
 
 Quer que seus programas abram mais rapido? instale o `preload`: ele ve os programas que vc mais usa e
