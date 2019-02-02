@@ -80,7 +80,11 @@ Pronto! o seu ubuntu foi instalado com sucesso :D
 
 Esse passo é completamente opcional, vou recomendar programas e coisas para fazer.
 
+Adicionar usuario no grupo sudo (debian): Para usar o sudo no seu usuario use o comando `su` digite a senha de root então o $ na linha de comando virá o # então instale o sudo caso não tenha `apt install sudo` por fim `usermod -aG nome_usuario sudo`
+
 Para instalar os programas abaixo basta rodar `sudo apt install nome_do_pacote`, então daqui para frente vou colocar apenas os nomes dos pacotes.
+
+Icone de atualizações: instale o pacote `pk-update-icon` para ter um icone que te notifica se seu sistema precisa ser atualizado.
 
 ### Gerenciador de senhas: 
 
@@ -105,6 +109,168 @@ Meu navegador favorito é o [brave](https://brave.com/) que bloqueia por padrão
 O navegador padrão é o firefox, sugiro que visite [ffprofile.com](https://ffprofile.com/)  para melhorar a segurança e privacidade dele.
 
 Está acostumado com chrome? instale o `chromium`, que é o navegador no qual o google chrome é baseado, porém esse é software livre e "menos dependente" do google.
+
+### Otimizações:
+
+Sua maquina é um laptop? Otimize o gerenciamento de energia para salvar bateria instalando os pacotes `tlp tlp-rdw linux-cpupower`
+
+Tem SSD? Adicione a opção noatime na fstab para reduzir o numero de escritas no seu disco, crie um arquivo em `/etc/cron.hourly/cron-fstrim` com o seguinte conteudo: depois `sudo chmod +x /etc/cron.hourly/cron-fstrim` e verique o arquivo /var/log/fstrim.log se o script está rodando.
+
+```
+#!/bin/bash
+
+logf=/var/log/fstrim.log
+
+echo "<------------------------->" >> $logf
+date >> $logf
+fstrim -v / >> $logf
+```
+
+criptografou seu disco com LUKS? modifique o campo GRUB_CMDLINE_LINUX_DEFAULT em /etc/default/grub adicionando a opção rd.luks.options=discard
+
+zram: Uma alternativa ao swap tradicional em disco é usar o zram que é o swap em RAM: baixe o [pacote](https://apt.galliumos.org/pool/main/z/zram-config/zram-config_0.5-galliumos2_all.deb) e instale ele com `sudo dpkg -i <arquivo>`
+
+desativar serviços não essenciais: Rode `systemd-analyze` e veja quanto tempo seu computador demora para ligar, rode `systemd-analyze blame` para listar quanto cada serviço demora para ligar. Quais serviços posso desativar? Em [Cleaning Up Your Linux Startup Process](https://www.linux.com/learn/cleaning-your-linux-startup-process) use `sudo systemctl disable <nome_servico>` para desativar e `sudo systemctl mask <nome_servico>` para forcar ele nunca iniciar. 
+
+lista de serviços:
+
+```
+    accounts-daemon.service is a potential security risk. It is part of AccountsService, which allows programs to get and manipulate user account information. I can't think of a good reason to allow this kind of behind-my-back operations, so I mask it.
+
+    avahi-daemon.service is supposed to provide zero-configuration network discovery, and make it super-easy to find printers and other hosts on your network. I always disable it and don't miss it.
+
+    brltty.service provides Braille device support, for example, Braille displays.
+
+    debug-shell.service opens a giant security hole and should never be enabled except when you are using it. This provides a password-less root shell to help with debugging systemd problems.
+
+    ModemManager.service is a DBus-activated daemon that controls mobile broadband (2G/3G/4G) interfaces. If you don't have a mobile broadband interface -- built-in, paired with a mobile phone via Bluetooth, or USB dongle -- you don't need this.
+
+    pppd-dns.service is a relic of the dim past. If you use dial-up Internet, keep it. Otherwise, you don't need it.
+
+    rtkit-daemon.service sounds scary, like rootkit, but you need it because it is the real-time kernel scheduler.
+
+    whoopsie.service is the Ubuntu error reporting service. It collects crash reports and sends them to https://daisy.ubuntu.com. You may safely disable it, or you can remove it permanently by uninstalling apport.
+
+    wpa_supplicant.service is necessary only if you use a Wi-Fi network interface.
+
+```
+
+Otimizando initramfs: No arquivo `/etc/initramfs-tools/initramfs.conf` mude MODULES= para MODULES=dep e COMPRESS= para lzop (caso tenha ssd coloque cat), por fim `sudo update-initramfs -u -k all`
+
+### Dicas de segurança:
+
+Anonimizar mac adress: Para evitar que seja rastreado na rede que você se conecta vamos colocar para que seu endereço fisico mude toda vez que conecta novamente, crie o arquivo `/etc/NetworkManager/conf.d/30-mac-randomization.conf` contendo: [fonte](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/)
+
+```
+[device-mac-randomization]
+# "yes" is already the default for scanning
+wifi.scan-rand-mac-address=yes
+
+[connection-mac-randomization]
+ethernet.cloned-mac-address=random
+wifi.cloned-mac-address=random
+```
+
+ssh hardening: Vai habilitar um servidor ssh na sua maquina? Habile o ufw: `ufw enable` e libere o ssh `ufw limit ssh`.
+gere novas chaves:
+```
+sudo -s
+cd /etc/ssh
+rm ssh_host_*
+ssh-keygen -t rsa -b 4096 -f ssh_host_rsa_key
+ssh-keygen -t ed25519 -f ssh_host_ed25519_key
+```
+
+opções do ssh: mude o arquivo `/etc/ssh/sshd_config` e mude as seguintes opções:
+
+```
+# (se quiser mude para uma porta aleatoria entre 49152–65535)
+#Port 22
+
+# (comente as opcoes dsa e ecdsa)
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+
+HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa
+
+KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256
+ 
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+ 
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com 
+
+LoginGraceTime 1m
+PermitRootLogin no
+
+# (desative passwordauth e coloque apenas pubkey: 
+# gere uma chave com ssh-keygen -t ed25519 -o -a 300 -f ~/.ssh/chave
+# copie e chave com ssh-copy-id -i ~/.ssh/chave user@server
+#PubkeyAuthentication yes
+#PasswordAuthentication yes
+PermitEmptyPasswords no
+
+UsePrivilegeSeparation sandbox
+
+ClientAliveInterval 20
+```
+
+habilite 2FA no ssh: [Hardening SSH with OTP for 2 factor authentication](https://jonarcher.info/2015/07/hardening-ssh-with-otp-for-2-factor-authentication/)
+
+spectre e meltdown: são duas vunerabilidades graves: verique se você está vuneravel: [Spectre & Meltdown Checker](https://github.com/speed47/spectre-meltdown-checker), para mitigar essas vunerabilidades instale o pacote `intel-microcode` (habilite os repositorios non-free)
+
+ecryptfs: Quer criptografar seu /home de maneira transparante? seu usuario NAO PODE ESTAR LOGADO, reinicie sua maquine e rode pelo tty, como root os comandos abaixo:
+
+```
+sudo apt install ecryptfs-utils cryptsetup
+sudo modprobe ecryptfs
+ecryptfs-migrate-home -u <username>
+sudo ecryptfs-setup-swap
+```
+
+criptografar /boot : instalou com disco criptografado ? criptografe o /boot para tornar a criptografia de disco mais segura: [Encrypting More: /boot Joins The Party](https://dustymabe.com/2015/07/06/encrypting-more-boot-joins-the-party/)
+
+```
+[root@localhost ~]# mount --bind / /mnt/
+[root@localhost ~]# cp -a /boot/* /mnt/boot/
+[root@localhost ~]# cp -a /boot/.vmlinuz-* /mnt/boot/
+[root@localhost ~]# diff -ur /boot/ /mnt/boot/
+[root@localhost ~]# umount /mnt
+
+[root@localhost ~]# umount /boot
+[root@localhost ~]# sed -i -e '/\/boot/d' /etc/fstab
+
+
+[root@localhost ~]# cp /boot/grub2/grub.cfg /boot/grub2/grub.cfg.backup
+[root@localhost ~]# grub2-mkconfig > /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-4.0.4-301.fc22.x86_64
+Found initrd image: /boot/initramfs-4.0.4-301.fc22.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-3f9d22f02d854d9a857066570127584a
+Found initrd image: /boot/initramfs-0-rescue-3f9d22f02d854d9a857066570127584a.img
+done
+[root@localhost ~]# cat /boot/grub2/grub.cfg | grep cryptodisk
+        insmod cryptodisk
+        insmod cryptodisk
+        
+        
+[root@localhost ~]# echo GRUB_ENABLE_CRYPTODISK=y >> /etc/default/grub
+[root@localhost ~]# cat /etc/default/grub
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/swap rd.lvm.lv=fedora/root rd.luks.uuid=luks-cb85c654-7561-48a3-9806-f8bbceaf3973 rhgb quiet"
+GRUB_DISABLE_RECOVERY="true"
+GRUB_ENABLE_CRYPTODISK=y
+[root@localhost ~]# grub2-install /dev/sda
+Installing for i386-pc platform.
+Installation finished. No error reported.
+
+```
+
+* [The Practical Linux Hardening Guide](https://github.com/trimstray/the-practical-linux-hardening-guide/blob/master/README.md)
 
 ## Miscelânea:
 
