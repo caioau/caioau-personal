@@ -112,7 +112,7 @@ Está acostumado com chrome? instale o `chromium`, que é o navegador no qual o 
 
 ### Otimizações:
 
-Sua maquina é um laptop? Otimize o gerenciamento de energia para salvar bateria instalando os pacotes `tlp tlp-rdw linux-cpupower`
+Sua maquina é um laptop? Otimize o gerenciamento de energia para salvar bateria instalando os pacotes `tlp tlp-rdw linux-cpupower thermald`
 
 Tem SSD? Adicione a opção noatime na fstab para reduzir o numero de escritas no seu disco, crie um arquivo em `/etc/cron.hourly/cron-fstrim` com o seguinte conteudo: depois `sudo chmod +x /etc/cron.hourly/cron-fstrim` e verique o arquivo /var/log/fstrim.log se o script está rodando.
 
