@@ -33,6 +33,7 @@ veja abaixo os slides de algumas apresentações:
 
 ### Contato:
 
+* mastodon: [\@caioau@mastodon.social](https://mastodon.social/@caioau)
 * twitter: [\@caioauv](https://twitter.com/caioauv)
 * email: 
     + rsa4096/0xEFF5B2E180F294CE: 210B C5A4 14FD 9274 6B6A  250E **EFF5 B2E1 80F2 94CE**
