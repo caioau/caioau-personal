@@ -22,6 +22,8 @@ vida longa e prospera
 
 ### Senhas: Escrevi um texto sobre: [O elo mais fraco da nossa segurança: S&nh5s](senhas/senhas.html)
 
+### Firefox Hardening: Fiz um [guia](https://0xacab.org/caioau/firefox-hardening) para tornar o firefox mais seguro e privado.
+
 veja abaixo os slides de algumas apresentações:
 
 * Oficina: O elo mais fraco da nossa segurança: S&nh5s - 3Mai2019 - [Cryptorave](https://cryptorave.org/) -> [slides](slides/CR2019.pdf)
