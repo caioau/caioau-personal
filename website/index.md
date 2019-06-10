@@ -26,6 +26,7 @@ vida longa e prospera
 
 veja abaixo os slides de algumas apresentações:
 
+* Apresentação: Online privacy and security guide - 23Mai2019 - [Eldorado](https://www.eldorado.org.br/) -> [slides](slides/eldPrivacySec.pdf)
 * Oficina: O elo mais fraco da nossa segurança: S&nh5s - 3Mai2019 - [Cryptorave](https://cryptorave.org/) -> [slides](slides/CR2019.pdf)
 * Oficina: O elo mais fraco da nossa segurança: S&nh5s - 26Aug2017 - [CryptoParty](https://cryptorave.org/) -> [slides](slides/slidesCriptoPartyv3.pdf)
 * Oficina: O elo mais fraco da nossa segurança: S&nh5s - 5Mai2017 - [Cryptorave](https://cryptorave.org/) -> [slides](slides/cryptoRave2017-senhasv2.slides.html)
