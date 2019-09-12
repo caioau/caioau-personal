@@ -26,6 +26,7 @@ vida longa e prospera
 
 veja abaixo os slides de algumas apresentações:
 
+* Oficina: O elo mais fraco da nossa segurança: S&nh5s - 12Set2019 - [Enigma Unicamp](https://enigma.ic.unicamp.br/) -> [slides](slides/senhasEnigmaSet2019.pdf)
 * Apresentação: Um guia de segurança e privacidade dos mochileiros das interwebs - 17Ago2019 - [Casa Hacker](https://casahacker.org) -> [slides](slides/casaHacker2019ago.pdf)
 * Apresentação: Online privacy and security guide - 23Mai2019 - [Eldorado](https://www.eldorado.org.br/) -> [slides](slides/eldPrivacySec.pdf)
 * Oficina: O elo mais fraco da nossa segurança: S&nh5s - 3Mai2019 - [Cryptorave](https://cryptorave.org/) -> [slides](slides/CR2019.pdf)
