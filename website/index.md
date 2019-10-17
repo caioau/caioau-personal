@@ -26,6 +26,7 @@ vida longa e prospera
 
 veja abaixo os slides de algumas apresentações:
 
+* Oficina: O elo mais fraco da nossa segurança: S&nh5s - 17Out2019 - [Laboratório Hacker de Campinas -- LHC](https://lhc.net.br)  -> [slides](slides/senhasLHCout2019.pdf) 
 * Oficina: O elo mais fraco da nossa segurança: S&nh5s - 12Set2019 - [Enigma Unicamp](https://enigma.ic.unicamp.br/) -> [slides](slides/senhasEnigmaSet2019.pdf)
 * Apresentação: Um guia de segurança e privacidade dos mochileiros das interwebs - 17Ago2019 - [Casa Hacker](https://casahacker.org) -> [slides](slides/casaHacker2019ago.pdf)
 * Apresentação: Online privacy and security guide - 23Mai2019 - [Eldorado](https://www.eldorado.org.br/) -> [slides](slides/eldPrivacySec.pdf)
@@ -38,6 +39,8 @@ veja abaixo os slides de algumas apresentações:
 
 ### Contato:
 
+* [Signal](https://signal.org/) : configure as mensagens temporárias para 1 semana.
+    + `echo KzU1IDE5IDkgODEwOCA1MTA0Cg== | base64 -d`
 * mastodon: [\@caioau@mastodon.social](https://mastodon.social/@caioau)
 * twitter: [\@caioauv](https://twitter.com/caioauv)
 * email: 
