@@ -1,0 +1,33 @@
+ORPort 443
+#ORPort [2a0a:c800:1:5::3]:443  # FIXME : put your public ipv6 here
+Nickname TorNick # FIXME : put your cool nickname here
+ContactInfo 0xABCDEFGGASD username at domain dot com # FIXME : put your contact info
+DirPort 80
+ExitPolicy reject *:*
+ExitPolicy reject6 *:*
+
+# FIXME : uncomment if limited traffic (this is 2TB upload+download per month)
+#RelayBandwidthRate 10 MBits
+#RelayBandwidthBurst 50 MBits
+#AccountingStart day 0:00
+#AccountingMax 12 GBytes
+#AccountingRule max 
+
+Log notice file /var/log/tor/notices.log
+ControlPort 9051
+CookieAuthentication 1
+RunAsDaemon 1
+DisableDebuggerAttachment 0
+HardwareAccel 1
+
+AvoidDiskWrites		1	# Try to write to disk less frequently.
+CellStatistics		1	# Accumulate some statistics :)
+ConnDirectionStatistics	1	# Accumulate some statistics :)
+EntryStatistics		1	# Accumulate some statistics :)
+ExtraInfoStatistics	1	# Accumulate some statistics :)
+HeartbeatPeriod		1hours	# Let you know your server is still alive.
+HiddenServiceStatistics	1	# Writes obfuscated statistics on its role.
+LogMessageDomains	1	# Includes message domains with each log msg.
+
+# FIXME: if running more relays put ther fingerprints here
+#MyFamily $0118F9F55111FE8E1520E2DE112EF1AF999CC1D2,$0118F9F55111FE8E1520E2DE112EF1AF999CC1D7

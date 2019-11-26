@@ -33,6 +33,10 @@ This slide is generated using pandoc with beamer, to generate the slides pdf run
 
 pandoc -t beamer input.md -o output.pdf
 
+if you dont have pandoc: 
+
+sudo apt install pandoc texlive-latex-recommended
+
 read pandoc manual:
 
 https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc
@@ -41,23 +45,25 @@ TODO:
 
 - [x] copy from previous casa hacker slides
 - [x] cool stuff with tor: whonix, tails, onionshare, secure drop, ricochet, briar
-- [ ] tor relay: torrc templates and for bridges, firewall (ufw), unattended upgrades, swap, ssh hardening, ntp, vnstat munin? tune2fs
+- [x] tor relay: torrc templates and for bridges, firewall (ufw), unattended upgrades, swap, ssh hardening, ntp, vnstat munin? tune2fs
 - [ ] raspy specifics: disable swap, fstab, rc.local to create log
-- [ ] tips: yubikey, ssh config blocks and onion service, magic wormhole?
+- [x] tips: yubikey, ssh config blocks and onion service, magic wormhole? port knocking
 
-- [ ] anonimous upgrades
+- [x] anonimous upgrades
 
 - [x] onion lists: ddg, debian, bbc, facebook, protonmail, 
 - [ ] tor mirrors
 - [ ] about casa hacker and cebolas
 
-- [ ] tor relay lifecycle
+- [x] tor relay lifecycle
 
 - [ ] rpi file
 
-- [ ] sshd_config, torrc , source.list, unnatended upgrades
-- [ ] port knockig
+- [x] sshd_config, torrc , source.list, unnatended upgrades
+- [x] port knockig
 - [ ] debian security mailing list, tor relay list
+
+- [ ] tshirt and fallback dir
 
 
 https://community.torproject.org/training/resources/
@@ -274,8 +280,6 @@ For bandwidth it required at least 16 Mbps for upload and download, if you have 
 
 * Monthly Outbound traffic: Tor relays needs a lot of traffic, **Ideally a relay runs on an unmetered plan**
 
-Tip: calculate bandwidth given traffic quota using [wolframAlpha](https://www.wolframalpha.com/), ie type: 2TB/month
-
 * Public IPv4 Address 
 
 * RAM memory requirements: Tor is very lightweight: 512MB should be fine for <= 40Mbps and 1GB for more.
@@ -334,7 +338,7 @@ Given that, **choose a OS that you're most familiar with.**
 
 * Rock solid stable.
 * Not frequent updates (only security updates).
-* Very committed to Libre software (unlike Ubuntu, Fedora).
+* Committed to Libre software (unlike Ubuntu, Fedora).
 * All volunteers signs the Debian Social Contract.
 * No profit organization (unlike Ubuntu, Fedora).
     + Ubuntu had a [spyware](https://www.eff.org/pt-br/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks) installed by default.
@@ -395,9 +399,10 @@ In order to setup our relay we are going to:
 * Always having the correct time: ntp.
 * Automatic updates (unattended-upgrades).
 * Tor setup and install.
-* Monitoring: vnstat and optionally munin.
+* Monitoring: nyx, vnstat and optionally munin.
 * Misc recommend things and Tips.
 * Raspberry pi specific things.
+
 
 --- 
 
@@ -447,6 +452,12 @@ Also install htop to see running process:
 > sudo apt install htop
 
 Then look for non-standard process, the remove it with sudo apt remove package.
+
+### Always having the correct time: ntp
+
+tor needs that your server is always with the correct time, just install the ntp:
+
+> sudo apt install ntp
 
 ---
 
@@ -513,7 +524,7 @@ sudo ufw default deny incoming # (1)
 sudo ufw limit SSHPORT
 sudo ufw allow 443 # ORPORT
 sudo ufw allow 80  # DIRPORT
-sudo ufw allow 22  # ssh tarpit (endlessh)
+sudo ufw allow 22  # ssh
 sudo ufw enable
 ```
 
@@ -600,38 +611,185 @@ then replace your edited torrc to /etc/tor/torrc and restart Tor:
 
 > sudo systemctl restart tor
 
+TODO: private bridge and get bridge line
+
 ---
 
 ## Tor setup: 
 
 ### Configuring for traffic quota:
 
-It this example we are configuring for a provider that allows 2TB/month for Download + upload.
+It this example we are configuring for a provider that allows 2TB/month for Download + upload (some provider on charge for upload).
 
+If we have 2TB for both directions, we have 1TB per direction.
+
+* Calculate average speed:
+
+Go to [WolframAlpha](https://www.wolframalpha.com/) and type 1TB/month: **we get 3.04 Mbps**.
+
+Since we have only a small amount of bandwidth to donate compared to your connection speed, its advised to set accounting the quota daily, and setup the RelayBandwidthRate to 2~3 times the avg speed. 
+
+* Get the daily quota 
+
+type (1TB/month)*day on WolframAlpha: **we get 32.88GB daily traffic**
+
+So your torrc should have (don't forget to reload tor):
+
+```
+RelayBandwidthRate 10 MBits
+RelayBandwidthBurst 50 MBits
+AccountingStart day 0:00
+AccountingMax 32 GBytes
+AccountingRule max 
+```
+
+this way your relay will always be useful for at least a third of each day and will use all of its quota (will not be under used).
 
 ---
 
-### Monitoring 
+### Tor setup: finishing up:
 
+Everything should be working, just look for the Tor log (/var/log/tor/notice.log) if it's everything all right, like this:
+
+```
+Self-testing indicates your ORPort is reachable from the outside. Excellent.
+Publishing server descriptor.
+```
+
+So your relay should be running :)
+
+Wait for a couple of hours, then search for your relay at the [Tor Metrics: Relay Search](https://metrics.torproject.org/rs.html) 
+
+(for bridges use the hashed-fingerprint value under /var/lib/tor)
+
+* If you are running more relay: awesome! But don't forget to set MyFamily on your torrc
 
 ---
 
-### Misc recommended stuff and Tips
+### Monitoring:
+
+After having setting up your relay, you can almost leave as is, but it's important to monitor your system's:
+
+1. CPU, memory, swap
+2. Bandwidth.
+3. Established connections.
+
+The 1st you can monitor with **htop**, the 2st with **vnstat** and 3st with **nyx**.
+
+nyx is a command line monitor for Tor.
+
+Additionally you can also install munin, it's the most complete way to monitor your system and generates several charts, so you don't need to login every time to see how is your system. Checkout the [munin tor plugin](https://github.com/daftaupe/munin-tor).
+
+---
+
+## Misc recommended stuff and Tips
+
+### Having a lot of swap:
+
+While 1GB of RAM is enough for most relays, sometimes for a short period the system memory is full so the out of memory killer kills tor :/ 
+
+After setting up swap it never happened, so having 1~3GB of swap is wise.
+
+1. You can have a swap file and point it in the fstab.
+2. (What I recommend) Use zram: It's fast than disk swap, just install the bc package and this [package](https://apt.galliumos.org/pool/main/z/zram-config/zram-config_0.5-galliumos2_all.deb)
+
+### Avoiding disks errors: enabling file system check every boot:
+
+One time my relay was down, after logging the file system was mounted as read only, I saw that was some errors on disk so the OS remounted as read only, after enabling fsck every boot solved, never had again:
+
+Which device is rootfs? run `lsblk` than look the column name have the pointpoint // for instance /dev/vda1 , then `sudo tune2fs -c 1 /dev/vda1`
+
+### Using ssh blocks:
+
+This is really handy, instead of doing:
+
+> ssh username@123.456.789.012 -p SSHPORT
+
+Using ssh block we can do:
+
+> ssh torrelay
+
+```
+# ~/.ssh/config
+
+host torrelay
+   HostName 123.456.789.012
+   User username
+   Compression yes
+   IdentitiesOnly yes
+   IdentityFile ~/.ssh/id_ed25519
+```
+
+### secure your sshd even more with port knocking
+
+We are not using sshd on the default 22 port and only allowed public key authentication, this is quite secure, but we still have a exposed port to the internet.
+
+Port knocking works likes this: In your case the ssh port is not open, then if I want to connect to my server I have to knock (connect) a secret sequence of ports, then the ssh port will be open for some time just for me.
+
+Install the knockd on Debian.
+
+### Super secure ssh keys: using security keys (like yubikey)
+
+We are using ssh keys to login to the server, while this is safer than passwords, if your computer gets compromised your ssh keys can be leaked.
+
+You can use firejail to prevent this, or use [ssh split](https://kushaldas.in/posts/using-split-ssh-in-qubesos-4-0.html) on QubeOS.
+
+As a permanent solution I would suggest using a security key, like yubikey, the private key is securely stored on a separated hardware and will never leave it. 
+
+If you have a yubikey: checkout [drduh guide](https://github.com/drduh/YubiKey-Guide)
+
+Future versions of OpenSSH will support using any u2f token as a security key, so you can use a inexpensive (~12USD) [tomu](http://tomu.im/tomu.html)
+
+### Transferring files magically: Using magic-wormhole
+
+While you can use scp or rsync to copy files over ssh, magic-wormhole is so much easier :)
+
+### Using anonymous upgrades
+
+Debian and tor project offers their packages to be downloaded via onion service, it's always safer to use onion over clearnet.
+
+* Install apt over tor transport package:
+
+> sudo apt install apt-transport-tor
+
+Then comment your /etc/source.list and other files under /etc/apt/source.list.d/, then copy the onion part from the TODO 
+
+### ansible
+
+https://github.com/nusenu/ansible-relayor
 
 ---
 
 ### Raspberry pi specific stuff:
 
+Modern raspis are powerful enough to run a Tor relay, but since their hard drive is a SD card is not as reliable and have shorter lifespan as a regular HDD, so it's recommended some measures to reduce the writes to disk and prolong it's lifespan
+
+disable swap, zram, fstab, rc creating tor logfile, fstrim
 
 ---
 
-### Tor relay life cycle
+### The lifecycle of a new relay:
 
+I just setup my relay but it's not fully using bandwidth.
+
+The Tor network have this mechanism to slowly ramp new relay, it takes some weeks to a new relay to be fully used.
+
+This post have all the details: [The lifecycle of a new relay](https://blog.torproject.org/lifecycle-new-relay)
+
+Because of this it's recommended to **backup the relays keys**, so if you move your relay it won't start from scratch. Copy the folder /var/lib/tor/keys/
 
 ---
 
 ### Reaching out:
 
+tor relay list and channel
+
+tor global south list and channel
+
+cebolas list and channel
+
 ---
 
+### How to help tor project: 
 
+voluntaring, donating, snowflake bridge

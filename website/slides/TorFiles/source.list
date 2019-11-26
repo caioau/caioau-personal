@@ -1,0 +1,19 @@
+deb http://deb.debian.org/debian/ buster main 
+deb-src http://deb.debian.org/debian/ buster main 
+deb http://security.debian.org/debian-security buster/updates main 
+deb-src http://security.debian.org/debian-security buster/updates main 
+deb http://deb.debian.org/debian/ buster-updates main 
+deb-src http://deb.debian.org/debian/ buster-updates main 
+
+# uncomment for backports
+#deb http://deb.debian.org/debian/ buster-backports main 
+#deb-src http://deb.debian.org/debian/ buster-backports main 
+
+
+# for anonimous upgrades: uncomment the following and sudo apt install apt-transport-tor (and comment all the others in source.list)
+#deb  tor+http://vwakviie2ienjx6t.onion/debian          buster            main
+#deb  tor+http://vwakviie2ienjx6t.onion/debian          buster-updates    main
+#deb  tor+http://sgvtcaew4bxjd7ln.onion/debian-security buster/updates    main
+#deb  tor://sdscoq7snqtznauu.onion/torproject.org buster main
+# uncomment for backports
+#deb tor+http://vwakviie2ienjx6t.onion/debian          buster-backports  main
