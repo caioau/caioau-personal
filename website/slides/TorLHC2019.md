@@ -26,6 +26,7 @@ colortheme:
 * How to use Tor Browser
 * Cool stuff made with Tor
 * Running a relay!
+* How to contribute to the project!
 
 <!---
 
@@ -41,30 +42,6 @@ read pandoc manual:
 
 https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc
 
-TODO:
-
-- [x] copy from previous casa hacker slides
-- [x] cool stuff with tor: whonix, tails, onionshare, secure drop, ricochet, briar
-- [x] tor relay: torrc templates and for bridges, firewall (ufw), unattended upgrades, swap, ssh hardening, ntp, vnstat munin? tune2fs
-- [ ] raspy specifics: disable swap, fstab, rc.local to create log
-- [x] tips: yubikey, ssh config blocks and onion service, magic wormhole? port knocking
-
-- [x] anonimous upgrades
-
-- [x] onion lists: ddg, debian, bbc, facebook, protonmail, 
-- [ ] tor mirrors
-- [ ] about casa hacker and cebolas
-
-- [x] tor relay lifecycle
-
-- [ ] rpi file
-
-- [x] sshd_config, torrc , source.list, unnatended upgrades
-- [x] port knockig
-- [ ] debian security mailing list, tor relay list
-
-- [ ] tshirt and fallback dir
-
 
 https://community.torproject.org/training/resources/
 
@@ -74,10 +51,18 @@ https://community.torproject.org/training/resources/
 
 ### About Casahacker hackerspace:
 
+**Casa Hacker is a non-profit hackerspace** dedicated to putting local communities in control of their digital experiences and shaping the future of information and communication technology for the public good. We put our principles above profits and believe that the technologies of our age are public resources to be used and built by everyone, not a commodity to be sold. In an experienced, multidisciplinary, technology and societal leader **we have developed social impact initiatives that empower people and transform communities.**
+
+* Based on Campinas (campo grande).
+* Website: [casahacker.org](https://casahacker.org)
+* Mastodon: [\@casahacker@masto.donte.com.br](https://masto.donte.com.br/@casahacker)
+* Social media: @casahacker
 
 ---
 
 ### About the cebolas collective:
+
+Cebolas is a Brazilian collective of Tor volunteers.
 
 ---
 
@@ -158,7 +143,11 @@ To advance human rights and freedoms by creating and deploying free and open sou
 
 ### Downloading Tor Browsing When censored:
 
-TODO (twitter DM, github, mirrors)
+If [torproject.org](https://torproject.org) is blocked, try mirrors:
+
+* [tor.calyxinstitute.org](http://tor.calyxinstitute.org)
+* [tor.eff.org](https://tor.eff.org)
+* Or try GetTor - email gettor@torproject.org and in the message write “windows”, “osx” or “linux” (no quotes, no subject line)
 
 ---
 
@@ -171,9 +160,11 @@ TODO (twitter DM, github, mirrors)
 * **Leave the Tor Browser as is (Don't install any extensions)**
 * Avoid opening downloaded files from Tor Browser (Use Tails)
 
-### Any questions? Read the Tor Browser User manual
+### Any questions? Read the Tor Browser User manual and the support portal
 
-Tor Browser has a user manual website under: [tb-manual.torproject.org](https://tb-manual.torproject.org/)
+Tor Browser has a user manual website under: [tb-manual.torproject.org](https://tb-manual.torproject.org/) ([dgvdmophvhunawds.onion](http://dgvdmophvhunawds.onion/))
+
+Another manual that will help you is the support portal: [support.torproject.org](https://support.torproject.org/) ([4bflp2c4tnynnbes.onion](http://4bflp2c4tnynnbes.onion/))
 
 ---
 
@@ -189,6 +180,8 @@ Briefly: When using Onion service ( .onion domains) the client and the service e
 * End to end encrypted.
 * NAT punch builtin.
 * No need to "leave" the Tor network.
+
+Checkout [Vanguards Onion Service Addon](https://github.com/mikeperry-tor/vanguards) that makes onion services safer.
 
 ---
 
@@ -232,10 +225,10 @@ This can be done in two different ways:
 ### Cool stuff built on Tor:
 
 * [ooni.torproject.org](https://ooni.torproject.org) -- Open Observatory of Network Interference
-* secure drop: platform to submit documents.
+* secure drop: platform to whistleblowers anonymous submit documents.
 * onion share: allow sharing files anonymously.
 * Tails -- The Amnesic Incognito Live System.
-* Whonix: Operating system that isolates the Tor program and Browser in separated VMs, can be installed on QuebesOS.
+* Whonix: Operating system that isolates the tor program and Browser into separated VMs, can be installed on QuebesOS.
 * Briar: p2p messenger.  
 * Debian/QuebeOS anonymous updates.
 
@@ -266,7 +259,7 @@ The entire path from you to site.com is called a **circuit**
 
 So the Tor relays types are:
 
-* Exit relay: Does the final connection to the desired websites, **requires huge legal support** since a random person can do illegal stuff and your Exit relay will be blamed for it. 
+* Exit relay: Does the final connection to the desired websites, **requires huge legal support** since any random person can do illegal stuff and your Exit relay will be blamed for it. 
 * Non-exit relay: A relay which will be either a middle or guard relay (more on that later).
 * Bridge relay: Acts like a Guard relay, but since every Tor relay IP is public it can be easy censored, Bridges IPs are not public (optionally they could be only published to the bridgedb). **Are useful for Tor users under oppressive regimes.**
 
@@ -328,7 +321,8 @@ I'm most familiar to [OpenBSD](https://www.openbsd.org/) and it has great securi
 * Immune by design against Spectre & Meltdown.
 * W ^ X memory.
 
-[why OpenBSD rocks](https://why-openbsd.rocks/fact/)
+* [why OpenBSD rocks](https://why-openbsd.rocks/fact/)
+* Also checkout this website: [runbsd.info](https://runbsd.info/) with why several individuals and companies choose BSD.
 
 Given that, **choose a OS that you're most familiar with.**
 
@@ -341,7 +335,7 @@ Given that, **choose a OS that you're most familiar with.**
 * Committed to Libre software (unlike Ubuntu, Fedora).
 * All volunteers signs the Debian Social Contract.
 * No profit organization (unlike Ubuntu, Fedora).
-    + Ubuntu had a [spyware](https://www.eff.org/pt-br/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks) installed by default.
+    + Ubuntu had a [spyware](https://www.eff.org/pt-br/deeplinks/2012/10/privacy-ubuntu-1210-amazon-ads-and-data-leaks) enabled by default.
     
 ---
 
@@ -453,17 +447,11 @@ Also install htop to see running process:
 
 Then look for non-standard process, the remove it with sudo apt remove package.
 
-### Always having the correct time: ntp
-
-tor needs that your server is always with the correct time, just install the ntp:
-
-> sudo apt install ntp
-
 ---
 
-### ssh hardening:
+## ssh hardening:
 
-#### Generate new host keys:
+### Generate new host keys:
 
 We have no guarantee that your provider is not using the same ssh host keys for everyone.
 
@@ -477,24 +465,11 @@ ssh-keygen -t ed25519 -f ssh_host_ed25519_key
 
 ---
 
-#### sshd config : TODO colocar link 
+#### sshd config : 
 
-```
-# /etc/ssh/sshd_config
-Port 123456 # FIXME: change the default port
-HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa
-KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256
-Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com 
-LoginGraceTime 1m
-PermitRootLogin no
-# TODO: copy your ssh key than disable password login
-PubkeyAuthentication yes
-PasswordAuthentication no
-PermitEmptyPasswords no
-UsePrivilegeSeparation sandbox
-ClientAliveInterval 10
-```
+Download my [sshd_config](https://raw.githubusercontent.com/caioau/caioau-personal/master/website/slides/TorFiles/sshd_config)
+
+Change the Port to different one, then put on /etc/ssh/sshd_config , then restart ssh
 
 ---
 
@@ -546,13 +521,15 @@ No need to say that keeping your system always updated is essential.
 
 > sudo dpkg-reconfigure unattended-upgrades
 
-* Configuration: TODO: github link
+* Configuration: Download the [50unattended-upgrade](https://raw.githubusercontent.com/caioau/caioau-personal/master/website/slides/TorFiles/50unattended-upgrades)
 
 **Change buster to the current stable name at the time!**
 
 And the packages origins to whitelist it, to do this list the installed packages origins: 
 
 > apt-cache policy | grep release
+
+Then replace with the /etc/apt/apt.conf.d/50unattended-upgrades
 
 Now your server should auto upgrade and if needed it'll reboot
 
@@ -578,18 +555,18 @@ if you are running a bridge also install obfs4proxy
 # /etc/apt/sources.list.d/tor.list
 
 deb https://deb.torproject.org/torproject.org buster main
-deb-src https://deb.torproject.org/torproject.org buster main
 ```
 
 * Adding and trusting the repository key:
 
-> curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add
+> curl https://deb.torproject.org/torproject.org/
+A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add
 
 * Installing:
 
 ```
 sudo apt update
-sudo apt install tor deb.torproject.org-keyring
+sudo apt install tor deb.torproject.org-keyring ntp
 ```
 
 ---
@@ -598,12 +575,14 @@ sudo apt install tor deb.torproject.org-keyring
 
 Download my torrc template files:
 
-* non-exit torrc template file.
-* bridge torrc template file.
+* [non-exit torrc template file](https://raw.githubusercontent.com/caioau/caioau-personal/master/website/slides/TorFiles/torrc-nonexit).
+* [bridge torrc template file](https://raw.githubusercontent.com/caioau/caioau-personal/master/website/slides/TorFiles/torrc-bridge).
 
-Change to suit your needs: Nickname, ContactInfo.
+Change to suit your needs: Nickname, ContactInfo and your public ipv6 address.
 
 Try as much as possible to keep Orport to 443 and dirport to 80.
+
+For bridges: Decide if you are running a public bridge (where it's published and some users will use it), or private (that is not published and it will only be used by you sent the bridgeline)
 
 Tips on how to deal with traffic quotas on the next slide.
 
@@ -611,7 +590,11 @@ then replace your edited torrc to /etc/tor/torrc and restart Tor:
 
 > sudo systemctl restart tor
 
-TODO: private bridge and get bridge line
+For bridges: test your bridge by getting its bridge line: 
+
+> sudo cat /var/lib/tor/pt_state/obfs4_bridgeline.txt
+
+then edit it with the right fields and put on your Tor browser.
 
 ---
 
@@ -619,7 +602,7 @@ TODO: private bridge and get bridge line
 
 ### Configuring for traffic quota:
 
-It this example we are configuring for a provider that allows 2TB/month for Download + upload (some provider on charge for upload).
+It this example we are configuring for a provider that allows 2TB/month for Download + upload (some provider only charge for upload).
 
 If we have 2TB for both directions, we have 1TB per direction.
 
@@ -632,6 +615,12 @@ Since we have only a small amount of bandwidth to donate compared to your connec
 * Get the daily quota 
 
 type (1TB/month)*day on WolframAlpha: **we get 32.88GB daily traffic**
+
+---
+
+## Tor setup: 
+
+### Configuring for traffic quota:
 
 So your torrc should have (don't forget to reload tor):
 
@@ -652,7 +641,8 @@ this way your relay will always be useful for at least a third of each day and w
 Everything should be working, just look for the Tor log (/var/log/tor/notice.log) if it's everything all right, like this:
 
 ```
-Self-testing indicates your ORPort is reachable from the outside. Excellent.
+Self-testing indicates your ORPort is reachable 
+from the outside. Excellent.
 Publishing server descriptor.
 ```
 
@@ -686,18 +676,28 @@ Additionally you can also install munin, it's the most complete way to monitor y
 
 ### Having a lot of swap:
 
-While 1GB of RAM is enough for most relays, sometimes for a short period the system memory is full so the out of memory killer kills tor :/ 
+While 1GB of RAM is enough for most relays, sometimes for a short period the system memory is full so the out of memory killer kills tor
 
-After setting up swap it never happened, so having 1~3GB of swap is wise.
+After setting up swap it never happened again! so having 1~3GB of swap is wise.
 
 1. You can have a swap file and point it in the fstab.
-2. (What I recommend) Use zram: It's fast than disk swap, just install the bc package and this [package](https://apt.galliumos.org/pool/main/z/zram-config/zram-config_0.5-galliumos2_all.deb)
+2. (What I recommend) Use zram: It's faster than disk swap, just install the bc package and this [package](https://apt.galliumos.org/pool/main/z/zram-config/zram-config_0.5-galliumos2_all.deb)
+
+---
+
+## Misc recommended stuff and Tips
 
 ### Avoiding disks errors: enabling file system check every boot:
 
-One time my relay was down, after logging the file system was mounted as read only, I saw that was some errors on disk so the OS remounted as read only, after enabling fsck every boot solved, never had again:
+One time my relay was down, after logging the file system was mounted as read only, I saw that was some errors on disk so the OS remounted as read only, after enabling fsck every boot the problem was solved.
 
-Which device is rootfs? run `lsblk` than look the column name have the pointpoint // for instance /dev/vda1 , then `sudo tune2fs -c 1 /dev/vda1`
+Which device is rootfs? run `lsblk` than look the column name have the pointpoint / for instance /dev/vda1 , then: 
+
+> sudo tune2fs -c 1 /dev/vda1
+
+---
+
+## Misc recommended stuff and Tips
 
 ### Using ssh blocks:
 
@@ -711,7 +711,6 @@ Using ssh block we can do:
 
 ```
 # ~/.ssh/config
-
 host torrelay
    HostName 123.456.789.012
    User username
@@ -720,25 +719,37 @@ host torrelay
    IdentityFile ~/.ssh/id_ed25519
 ```
 
+---
+
+## Misc recommended stuff and Tips
+
 ### secure your sshd even more with port knocking
 
 We are not using sshd on the default 22 port and only allowed public key authentication, this is quite secure, but we still have a exposed port to the internet.
 
 Port knocking works likes this: In your case the ssh port is not open, then if I want to connect to my server I have to knock (connect) a secret sequence of ports, then the ssh port will be open for some time just for me.
 
-Install the knockd on Debian.
+* Install the knockd package on Debian.
+
+---
+
+## Misc recommended stuff and Tips
 
 ### Super secure ssh keys: using security keys (like yubikey)
 
-We are using ssh keys to login to the server, while this is safer than passwords, if your computer gets compromised your ssh keys can be leaked.
+We are using ssh keys to login to the server, while this is way safer than passwords, if your computer gets compromised your ssh keys can be leaked.
 
 You can use firejail to prevent this, or use [ssh split](https://kushaldas.in/posts/using-split-ssh-in-qubesos-4-0.html) on QubeOS.
 
-As a permanent solution I would suggest using a security key, like yubikey, the private key is securely stored on a separated hardware and will never leave it. 
+As a permanent solution I would suggest using a security key, like yubikey, the private key is securely only stored on a separated hardware and will never leave it. 
 
 If you have a yubikey: checkout [drduh guide](https://github.com/drduh/YubiKey-Guide)
 
 Future versions of OpenSSH will support using any u2f token as a security key, so you can use a inexpensive (~12USD) [tomu](http://tomu.im/tomu.html)
+
+---
+
+## Misc recommended stuff and Tips
 
 ### Transferring files magically: Using magic-wormhole
 
@@ -752,19 +763,53 @@ Debian and tor project offers their packages to be downloaded via onion service,
 
 > sudo apt install apt-transport-tor
 
-Then comment your /etc/source.list and other files under /etc/apt/source.list.d/, then copy the onion part from the TODO 
+Then comment your /etc/source.list and other files under /etc/apt/source.list.d/, then copy the onion part from [here](https://raw.githubusercontent.com/caioau/caioau-personal/master/website/slides/TorFiles/source.list) 
 
-### ansible
+---
 
-https://github.com/nusenu/ansible-relayor
+## Misc recommended stuff and Tips
+
+### Ansible
+
+We did all the configuration manually, some experienced sysadmins are very familiar ansible to do it automatically, checkout [Ansible Role for Tor Relay Operators](https://github.com/nusenu/ansible-relayor)
 
 ---
 
 ### Raspberry pi specific stuff:
 
-Modern raspis are powerful enough to run a Tor relay, but since their hard drive is a SD card is not as reliable and have shorter lifespan as a regular HDD, so it's recommended some measures to reduce the writes to disk and prolong it's lifespan
+Modern raspis are powerful enough to run a Tor relay, but since their hard drive is a SD card is not as reliable and have shorter lifespan as a regular HDD, so it's recommended to take some measures to reduce the number of writes to disk and prolong its lifespan.
 
-disable swap, zram, fstab, rc creating tor logfile, fstrim
+* disable swap:
+
+```
+sudo dphys-swapfile swapoff
+sudo dphys-swapfile uninstall
+sudo systemctl disable dphys-swapfile
+```
+
+* fstab mounting some folders as tmpfs: replace your /etc/fstab with [this](https://raw.githubusercontent.com/caioau/caioau-personal/master/website/slides/TorFiles/raspi-fstab)
+    + this broke tor (it assumes the log is always there): put the following /etc/rc.local:
+    ```
+    mkdir /var/log/tor/
+    chown debian-tor:debian-tor /var/log/tor/
+
+    ```
+
+---
+
+### Raspberry pi specific stuff:
+
+* Running fstrim regularly:
+
+```
+# /etc/cron.hourly/cron-fstrim
+
+#!/bin/bash
+date >> /var/log/fstrim.log
+fstrim -v >> /var/log/fstrim.log
+```
+
+* Enabling zram:  just install the bc package and this [package](https://apt.galliumos.org/pool/main/z/zram-config/zram-config_0.5-galliumos2_all.deb)
 
 ---
 
@@ -776,20 +821,39 @@ The Tor network have this mechanism to slowly ramp new relay, it takes some week
 
 This post have all the details: [The lifecycle of a new relay](https://blog.torproject.org/lifecycle-new-relay)
 
+Your relay will pass into 4 phases:
+
+1. Unmeasured (days 0-3): Basically no use.
+2. Remote measurement (days 3-8): Will attract some traffic.
+3. Ramping as guard (days 8-68): If your relay is fast and stable it will become a guard.
+4. Steady-state guard (days 68-)
+
 Because of this it's recommended to **backup the relays keys**, so if you move your relay it won't start from scratch. Copy the folder /var/lib/tor/keys/
+
+---
+
+### How to help tor project:
+
+If you are running a fast relay for some time ask for a free awesome t-shirt.
+
+Also if you are willing to keep running a relay for years and don't change its IP, pay attention to the mailing list when they are updating the fallback dir list, for you to opt-in to be on, this way you're helping users where Tor is censored.
+
+Besides running a relay can help the project by:
+
+* Donating: It always helps, at time of writing (Nov/2019) Mozilla is doubling your donation, very cool!
+* volunteering (there's a lot of documentation and translations needed)
+* You can also run a new type of bridge called [snowflake](https://snowflake.torproject.org/) by installing a extension on your browser.
+* Spreading the word: Talk and teach about Tor with your friends and family.
+* Simply using Tor Browser as much as possible (if more people use it and more frequently it will make Tor the new norm).
 
 ---
 
 ### Reaching out:
 
-tor relay list and channel
+Are you having problems with your relay? Even if not you really should subscribe to the [tor-relays mailing list](https://lists.torproject.org/cgi-bin/mailman/listinfo/tor-relays/)
 
-tor global south list and channel
+To you want to volunteer and help Tor? subscribe the [global south mailing list](https://lists.torproject.org/cgi-bin/mailman/listinfo/global-south)
 
-cebolas list and channel
+Also in the IRC: #tor, #tor-relays, #tor-south @OFTC
 
----
-
-### How to help tor project: 
-
-voluntaring, donating, snowflake bridge
+Another great list I recommend following is the [Debian Security announcements](https://lists.debian.org/debian-security-announce/) where they warn you if there's a vulnerable package that needs updating (so you can be sure your system is automatically upgrading)
