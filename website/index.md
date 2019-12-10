@@ -26,6 +26,8 @@ vida longa e prospera
 
 veja abaixo os slides de algumas apresentações:
 
+* Oficina: Cebolizando: O que é Tor? Como usar? E como contribuir! - [Laboratório Hacker de Campinas -- LHC](https://lhc.net.br) -> [slides](slides/TorLHC2019.pdf)
+* Oficina: Segurizando Sistemas: Hardening de Debian - 7Dez2019 - [CryptoFesta](https://cryptorave.org/) -> [slides](https://0xacab.org/caioau/debian-hardening-install/blob/master/slides/debian-hardening-slides-pt-br.md)
 * Oficina: O elo mais fraco da nossa segurança: S&nh5s - 17Out2019 - [Laboratório Hacker de Campinas -- LHC](https://lhc.net.br)  -> [slides](slides/senhasLHCout2019.pdf) 
 * Oficina: O elo mais fraco da nossa segurança: S&nh5s - 12Set2019 - [Enigma Unicamp](https://enigma.ic.unicamp.br/) -> [slides](slides/senhasEnigmaSet2019.pdf)
 * Apresentação: Um guia de segurança e privacidade dos mochileiros das interwebs - 17Ago2019 - [Casa Hacker](https://casahacker.org) -> [slides](slides/casaHacker2019ago.pdf)

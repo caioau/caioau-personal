@@ -64,6 +64,9 @@ https://community.torproject.org/training/resources/
 
 Cebolas is a Brazilian collective of Tor volunteers.
 
+* Mailing list: [cebolas@lists.riseup](https://lists.riseup.net/www/info/cebolas)
+* GitLab group: [cebolas@0xacab.org](https://0xacab.org/cebolas) 
+
 ---
 
 ### Acknowledgments 
@@ -107,6 +110,10 @@ Tor -- The onion router, is a libre software that enables communicating anonymou
 
 ## Demystifying Tor: Facts
 
+### Dont't let iceberg pictures scare you!
+
+Currently Tor has ~2 million simultaneous users, which consumes ~200Gbit/s **but only 3Gbit/s traffic is onion services (~2%)**, then the onion services is only the "tip of the iceberg". (data from [Tor metrics](https://metrics.torproject.org/))
+
 
 ### Whats Tor mission?
 
@@ -132,7 +139,7 @@ To advance human rights and freedoms by creating and deploying free and open sou
 
 ---
 
-### Getting started: Downloading Tor Browser:
+### Getting started: Downloading Tor Browser: GNU/Linux
 
 1. Goto : [torproject.org](https://www.torproject.org) and select **Download**
 2. Select your Operating System and also select the signature.
@@ -141,6 +148,13 @@ To advance human rights and freedoms by creating and deploying free and open sou
     2.  gpg \--verify tor-browser-linux64-9.0.1_en-US.tar.xz.asc
 4. Extract and Run the Tor Browser.
 
+### Downloading Tor Browser on your smartphone:
+
+* For Android: Get **Tor Browser for Android** on [Play Store](https://play.google.com/store/apps/details?id=org.torproject.torbrowser) or Fdroid.
+* For iOS: there's a unofficial, very limited app called **Onion Browser**.
+
+---
+
 ### Downloading Tor Browsing When censored:
 
 If [torproject.org](https://torproject.org) is blocked, try mirrors:
@@ -148,6 +162,12 @@ If [torproject.org](https://torproject.org) is blocked, try mirrors:
 * [tor.calyxinstitute.org](http://tor.calyxinstitute.org)
 * [tor.eff.org](https://tor.eff.org)
 * Or try GetTor - email gettor@torproject.org and in the message write “windows”, “osx” or “linux” (no quotes, no subject line)
+
+---
+
+### Tor Browser features:
+
+![](tb-features.png){height=300px}
 
 ---
 
@@ -193,13 +213,14 @@ Checkout [Vanguards Onion Service Addon](https://github.com/mikeperry-tor/vangua
 * QuebesOS: [qubesosfasa4zl44o4tws22di6kepyzfeqv3tg4e3ztknltfxqrymdad.onion](http://qubesosfasa4zl44o4tws22di6kepyzfeqv3tg4e3ztknltfxqrymdad.onion/)
 * BBC: [bbcnewsv2vjtpsuy.onion](https://www.bbcnewsv2vjtpsuy.onion/)
 * NYTimes: [nytimes3xbfgragh.onion](https://www.nytimes3xbfgragh.onion/)
-* BuzzFeed: [bfnews3u2ox4m4ty.onion](https://bfnews3u2ox4m4ty.onion/)
 * Facebook: [facebookcorewwwi.onion](https://facebookcorewwwi.onion/)
 * DuckDuckGo: [3g2upl4pq6kufc4m.onion](https://3g2upl4pq6kufc4m.onion/)
 * ProtonMail: [protonirockerxow.onion](https://protonirockerxow.onion/)
 * [invidio.us](https://invidio.us/) : [axqzx4s6s54s32yentfqojs3x5i7faxza6xo3ehd4bzzsg2ii4fv2iid.onion](http://axqzx4s6s54s32yentfqojs3x5i7faxza6xo3ehd4bzzsg2ii4fv2iid.onion/)
 * [riseup.net](https://riseup.net): [list](https://riseup.net/security/network-security/tor/hs-addresses-signed.txt)
 * [keybase.io](https://keybase.io): [keybase5wmilwokqirssclfnsqrjdsi7jdir5wy7y7iu3tanwmtp6oid.onion](http://keybase5wmilwokqirssclfnsqrjdsi7jdir5wy7y7iu3tanwmtp6oid.onion/)
+
+[real world onion sites](https://github.com/alecmuffett/real-world-onion-sites): list of mainstream websites with onion.
 
 ---
 
