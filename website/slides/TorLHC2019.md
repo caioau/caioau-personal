@@ -319,7 +319,7 @@ Avoid as must as possible the following providers:
 * Hetzner Online GmbH (AS24940)
 * DigitalOcean, LLC (AS14061)
 
-Try hosting in a AS and country that already has a lot of relays. Look in the metrics: [AS](https://metrics.torproject.org/rs.html#aggregate/as) and [Country](https://metrics.torproject.org/rs.html#aggregate/cc)
+Try to **avoid hosting in a AS and country that already has a lot of relays**. Look in the metrics: [AS](https://metrics.torproject.org/rs.html#aggregate/as) and [Country](https://metrics.torproject.org/rs.html#aggregate/cc)
 
 When looking for a provider **the most important thing is traffic quota, ideally look for unmetered.** 
 
