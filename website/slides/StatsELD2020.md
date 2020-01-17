@@ -128,7 +128,7 @@ $$ \mathbb{P}(A_i | B) = \frac{\mathbb{P}(B | A_i) \mathbb{P} (A_i)}{\sum_{j=1}^
 
 ### Bayes example (from [Veritasium](https://www.youtube.com/watch?v=R13BD8qKeTg)):
 
-You are felling sick, so you go to the doctor, there you run a battery of tests. After getting the results you tested positive for a rare disease (affects 0.1% of the population), the test will correctly identify that you have 99% of the times. 
+You are felling sick, so you go to the doctor, there you run a battery of tests. After getting the results you tested positive for a rare disease (affects 0.1% of the population), the test will correctly identify that you have it 99% of the times. 
 
 What's the chances that you actually have the disease? 99%?
 
@@ -144,7 +144,7 @@ $$=\frac{0.99 \cdot 0.001}{0.001 \cdot 0.99 + 0.999 \cdot 0.01} = 0.09 = 9\%$$
 
 What if you test again and it's also positive? You can just take the posterior probability we just calculated and use as a prior:
 
-$$=\frac{0.99 \cdot 0.09}{0.001 \cdot 0.99 + 0.999 \cdot 0.01} = 0.907 \approx 91\%$$
+$$=\frac{0.99 \cdot 0.09}{0.09 \cdot 0.99 + 0.91 \cdot 0.01} = 0.907 \approx 91\%$$
 
 * Awesome video: [A visual guide to Bayesian thinking](https://www.youtube.com/watch?v=BrK7X_XlGB8)
 
@@ -271,7 +271,7 @@ defs, lei dos grandes numeros, teorema do limite central
 
 ### Inference
 
-metodo da maxima verosimilhanca, e grafico qxq
+metodo da maxima verosimilhanca, e grafico qxq (scipy.stats.probplot)
 
 ---
 
@@ -283,3 +283,4 @@ metodo da maxima verosimilhanca, e grafico qxq
 * ross, barry james, meyer
 * khan academy
 * http://www.randomservices.org/random/
+* divulgacao: pizza de dados, senhora toma cha, andar do bebado
