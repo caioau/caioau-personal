@@ -100,7 +100,7 @@ $$\mathbb{P} \left(\displaystyle\bigcup_{i=1}^\infty A_i \right) = \sum_{i=1}^\i
 
 ### Event independence:
 
-Two events are independent when the occurrence of the first does not influence the second.
+Two events are independent when the occurrence of the first does not affect the probability of ocurrence of the second.
 
 Two events A and B are independent if:
 
@@ -156,7 +156,7 @@ $$=\frac{0.99 \cdot 0.09}{0.09 \cdot 0.99 + 0.91 \cdot 0.01} = 0.907 \approx 91\
 
 ### Random Variable (RV)
 
-Consider a experiment with a sample sample $\Omega$ associated with it. A function that maps each element $\omega \in \Omega$ to a Real number it's called random variable (RV) ($X: \Omega \rightarrow \mathbb{R}$)
+Consider a experiment with a sample space $\Omega$ associated with it. A function that maps each element $\omega \in \Omega$ to a Real number such that $[w /leq X]$ it's called random variable (RV) ($X: \Omega \rightarrow \mathbb{R}$)
 
 * Example: Imagine a experiment that consist of 3 consecutive fair coin tosses, so the sample space of this experiment is: \
 S = {(H,H,H), (H,H,T) , ... (T,T,T)} . Now we want to create a random variable X that counts the number of heads in each outcome, so X((H,H,H)) = 3 and X((H,H,T)) = 2. 
@@ -242,7 +242,7 @@ $$ \mathbb{P}(X = k) = \dfrac{e^{-\lambda}\lambda^k}{k!}$$
 * Normal
 * Exponential
 memoryless, sunk costs (https://youarenotsosmart.com/2011/03/25/the-sunk-cost-fallacy/)
-* Pareto
+* Pareto, principio de pareto (80-20)
 
 meme know distributions
 
@@ -252,6 +252,34 @@ meme know distributions
 
 tabela e calcular python, excel, normalizar
 
+
+---
+
+### Assumptions on distribution choice
+
+antes se eh discreta ou continua
+
+descrever a natureza da normal, exp, pareto
+
+Discretas:
+
+Bernouli: resultado dicotonimo , exemplo: moeda, homem ou mulher, sim ou nao. Voto em 2o turno 
+
+Binom: quantidade de sucesso dado um numero fixo de experimento independente; Dados 20 dispositivos independentes, depois de muitas horas, qual a prob de 15 apresentarem defeito.
+
+Geometrica: Numero de falhas ate primeiro sucesso. Exemplo loteria: Dado p ser 1 em 1 milhao qual a prob de ganhar depois de 3 tentativas?
+
+Poisson: Contagem de pessoas inscritas em algum programa que desistem. 
+
+Continuas
+
+Normal : Sem restricao de valores (pode ser positivo ou negativo). Exemplo: Altura de criancas do mesmo sexo e idade (funciona bem pra qui quadrado).
+
+Qui quadrado: Somente valores positivos, diferente da normal: nao eh simetrica
+
+Exp: Somentes valores positivos. Descreve o tempo de falha; Exemplo: Vida util de uma lampada
+
+Pareto: Lei das potencias. Exemplo: Tamanho de chasidas: poucas minas fartas e varias pequenas.
 
 ---
 
@@ -271,7 +299,9 @@ defs, lei dos grandes numeros, teorema do limite central
 
 ### Inference
 
-metodo da maxima verosimilhanca, e grafico qxq (scipy.stats.probplot)
+metodo da maxima verosimilhanca, e grafico qxq (scipy.stats.probplot) (colocar exemplo com distribuicao errada: t student e fitar com a normal)
+
+max veross: find the most likely parameter value, given data. That is, given a prob description of data, find the optimum value for that data (derivatives). 
 
 ---
 
