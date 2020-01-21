@@ -68,15 +68,6 @@ It's the set of all the possible outcomes of a experiment, denoted by S or $\Ome
 
 It's a subset of the sample space.
 
-### Properties needed:
-
-Given a sample sample $\Omega$ the class of events denoted by $\mathcal{A}$ need to satisfy the following properties:
-
-1. $\emptyset \in \mathcal{A}$;
-2. $a_1,a_2, \ldots , \in \mathcal{A} \Longrightarrow \displaystyle\bigcup_{i=1}^\infty a_i \in \mathcal{A}$
-3. if $a \in \mathcal{A} \Longrightarrow a^C \in \mathcal{A}$
-
-
 ---
 
 ## Basic concepts of probability:
@@ -156,7 +147,7 @@ $$=\frac{0.99 \cdot 0.09}{0.09 \cdot 0.99 + 0.91 \cdot 0.01} = 0.907 \approx 91\
 
 ### Random Variable (RV)
 
-Consider a experiment with a sample space $\Omega$ associated with it. A function that maps each element $\omega \in \Omega$ to a Real number such that $[w /leq X]$ it's called random variable (RV) ($X: \Omega \rightarrow \mathbb{R}$)
+Consider a experiment with a sample space $\Omega$ associated with it. A function that maps each element $\omega \in \Omega$ to a Real number such that $[w \leq X]$ it's called random variable (RV) ($X: \Omega \rightarrow \mathbb{R}$)
 
 * Example: Imagine a experiment that consist of 3 consecutive fair coin tosses, so the sample space of this experiment is: \
 S = {(H,H,H), (H,H,T) , ... (T,T,T)} . Now we want to create a random variable X that counts the number of heads in each outcome, so X((H,H,H)) = 3 and X((H,H,T)) = 2. 
@@ -226,7 +217,7 @@ Again consider a Bernoulli experiment conducted n times, but the first n-1 are f
 
 $$ \mathbb{P} (X = k) = (1-p)^kp$$
 
-* A important property is that Geometric distribution is **memoryless** (TODO definir)
+* A important property is that Geometric distribution is the only discrete distribution that is **memoryless**.
 
 ### Poisson:
 
@@ -237,12 +228,63 @@ $$ \mathbb{P}(X = k) = \dfrac{e^{-\lambda}\lambda^k}{k!}$$
 
 ---
 
-### Continuous distributions
+### graficos distribuicoes discretas
 
-* Normal
-* Exponential
-memoryless, sunk costs (https://youarenotsosmart.com/2011/03/25/the-sunk-cost-fallacy/)
-* Pareto, principio de pareto (80-20)
+---
+
+## Continuous distributions
+
+### Normal (or Gaussian, bell curve):
+
+A continuous real random variable is called Normal with $\sigma^2 > 0$ (squared scale), $\mu \in \mathbb{R}$ (location) parameters if your PDF is:
+
+$$ f(x) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2\right)$$
+
+---
+
+## Continuous distributions
+
+### Exponential
+
+A continuous **positive** random variable is called Exponential with $\lambda > 0$ (rate or inverse scale) parameter if your PDF is:
+
+$$ f(x) = \lambda e^{-\lambda x}$$
+
+Important property: Exponential and Geometric (discrete) distribution are the only distributions that are **memoryless**.
+
+#### Memoryless property:
+
+$$ \mathbb{P}[X > x + y \; | \; X > y] = \mathbb{P}[X > x]$$
+
+So no matter how much time has passed it's like the process is starting from beginning.
+
+---
+
+## Continuous distributions
+
+### Pareto
+
+A continuous $x \in [x_m, \infty)$ random variable is called pareto with $x_m >0$ (scale) and $\alpha > 0$ (shape) parameters if your PDF is:
+
+$$ f(x) = \frac{\alpha x_m^\alpha}{x^{\alpha + 1}}$$
+
+Zipf is the discrete distribution of pareto
+
+Pareto is a **heavy tailed** distribution: It means it goes to zero slower.
+
+#### Pareto principle (80-20 law):
+
+The pareto principle states that 80% of results is caused by 20% of the effects, for example Wealth distribution, software bugs and so on. 
+
+It's a particular pareto distributed values when $\alpha = 1.161$
+
+---
+
+
+### graficos distribuicoes continuas
+
+
+---
 
 meme know distributions
 
@@ -250,7 +292,7 @@ meme know distributions
 
 ### Calculations on the Normal distribution
 
-tabela e calcular python, excel, normalizar
+tabela e calcular python, excel, normalizar (z score), regra 65,95,99
 
 
 ---
@@ -313,4 +355,4 @@ max veross: find the most likely parameter value, given data. That is, given a p
 * ross, barry james, meyer
 * khan academy
 * http://www.randomservices.org/random/
-* divulgacao: pizza de dados, senhora toma cha, andar do bebado
+* divulgacao: pizza de dados, senhora toma cha, andar do bebado, /r/dataisbeautiful
