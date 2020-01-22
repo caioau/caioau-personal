@@ -45,6 +45,8 @@ https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc
 - [ ] perda de memoria geometrica e exponencial
 - [ ] tempo de falha exponencial
 - [ ] lei dos grandes numeros  e teorema do limite central
+- [ ] colocar blog post tesler falando normalizacao?
+- [ ] exemplo chocolate engorda?
 
 
 -->
@@ -54,6 +56,10 @@ https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc
 ### Motivation
 
 ![Dados apontam ... (data shows ...)](DadosApontam.jpg){height=200px}
+
+---
+
+### motivation exemple cholate 
 
 
 ---
@@ -225,10 +231,30 @@ A random variable which value can assume 0,1,2 ... is called Poisson with $\lamb
 
 $$ \mathbb{P}(X = k) = \dfrac{e^{-\lambda}\lambda^k}{k!}$$
 
+---
+
+## Discrete distributions plots
+
+### Geometric:
+
+![](geo-PMF.png){height=250px}
+
 
 ---
 
-### graficos distribuicoes discretas
+## Discrete distributions plots
+
+### Binomial:
+
+![](binomial-PMF.png){height=250px}
+
+---
+
+## Discrete distributions plots
+
+### Poisson:
+
+![](poisson-PMF.png){height=250px}
 
 ---
 
@@ -270,18 +296,37 @@ $$ f(x) = \frac{\alpha x_m^\alpha}{x^{\alpha + 1}}$$
 
 Zipf is the discrete distribution of pareto
 
-Pareto is a **heavy tailed** distribution: It means it goes to zero slower.
+Pareto is a **heavy tailed** distribution: It means it goes to zero slower (than exponential).
 
 #### Pareto principle (80-20 law):
 
-The pareto principle states that 80% of results is caused by 20% of the effects, for example Wealth distribution, software bugs and so on. 
+The pareto principle states that 80% of results is caused by 20% of the effects, for example wealth distribution, software bugs and so on ...
 
-It's a particular pareto distributed values when $\alpha = 1.161$
+It's a particular pareto distributed values when $\alpha  \approx  1.161$
 
 ---
 
+## Continuous distributions plots
 
-### graficos distribuicoes continuas
+### Normal:
+
+![](normal-PDF.png){height=250px}
+
+---
+
+## Continuous distributions plots
+
+### Exponential:
+
+![](exp-PDF.png){height=250px}
+
+---
+
+## Continuous distributions plots
+
+### Pareto:
+
+![](pareto-PDF.png){height=250px}
 
 
 ---
@@ -291,6 +336,51 @@ meme know distributions
 ---
 
 ### Calculations on the Normal distribution
+
+Given a Normal distributed values, how to calculate the probability on it?
+
+With normal distribution we usually use a standard normal (where $\mu = 0, \sigma = 1$) cumulative table and standardize the values. 
+
+* How to standardize the values: Given $X \sim N(\mu, \sigma^2)$
+
+$$ z = \frac{x - \mu}{\sigma} \quad \text{or} \quad z = \frac{x - \overline{x}}{s}$$
+
+z is called **z score** and is **standard normal** distributed.
+
+* Standard cumulative $\Phi(x)$:
+
+$\Phi(x) = \mathbb{P}(z \leq x)$ also $\Phi(-x) = 1 - \Phi(x)$
+
+
+$\Phi(x)$ values can we found in a [table](https://en.wikipedia.org/wiki/Standard_normal_table#Cumulative) or using NORMSDIST function in Excel or in Python using stats.norm.cdf function from SciPy.
+
+---
+
+### 68-95-99.7 rule:
+
+The 68-95-99.7 rule also know as the empirical rule is a shorthand to remember the percentage of Normal distributed values that lie within arround the mean with a width of 1,2,3 standard deviations.
+
+$$ \mathbb{P}( \mu - 1\sigma \leq X \leq \mu + 1\sigma) \approx 0.6827$$
+$$ \mathbb{P}( \mu - 2\sigma \leq X \leq \mu + 2\sigma) \approx 0.9545$$
+$$ \mathbb{P}( \mu - 3\sigma \leq X \leq \mu + 3\sigma) \approx 0.9973$$
+
+We don't have to memorize this values, we can calculate it:
+
+$$ \mathbb{P}( \mu - 1\sigma \leq X \leq \mu + 1\sigma) = \mathbb{P}(-1\sigma \leq X - \mu \leq 1\sigma) = $$
+
+$$ \mathbb{P}\left(-1 \leq \frac{X - \mu}{\sigma} \leq 1\right) = \mathbb{P}(-1 \leq z \leq 1) = \Phi(1) - \Phi(-1) \approx  0.6827 $$
+
+---
+
+### 68-95-99.7 rule: Chart
+
+![](553px-Empirical_rule_histogram.svg.png){height=280px}
+
+---
+
+### Calculations on the Normal distribution: Example:
+
+
 
 tabela e calcular python, excel, normalizar (z score), regra 65,95,99
 
