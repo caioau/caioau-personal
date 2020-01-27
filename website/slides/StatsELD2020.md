@@ -5,8 +5,8 @@
     All Copylefts are beautiful: licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ---
-title: 'Plating Onions'
-subtitle: 'TODO subtitle'
+title: 'Introduction to statistics'
+subtitle: 'Learning the basics of probability and statistics'
 date: 
 author:
 - Caio Volpato (caioau) [caioau.keybase.pub](https://caioau.keybase.pub/)
@@ -58,10 +58,6 @@ https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc
 ### Motivation
 
 ![Dados apontam ... (data shows ...)](DadosApontam.jpg){height=200px}
-
----
-
-### motivation exemple cholate 
 
 
 ---
@@ -379,12 +375,45 @@ $$ \mathbb{P}\left(-1 \leq \frac{X - \mu}{\sigma} \leq 1\right) = \mathbb{P}(-1 
 
 ---
 
-### Calculations on the Normal distribution: Example:
+### Calculations on the Normal distribution: Example from Ross:
 
-exemplo ross , desenho area ...
+X is a normal random variable with parameters: $\mu = 3$ and $\sigma^2 = 9$, Calculate: (a) $\mathbb{P}(2 < X < 5)$ (b) $\mathbb{P}(X > 0)$ (c) $\mathbb{P}(|X - 3| > 6)$
 
-tabela e calcular python, excel, normalizar (z score), regra 65,95,99
 
+![](ex_ross0.png){height=200px}
+
+---
+
+### Calculations on the Normal distribution: Example from Ross: part a
+
+![](ex_ross1.png){height=150px}
+
+$$ \mathbb{P}(2 < X < 5) = \mathbb{P}\left(\frac{2-\mu}{\sigma} < \frac{X - \mu}{\sigma} < \frac{5 - \mu}{\sigma}\right) = \mathbb{P}\left(\frac{-1}{3} < Z < \frac{2}{3}\right) = $$
+
+$$ \Phi\left(\frac{2}{3}\right) - \Phi\left(\frac{-1}{3}\right) =  \Phi\left(\frac{2}{3}\right) - \left[1 - \Phi\left(\frac{1}{3}\right)\right] \approx 0.3779$$
+
+---
+
+### Calculations on the Normal distribution: Example from Ross: part b
+
+![](ex_ross2.png){height=150px}
+
+$$ \mathbb{P}(X > 0) = \mathbb{P}\left(\frac{X - \mu}{\sigma} > \frac{-\mu}{\sigma}\right) = \mathbb{P}(Z > -1) = 1 - \Phi(-1) = $$
+
+$$ = \Phi(1) \approx 0.8413$$
+
+---
+
+### Calculations on the Normal distribution: Example from Ross: part c
+
+![](ex_ross3.png){height=120px}
+
+$$ \mathbb{P}(|X - 3| > 6) = \mathbb{P}(6 < X - 3 < -6) = \mathbb{P}(9 < X < -3 ) = $$
+
+
+$$ \mathbb{P}(X > 9) + \mathbb{P}(X < -3) = \mathbb{P}\left(\frac{X-\mu}{\sigma} > \frac{9 - \mu}{\sigma}\right) + \mathbb{P}\left(\frac{X - \mu}{\sigma} < \frac{-3 - \mu}{\sigma}\right)$$
+
+$$ = \mathbb{P}(Z > 2) + \mathbb{P}(Z < -2) = 2[1 - \Phi(2)] \approx 0.0456$$
 
 ---
 
@@ -457,8 +486,29 @@ $X_{(n)}$ the **biggest** value from $X_1,X_2, \cdots, X_n$ (maximum)
 
 ---
 
-TODO exemplo boxplot, gerar dados outliars etc ...
+### Boxplots example:
 
+Let X_n be a sequence of normal distributed random variable with $\mu = 500$ and $\sigma = 100$ we have n=1000 samples, results:
+
+![](ex_boxplot1.png){height=250px}
+
+---
+
+### Boxplots example:
+
+![](ex_boxplot2.png){height=150px}
+
+
+```
+count    1000.000000
+mean      496.802168
+std        97.449072
+min       241.318823
+25%       433.832640
+50%       497.362550
+75%       558.788376
+max       841.161151
+```
 
 ---
 
