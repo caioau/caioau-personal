@@ -47,6 +47,8 @@ https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc
 - [ ] lei dos grandes numeros  e teorema do limite central
 - [ ] colocar blog post tesler falando normalizacao?
 - [ ] exemplo chocolate engorda?
+- [ ] def outliar?
+- [ ] colocar fontes imagem!
 
 
 -->
@@ -266,6 +268,10 @@ A continuous real random variable is called Normal with $\sigma^2 > 0$ (squared 
 
 $$ f(x) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2\right)$$
 
+* The normal function is a example of Liouville's theorem, an probability cannot be analytically calculated, only be numeric methods.
+
+* Fun facts: the half inside the exponential is for the variance to be 1, and the $\sqrt{2\pi}$ is for the integral in the whole support to become 1. 
+
 ---
 
 ## Continuous distributions
@@ -300,7 +306,7 @@ Pareto is a **heavy tailed** distribution: It means it goes to zero slower (than
 
 #### Pareto principle (80-20 law):
 
-The pareto principle states that 80% of results is caused by 20% of the effects, for example wealth distribution, software bugs and so on ...
+The pareto principle states that 80% of results is caused by 20% of the effects, for example wealth distribution, software bugs etc ...
 
 It's a particular pareto distributed values when $\alpha  \approx  1.161$
 
@@ -327,11 +333,6 @@ It's a particular pareto distributed values when $\alpha  \approx  1.161$
 ### Pareto:
 
 ![](pareto-PDF.png){height=250px}
-
-
----
-
-meme know distributions
 
 ---
 
@@ -380,7 +381,7 @@ $$ \mathbb{P}\left(-1 \leq \frac{X - \mu}{\sigma} \leq 1\right) = \mathbb{P}(-1 
 
 ### Calculations on the Normal distribution: Example:
 
-
+exemplo ross , desenho area ...
 
 tabela e calcular python, excel, normalizar (z score), regra 65,95,99
 
@@ -389,43 +390,131 @@ tabela e calcular python, excel, normalizar (z score), regra 65,95,99
 
 ### Assumptions on distribution choice
 
-antes se eh discreta ou continua
-
-descrever a natureza da normal, exp, pareto
-
-Discretas:
-
-Bernouli: resultado dicotonimo , exemplo: moeda, homem ou mulher, sim ou nao. Voto em 2o turno 
-
-Binom: quantidade de sucesso dado um numero fixo de experimento independente; Dados 20 dispositivos independentes, depois de muitas horas, qual a prob de 15 apresentarem defeito.
-
-Geometrica: Numero de falhas ate primeiro sucesso. Exemplo loteria: Dado p ser 1 em 1 milhao qual a prob de ganhar depois de 3 tentativas?
-
-Poisson: Contagem de pessoas inscritas em algum programa que desistem. 
-
-Continuas
-
-Normal : Sem restricao de valores (pode ser positivo ou negativo). Exemplo: Altura de criancas do mesmo sexo e idade (funciona bem pra qui quadrado).
-
-Qui quadrado: Somente valores positivos, diferente da normal: nao eh simetrica
-
-Exp: Somentes valores positivos. Descreve o tempo de falha; Exemplo: Vida util de uma lampada
-
-Pareto: Lei das potencias. Exemplo: Tamanho de chasidas: poucas minas fartas e varias pequenas.
+![Credits: [Portal data science](https://www.instagram.com/portaldata/)](memeNormal.jpg){height=250px}
 
 ---
 
-### order statitics
+### Assumptions on distribution choice
 
-defs, min, max, median, q1,q3, IQR, pq? estat robusta, boxplot
+![](dino_release.png){height=280px}
+
+---
+
+### Assumptions on distribution choice
+
+In order to know which distribution of your data values understanding the nature of the problem is fundamental. 
+
+Is your values a result from counting? So is it discrete ? Or continuous? Which values are possible? 
+
+#### Discrete distributions:
+
+* Bernoulli: boolean result, example: coin toss, second turn (with only 2 candidates) election.
+
+* Binomial: Number of "success" results given a permanent experiment runs. Example: From 20 devices after a long time what's the probability of 15 of them has a kind of defect. 
+
+* Geometric: Number of failures until the first success. Example: The probability of winning the lottery is 1 in 1 million, What's the probability of winning it after 3 tries? 
+
+* Poisson: Example: Number of cars on the road.
+
+---
+
+## Assumptions on distribution choice
+
+### Continuous distributions:
+
+* Normal: No restriction on possible values (positive and negative values are valid). Example: The height of children of the same sex and age.
+
+* chi-squared: Only positive values, unlike normal is not symmetric. 
+
+* Exponential: Only positive values, describes the time until failure. 
+
+* Pareto: Only positive values and bigger and $x_m$. Example: Size of gold mines, very few big mines and a lot of small ones. 
+
+---
+
+### order statistics and quantiles
+
+* Given $X_1,X_2, \cdots, X_n$ values from the same distribution, let:
+
+$X_{(1)}$ the smallest value from $X_1,X_2, \cdots, X_n$ (minimum) 
+
+$X_{(2)}$ 2th smallest value from $X_1,X_2, \cdots, X_n$ 
+
+$X_{(j)}$ jth smallest value from $X_1,X_2, \cdots, X_n$ 
+
+$X_{(n)}$ the **biggest** value from $X_1,X_2, \cdots, X_n$ (maximum)
+
+* q-quantiles are values that partition the values into q subsets of (almost) equal sizes. For instance: q=2 we have the median, 4 the quartiles , 100 percentile and so on ...
+
+* Why use quantiles? Why use median instead of the mean? Because Order statistics is a **robust statistic** which means it is not affected by outliers.
+
+---
+
+### boxplots:
+
+![](550px-Boxplot_vs_PDF.svg.png){height=250px}
+
+
+---
+
+TODO exemplo boxplot, gerar dados outliars etc ...
 
 
 ---
 
 ### Convergence
 
-defs, lei dos grandes numeros, teorema do limite central
+In statistics there some types of convergence, the main ones are:
 
+Let $\{X_1, X_2, \cdots \}$ be a sequence of identically distributed random variables.
+
+1. In Probability: $X_n \overset{p}{\longrightarrow} Y$ :
+
+$$ (\forall \varepsilon > 0) \quad \displaystyle\lim_{n \to \infty} \mathbb{P}(| X_n - Y | > \varepsilon ) = 0$$
+
+2. In distribution (weakly, in law):  $X_n \overset{D}{\longrightarrow} Y$
+
+$$ \displaystyle\lim_{n \to \infty} F_{X_n} (x) = F_Y (y) $$
+
+3. Almost sure (strongly) : $X_n \overset{as}{\longrightarrow} Y$
+
+$$ \mathbb{P} \left( \displaystyle\lim_{n \to \infty} X_n = Y\right) = 1 $$
+
+
+---
+
+## Convergence
+
+### Law of large numbers (LLN):
+
+Let $\{X_1, X_2, \cdots \}$ be a sequence of identically distributed random variables and $\mathbb{E}[X] = \mu$
+
+#### Weak (WLLN)
+
+$\overline{X_n} \overset{p}{\longrightarrow} \mu \quad n \rightarrow \infty$
+
+#### Strong (SLLN)
+
+$\overline{X_n} \overset{as}{\longrightarrow} \mu \quad n \rightarrow \infty$
+
+In words: The sample mean converge to the (theoretical) expected value as the sample size increases. 
+
+---
+
+## Convergence
+
+### Central Limit Theorem (CLT)
+
+Let $\{X_1, X_2, \cdots \}$ be a sequence of identically distributed random variables and $\mathbb{E}[X] = \mu$ and $\mathbb{V}[X] = \sigma^2$
+
+The CLT states that:
+
+$$ \overline{X_n}  \overset{D}{\longrightarrow} \mathcal{N}\left(\mu, \dfrac{\sigma^2}{n}\right)$$
+
+After some transformations we have:
+
+
+$$ \frac{\sqrt{n}(\overline{X_n} - \mu)}{\sigma} \overset{D}{\longrightarrow} \mathcal{N}(0,1)$$
 
 ---
 
