@@ -41,16 +41,6 @@ read pandoc manual:
 
 https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc
 
-- [ ] estatitica de order, e boxplot
-- [ ] perda de memoria geometrica e exponencial
-- [ ] tempo de falha exponencial
-- [ ] lei dos grandes numeros  e teorema do limite central
-- [ ] colocar blog post tesler falando normalizacao?
-- [ ] exemplo chocolate engorda?
-- [ ] def outliar?
-- [ ] colocar fontes imagem!
-
-
 -->
 
 --- 
@@ -371,7 +361,7 @@ $$ \mathbb{P}\left(-1 \leq \frac{X - \mu}{\sigma} \leq 1\right) = \mathbb{P}(-1 
 
 ### 68-95-99.7 rule: Chart
 
-![](553px-Empirical_rule_histogram.svg.png){height=280px}
+![Credits: [Wikipedia: Empirical rule histogram](https://commons.wikimedia.org/wiki/File:Empirical_rule_histogram.svg)](553px-Empirical_rule_histogram.svg.png){height=250px}
 
 ---
 
@@ -481,7 +471,7 @@ $X_{(n)}$ the **biggest** value from $X_1,X_2, \cdots, X_n$ (maximum)
 
 ### boxplots:
 
-![](550px-Boxplot_vs_PDF.svg.png){height=250px}
+![Credits: [Wikipedia: Boxplot vs PDF](https://commons.wikimedia.org/wiki/File:Boxplot_vs_PDF.svg)](550px-Boxplot_vs_PDF.svg.png){height=250px}
 
 
 ---
@@ -501,13 +491,13 @@ Let X_n be a sequence of normal distributed random variable with $\mu = 500$ and
 
 ```
 count    1000.000000
-mean      496.802168
-std        97.449072
-min       241.318823
-25%       433.832640
-50%       497.362550
-75%       558.788376
-max       841.161151
+mean      501.933206
+std        97.921594
+min       175.873266
+25%       435.240969
+50%       502.530061
+75%       564.794388
+max       885.273149
 ```
 
 ---
@@ -568,20 +558,85 @@ $$ \frac{\sqrt{n}(\overline{X_n} - \mu)}{\sigma} \overset{D}{\longrightarrow} \m
 
 ---
 
-### Inference
+### Inference:
 
-metodo da maxima verosimilhanca, e grafico qxq (scipy.stats.probplot) (colocar exemplo com distribuicao errada: t student e fitar com a normal)
+Inference is the process to deduce (estimate) the properties of underlying probability distribution from the data values.
 
-max veross: find the most likely parameter value, given data. That is, given a prob description of data, find the optimum value for that data (derivatives). 
+#### Maximum likelihood estimator (MLE):
+
+One of the most popular estimator method is the maximum likelihood estimator, it consists of finding the parameters that maximizes the likelihood function (via derivatives).
+
+#### Q-Q plot:
+
+Q-Q (quantile-quantile) plot: Is a plot where data quantiles are ploted in one axis and the theoretical quantiles of the fitted distribution on the other axis and a linear regression of the points. This plot can be used to provide a assessment of the "goodness of fit" and maybe find out the data outliers on the data. 
+
+---
+
+### Inference process
+
+Given some data the inference process goes like this:
+
+1. Choose a distribution (based on the nature of the problem).
+2. Fit the distribution (estimate the parameters).
+3. Create a q-q plot to judge the goodness of fit, if some outliers are found they can be identified (and maybe left out). 
+
+If the line still not good try starting again with a different distribution.
+
+---
+
+### Inference example:
+
+Using the same data from the boxplot example, the Q-Q plot: 
+
+![](qqplot1.png){height=150px}
+
+The plot has created using [stats.probplot](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.probplot.html) from SciPy.
+
+Using stats.norm.fit we can estimate (fit) the parameters (assuming normal distribution), we get: loc=501.93 and scale=97.87 we generated random values using loc=500,scale=100n=1000 (the fit could get better with a bigger sample)
+
+---
+
+### Inference example 2:
+
+With new data (n=1000), the Q-Q plot:
+
+![](qqplot2.png){height=200px}
+
+Looking at the line we can clearly see that the line did not fit the points, the data probably is not normal distributed.
+
+---
+
+### Inference example 2: histogram:
+
+![](qqplot2-2.png){height=200px}
+
+the values is not symmetric, one good guest is that it's a chi squared distribution.
+
+---
+
+### Inference example 2: Q-Q plot assuming chi squared:
+
+![](qqplot2-3.png){height=200px}
+
+Using stats.chi2.fit we can estimate (fit) the parameters: df=5.5,loc=460,scale=74, we generated random values using df=4,loc=500,scale=100.
 
 ---
 
 ### Further reading:
 
-* Portal action (pt)
-* stat cookbook
-* havard youtube (https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo)
-* ross, barry james, meyer
-* khan academy
-* http://www.randomservices.org/random/
-* divulgacao: pizza de dados, senhora toma cha, andar do bebado, /r/dataisbeautiful
+To study those topics in depth, here are some awesome references:
+
+#### Getting started: 
+
+* Podcast: (pt) [Pizza de Dados](https://pizzadedados.com/)
+* Book: The Lady Tasting Tea: (pt) Uma Senhora Toma Chá.
+* [/r/dataisbeautiful](https://www.reddit.com/r/dataisbeautiful/)
+
+#### Studying material:
+
+* (pt) [Portal Action](http://www.portalaction.com.br/ambiente-virtual-de-aprendizado)
+* [The Probability and Statistics Cookbook](http://statistics.zone/)
+* [Havard Statistics 110: Probability](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo)
+* [Statistics and probability](https://www.khanacademy.org/math/statistics-probability)
+* [Random website](http://www.randomservices.org/random/)
+* Book: (en) First Course in Probability by Sheldon Ross: (pt) Probabilidade: Um Curso Moderno com Aplicações
