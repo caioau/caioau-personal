@@ -631,6 +631,7 @@ To study those topics in depth, here are some awesome references:
 * Podcast: (pt) [Pizza de Dados](https://pizzadedados.com/)
 * Book: The Lady Tasting Tea: (pt) Uma Senhora Toma Chá.
 * [/r/dataisbeautiful](https://www.reddit.com/r/dataisbeautiful/)
+* [Scipy lectures](http://scipy-lectures.org/) scientific examples with Python.
 
 #### Studying material:
 
