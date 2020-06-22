@@ -26,6 +26,7 @@ vida longa e prospera
 
 veja abaixo os slides de algumas apresentações:
 
+* Apresentação: Introduction to statistics - 6fev2020 - [Eldorado](https://www.eldorado.org.br/) -> [slides](slides/StatsELD2020.pdf)
 * Oficina: Cebolizando: O que é Tor? Como usar? E como contribuir! - [Laboratório Hacker de Campinas -- LHC](https://lhc.net.br) -> [slides](slides/TorLHC2019.pdf)
 * Oficina: Segurizando Sistemas: Hardening de Debian - 7Dez2019 - [CryptoFesta](https://cryptorave.org/) -> [slides](https://0xacab.org/caioau/debian-hardening-install/blob/master/slides/debian-hardening-slides-pt-br.md)
 * Oficina: O elo mais fraco da nossa segurança: S&nh5s - 17Out2019 - [Laboratório Hacker de Campinas -- LHC](https://lhc.net.br)  -> [slides](slides/senhasLHCout2019.pdf) 
