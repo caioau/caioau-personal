@@ -3,7 +3,7 @@
   [caioau.keybase.pub](https://caioau.keybase.pub/) → [caioauheyuuiavlc.onion](http://caioauheyuuiavlc.onion/) \
     210B C5A4 14FD 9274 6B6A  250E **EFF5 B2E1 80F2 94CE** \
     Todos os copylefts são lindos, licenciado sob: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-% [CryptoGoma](https://encripta.org/) 
+% [CryptoGoma -- 23 Junho 2020](https://encripta.org/) 
 
 ---
 title: 'O elo mais fraco da nossa segurança: S&nh5s'
