@@ -256,7 +256,7 @@ Nextcloud é um software servidor de "nuvem" similar ao Dropbox, porém com mais
 
 Permite sincronizar contatos e calendário usando o apps da Fdroid **DavX5** (antigo davdroid). No computador é possivel acessar pelo navegador ou thunderbird (extensão lightning)
 
-Você pode procurar um provider gratuito de Nextcloud, como: [woelkli](https://woelkli.com), [framasoft](https://degooglisons-internet.org/en/list/) e [https://www.systemli.org/](https://www.systemli.org/)
+Você pode procurar um provider gratuito de Nextcloud, como: [woelkli](https://woelkli.com), [framasoft](https://degooglisons-internet.org/en/list/), [https://www.systemli.org/](https://www.systemli.org/) e [disroot](https://disroot.org)
 
 Outra opção é hospedar sua própria instancia nextcloud, alugando uma VPS na digitalOcean, hetzner, linode, etc ...
 
@@ -416,7 +416,7 @@ Como instalar apps da Play store? Ao invés de usar sites como apkmirror, na Fdr
 
 ### Boas Praticas de Segurança: Android:  
 
-* Utilize o "dns privado": com [nextdns](https://nextdns.io/) ou [cloudflare](https://developers.cloudflare.com/1.1.1.1/setting-up-1.1.1.1/android)
+* Utilize o "dns privado": Dessa forma o DNS será criptografado, dificultando que sua operadora saiba quais sites está conectando. [Lista de provedores](https://privacytools.io/providers/dns/), pessoalmente recomendo [nextdns](https://nextdns.io/) ou [cloudflare](https://developers.cloudflare.com/1.1.1.1/setting-up-1.1.1.1/android)
 * Desative permissões desnecessárias.
 * Vá no app de Câmera e desabilite a opção de Geolocalização.
 * Use o app chamado imagePipe que além de tirar metadados de fotos, reduz seu tamanho.
@@ -445,7 +445,7 @@ Recomendo o app PilferShush Jammer (fdroid): ele bloqueia apps de usarem seu mic
 * Desabilite "minhas atividades": [myactivity.google.com/myactivity](https://myactivity.google.com/myactivity)
 * Use apps livres da fdroid.
 * Isole apps com shelter.
-* Utilize o "dns privado": com [nextdns](https://nextdns.io/) ou [cloudflare](https://developers.cloudflare.com/1.1.1.1/setting-up-1.1.1.1/android)
+* Utilize o "dns privado".
 * Desabilite backup no Google Drive no WhatsApp
 * Faça backups com syncthing
 
