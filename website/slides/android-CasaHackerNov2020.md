@@ -226,8 +226,9 @@ Basta abrir seu browser em [f-droid.org](https://f-droid.org/), baixar o apk e i
 * Teclado: AnySoftKeyboard, OpenBoard
 * Email: K-9 Mail, FairEmail, Tutanota
 * Adblock: TrackerControl, Blokada, AdAway
-* OsmAnd+: Alternativa ao waze
-* RunnerUp: Alternativa ao strava
+* OsmAnd+: Alternativa ao waze (navegador)
+* Transportr: Alternativa ao Moovit (transporte publico)
+* RunnerUp: Alternativa ao strava (monitoramento ex fisico)
 
 ---
 
@@ -382,6 +383,24 @@ Vá na wiki do [Treble Experimentations](https://github.com/phhusson/treble_expe
 ### Como instalar apps da Play store: Aurora store
 
 Como instalar apps da Play store? Ao invés de usar sites como apkmirror, na Fdroid tem um app chamado **Aurora Store**, que permite acessar a play store de forma livre, dessa forma os apps são atualizados facilmente.
+
+---
+
+### #FreeYourAndroid
+
+a fundação software livre da europa -- fsfe tem a campanha #FreeYourAndroid para libertar dispositivos Android.
+
+Pag da campanha: [fsfe.org/activities/android](https://fsfe.org/activities/android/)
+
+
+### SeedVault: Backups completos:
+
+O SeedVault é um app livre para fazer backups completos (todos os dados dos apps, equivalente ao titanium backup), infelizmente não é possível instalar o seedvault, ele deve vir incluso no ROM.
+
+Video demo: [video](https://peertube.co.uk/videos/watch/8d35afff-e6bc-4e9f-a24b-2ee3ce0314fe) 
+
+Github: [github.com/seedvault-app/seedvault](https://github.com/seedvault-app/seedvault)
+
 
 ---
 
